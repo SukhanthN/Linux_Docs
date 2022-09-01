@@ -1,4 +1,5 @@
 #Linux
+
 	What is linux:
 	> Linux is an open source operating system (OS) and IT infrastructure platform.
 	> It was originally developed by linus Torvalds in 1991.
