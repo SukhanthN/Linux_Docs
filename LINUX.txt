@@ -171,6 +171,8 @@
 	> wget url								(download zip file)
 	
 	> find / -name *httpd*					(find the files)
+	> find . -name "*.txt"					(find the files)	(.) : For current directory name.
+	> find / -name "*.txt"					(find the files)	(/) : For root.
 	
 	> whereis	file/directory name			(search the file/directory)
 	
@@ -228,7 +230,7 @@
 ------------------------------------------------------------------------------------------------------------------------------------------
 
 # LINUX PACKAGE MANAGEMENT:
-	
+---------------------------
 Package Management (rpm vs yum):
 	A package format is a type of archive containing computer programs and
 	additional metadata needed by package managers.
@@ -264,7 +266,7 @@ Package Management (rpm vs yum):
 	> yum history info ID
 	> /var/log/yum.log
 	-------------------------------------------
-	Apache web application configuration: 
+	Apache web application configuration:
 	SSl/TLS Certificate genetation using ACM
 	configuring http to https domain redirection
 	-------------------------------------------
@@ -490,7 +492,7 @@ zip						.zip					unzip
 # ARCHIVING FILES:
 ------------------
 TAR: (TAPE ARCHIVE)
-A tar file is collection of sevral files/or directories in one fiel. this is a good way to reate
+A tar file is collection of sevral files/or directories in one fiel. this is a good way to create
 backups and archives.		(taking the backups in real enviroment using tar command.)
 
 SYNTAX: $tar [option] [archive-file] [file or directory to be archived]
@@ -772,7 +774,7 @@ searcher.
 	> chown 						(to change the ownership of a file)
 	
 	# PERMISSIONS MANAGEMENT ON FILES AND DIRECTORIES:
-	-------------------------------------------------
+	--------------------------------------------------
 	Numerical notation:
 
 	> chmod 700 filename			(to modify permissions of a file)
@@ -823,7 +825,7 @@ searcher.
 
 # PROCESSES MANAGEMENT IN LINUX:
 -------------------------------
-	> A process os program under execution. (or) Any running, or a command given to Linux system is called as a process.
+	> A process is program under execution (or) Any running, or a command given to Linux system is called as a process.
 	> The operating system tracks process through a process ID (PID). Each process in the system has a unique PID.
 	> The priority index of a process is called NICE in Linux. Its default value is 0 and it can vary between 20 to -19.
 	> The lower the Nicencess index the higher would be priority given to that task.
@@ -993,34 +995,36 @@ searcher.
 			raju:$1$.QKDPc5E$SWlkjRWexrXYgc98F:12825:0:90:5:30:13096:		
 	
 	> cat /etc/shadow | grep -i raju		(ch eck password add to user or not)
-
-	> useradd username						(create a new user)
+	> cat /etc/passwd | grep -i username	(to verify usr is created ot not)
+	
+	> useradd username								(create a new user)
 	> useradd -u 2000 -g test1 -G devteam,test -c "admin user RHCSA" -s /bin/bash -d /opt/rhcsa -e 2018-08-25		(create a user with custom options with description)
 	
 	> useradd -g groupname -G groupname	username	(add user with custom options -g primary group and -G secondary group)
 	
 	> useradd -u 1005 -c "Linux Admin" -d /opt/username -s /bin/sh username		(create a user with custom options with description)
-	> usermod -o 1001 -u 1001 username		(add user with userID and groupID)
-	
+
 	> userdel username 						(to delete an user)
 	> userdel -rf username					(to delete an user along with user files) 
 
-	> cat /etc/passwd | grep -i username	(to verify usr is created ot not)
 	> id username							(same command)
 	> echo $0  								(to check the current login user shell)
 	> cat /etc/shells 						(check avaliable shells)
 	> whoami 								(to check the current login user name)
 	> useradd -D username 					(to check default option of the user)
 	
-	> usermod -aG GN UN 					(add user to group)
-	> usermod -g GN UN 						(chnage primary group)
-	> usermod -G GN UN 						(add user to group)
+	> usermod -aG GN UN 					(add user to group upend the group)
+	> usermod -G GN UN 						(same command)
+	> usermod -g GN UN 						(chnage primary group not upend)
 	
 	> usermod username						(modify/change user account)
 	> usermod -u 1003 username				(modify/change user ID)
 	> usermod -c "dba Admin" username		(specify the description)
+	
 	> usermod -s /bin/bash username			(modify/change user login shell)
-	> usermod -s /sbin/nologin/				(remove shell)
+	> usermod -s /sbin/nologin/	UN			(remove shell for user)
+	> cat /etc/shells 						(check avaliable shells)
+	
 	> usermod -d /home/username				(modify/change user location)
 	
 	> usermod -L username					(to lock the user)
@@ -1030,8 +1034,12 @@ searcher.
 	
 	> usermod -l new_username old_usernme			(modify/change user name)
 	> usermod -d /home/new_username new_username 	(modify/change user home location)
-	> usermod -m /home/sai sai 						(
+	> usermod -m /home/sai sai 						(move home path for user)	-m means move home path.
 	
+	> usermod -o 1001 -u 1001 username				(add user with specified userID and groupID for multiple users)
+
+
+
 	> passwd username						(modify/change password for user)
 	> cat /etc/shadow | grep -i username	(to check password add or not status field of the passwd)
 	> passwd -S username					(same command)
@@ -1041,13 +1049,13 @@ searcher.
 	
 	> passwd -n 10 username					(the user can't change its own password untill 10 days)
 	> passwd -e 2018-08-22 username			(one time password short expire password)
-	
+ 	
 	> echo "12345" | passwd --stdin username(set password to user)
 	> passwd -x 90 username					(after 90 days the passwd required to be changed)
 	
 	> chage username						(change user password expiry information)
-	> chage -l username						(display details)
-	> chage -m 45 -M 60 -W 10 -E 2021-12-31 username (passwd options passwd change minmum & maximum date, warning, expire date)
+	> chage -l username						(display details of user)
+	> chage -m 45 -M 60 -W 10 -E 2021-12-31 username 	(passwd options passwd change minmum & maximum date, warning, expire date)
 	
 
 	# MANAGING GROUPS:
@@ -1089,7 +1097,7 @@ searcher.
 	> groupmod -n new_group_name old_group_name	(modify/change group name)
 	
 	> groupmod -ptest GN						(protect the group)
-	> groupmod -A GN UN							(add administrator for the group)	
+	> groupmod -A UN GN							(add administrator for the group)	
 	
 	> gpasswd groupname    						(add the password to group)
 	> cat /etc/gshadow groupname				(status of the group password)
@@ -1138,34 +1146,58 @@ searcher.
 		> vim /etc/login.defs						(user pre-defined settings) (how to change user pre-defined settings)
 		
 		> cat /etc/default/useradd					(default information)
-     	
-	# GROUP COLLABORATION:
-	----------------------
+
+-------------------------------------------------------------------------------------------------------------------------------------------     	
+# GROUP COLLABORATION:		(special permissions)
+----------------------
 	> Group Collaborations is an essential part of any system administrator who deals with users.
 	knowing file and directory permissins will allow you to let users work together.
-	> Here, we look at three key features:
-			
+	
+	Setuid, Setgid and Stickybit:
+	-----------------------------
+	> Setuid is a Linux file permission setting that allows a user to
+	execute that file or program with the permission of the owner of
+	that file. This is primarily used to elevate the privileges of the
+	Current user.
+	Example: /etc/passwd
+	
+	> Setgid is also similar like setuid. A process, when executed,
+	will run as the group that owns the file.
+	Example: ls -l /usr/bin/crontab
+	
+	> Stickybit: When stickybit is set on a directory, the files in that
+	directory can only be deleted by the owner.
+	Example: /tmp/
+	
+	# Here, we look at three key features:
+	--------------------------------------	
 			suid (set user id):
 			-------------------
+			> setuid
 			> Used to allow multi user access.
 			> Flag id value is : 4
+			> symbolic value : S
 			
 			sgid (set group id):
 			--------------------
+			> setgid
 			> Used to allow multi group access.
 			> Flag id value is: 2
+			> symbolic value : S
 			
 			sticky bit:
 			-----------
+			> stickybit
 			> Used to prevent accidental delete by users and groups.
 			> flag id value is: 1
-	
+			> stickybit : T
+			
 	> which useradd							(Search for a string)
-	> chmod u+s /usr/sbin/useradd			(add command with normal user set multi user assess)
+	> chmod u+s /usr/sbin/useradd (filepath)(add command with normal user set multi user assess)
+	> chmod 4755 /usr/sbin/useradd			(same command add)
 	> chmod u-s /usr/sbin/useradd			(remove command with normal user)
-	> chmod 4755 /usr/sbin/useradd			(add command with normal user set multi user assess)
-	> chmod 0755 /usr/sbin/useradd			(remove command with normal user)
-	> ls -l /usr/sbin/useradd				(status of the useradd command)
+	> chmod 0755 /usr/sbin/useradd			(same command remove)
+	> ls -l /usr/sbin/useradd (filepath)	(status of the useradd command)
 	
 	> chgrp groupname /usr/sbin/useradd		(change the group of command)
 	> chmod g+s /usr/sbin/useradd			(add command with normal user set multi user assess group level user add command executed by dev-team people)
@@ -1174,10 +1206,10 @@ searcher.
 	
 	> chomd +t /cloud-data					(enable sticky bit for the folder it is prevents accendentlly deletes users and groups)
 	> chomd -t /cloud-data					(disable sticky bit)
-	> chomd 1777 /cloud-data				(esame command add)
+	> chomd 1777 /cloud-data				(same command add)
 	> chomd 0777 /cloud-data				(same command remove)
 	
-	# CONFIGURING SUDO ACCESS:
+	# CONFIGURING SUDO ACCESS:    VCS#4311
 	--------------------------
 	> The sudo command offers a mechanism for providing trusted users with administrative access to a
 	system without sharing the passwd of the root user.
@@ -1195,6 +1227,14 @@ searcher.
 	username		ALL=(ALL)		NOPASSWD:ALL 	(add user as sudoer with on password)
 	%groupname		ALL=(ALL) 		NOAPSSWD:All	(add group as sudoer with on password)
 	
+## Allow Users to run any Commands
+root ALL=(ALL) ALL
+aravi ALL =NOPASSWD: ALL
+
+# Group Names
+%engineers ALL =NOPASSWD:	CUSTOM
+%admins1 ALL =NOPASSWD: ADMINISTRATORS
+
 ---------------------------------------------------------------------------------------------------------------------
 	
 # MANAGINING USERS AND GROUPS :						avinash
@@ -1242,14 +1282,17 @@ searcher.
 	> usermod -s /sbin/nologin username		(to remove from shell)
 	> usermod -s /sbin/bash UN 				(to add to shell)
 	
+	> cat /etc/sudoers						(visudo file location)
 	--------------------
 	> useradd 	(name)
 	> adduser	(ubuntu)
 	> visudo	(#Allow members and group sudo to execute any command)
 	> teja ALL=(ALL:ALL) NOPASSWD:ALL		(exit)
-		
+	> sai ALL 
+	
 	> visudo								(press i to search wheel group and remove = and space and save) 
-	> useradd -a -G nandam 					(user name)
+
+	> 
 	
 -------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -1878,6 +1921,7 @@ STORAGE MANAGEMENT ON LINUX: avinash
 	
 --------------------------------------------------------------------------------------------------------------------------------------------
 # REDUNDANT ARRAY OF INDEPENDENT DISKS (RAID):
+----------------------------------------------
 	> User can use RAID to store data across multiple drives. It also helps to avoid data loss if a drive has failed.
 	> The basic idea behind RAID is to combine multiple devices, such as HDD, SSD or NVMe, into an array to 
 	accomplish performance or redundancy goals.
@@ -2449,6 +2493,7 @@ STORAGE MANAGEMENT ON LINUX: avinash
 		by default iso image non readable format.
 	
 	how to read iso image:
+	----------------------
 	we mush mount iso image.
 	> mkdir rhel_release
 	> mount -t iso9660 -o loop iso image file name /mount point		(mount iso image)
@@ -2461,16 +2506,28 @@ STORAGE MANAGEMENT ON LINUX: avinash
 	
 # ACCESS CONTROL LIST'S (ACL'S):
 --------------------------------
-	> Files and dorectories have permissin sets for the owner of the file, the group associated with the file, and
+	> Files and directories have permissin sets for the owner of the file, the group associated with the file, and
 	all other users for the system. However, these permissin sets have limitations.
 	> different permissins can be configured for different users and groups.
 	
+	> Access control list is used to provide more flexible/granular
+	permissions to files & directories.
+	
+	SCENARIO:
+	---------
+	Provide read and write permissions to /testing/techarkit file and to aravi user.
+	
+	> You should not add aravi to any group.
+	> Revoke others permissions to particular file.
+	> aravi user should able to read and write /testing/techarkit.
+	
 		There are two types of ACLs:
+		----------------------------
 			> access acls			(ACL for specific file or directory)
 			> default acls			(A default, ACL for directory. These are an optional.
 			
 	TOOLS:
-			
+	------
 	> setfacl				(sets ACLs for files and directories.
 	> getfacl				(to verifying ACLs information)
 			
@@ -2482,6 +2539,7 @@ STORAGE MANAGEMENT ON LINUX: avinash
 	> yum install acl -y								(install acl package)
 	
 	> setfacl -m u:raju:x /directory_name				(set the acl for raju user for execute only cloud-data folder)
+	> setfacl -m :u:raju:- /directory_name				(remove user name)
 	> setfacl -m u:rajux,u:sai:rwx /directory_name		(set the acl for multiple users)
 	> setfacl -x u:raju: /directory_name				(remove all permissins for raju user)
 	> setfacl -x u:raju:,u:sai: /directory_name			(remove all permissins for multiple user)
@@ -2491,8 +2549,13 @@ STORAGE MANAGEMENT ON LINUX: avinash
 	> setfacl -x g:sales: /directory_name				(remove all permissins for sales group)
 	> setfacl -x g:sales:,g:dev: /directory_name		(remove all permissins for multiple groups)
 	
+	> getfacl file1 | setfacl --set-file=- file2		(copying the ACL of one file to another)
+	> getfacl --access dir | setfacl -d -M dir			(copying the access ACL into the Default ACL)
+	
 	> getfacl directory_name							(to verifying ACLs information)
-
+	
+	> setfacl -b fie2 									(remove all ACL entries)
+	
 --------------------------------------------------------------------------------------------------------------------------------------------
 
 # DOMAIN NAME SYSTEM (DNS):
@@ -2744,12 +2807,14 @@ server	IN 		A 		172.31.35.61
 		MAN
 		
 	# IP ADDRESSING:
+	----------------
 	> An Iternet Protocol (IP) address is a numerical label assigned to each device connected to a 
 	computer network that uses the internet protocal for communication.
 	> The Internet Assigned Number Authority (IANA) reserves the following IP address blocks for use 
 	as Private and Public IP addresses.
 	
 	> IP-ADDRESS type are:
+	----------------------
 	INTERNET PROTOCOL VERSION4 (IP4):
 	> IP4 has 32-bit address length. It support Manual DHCP address configuration.
 	> IPv4 uses four 1-byte decimal number, separated by a dot (i.e 192.168.1.1)
@@ -3415,7 +3480,7 @@ host sukhanth {
 -----------------------------------------------------------------------------------------------------------------------------------------
 
 # WEB SERVER:
-
+-------------
 	> A web server is a network service that serves content to a client over the web, hat means web pages.
 	> Web servers are also known as HTTP servers, as they use the Hypertext Transport Protocol (HTTP).
 	> The web servers available in Red Hat Enterprise Linux 8 are:
@@ -3533,6 +3598,7 @@ AllowOverride AuthConfig
 	> yum install httpd openssl mod_ssl -y
 	> openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout server.key -out server.crt
 	Email Address []: root@192.168.1.105
+	Email Address []: root@192.168.1.105
 	
 	> cd /root	
 	> cp -r server.crt /etc/pki/tls/certs/
@@ -3589,6 +3655,33 @@ DocumentRoot /var/www/html/website2
 	> systemctl status firewalld							(display status of the firewall)
 	> systemctl stop firewall								(stop the firewall)
 	> systemctl disable firewall							(permentelly stop the firewall)
+	
+	# NMCLI - Network Manager Command Line Interface:
+	-------------------------------------------------
+	> nmcli device status									(display current connected zone)
+	> nmcli device show eth0								(display enthire info device)
+	> nmcli connection show									(display the avaliable profiles)
+	> nmcli general status									(general status)
+	> nmcli general loging 
+	> 
+	
+	show | up | down | modify | add | edit | clone | monitor | reload | ifname | load | import | export 
+	
+	> nmcli connection add type ethernet con-name home ifname ens33			(create profile)
+	> nmcli connection add type ethernet con-name techarkit ifname ens33 	(device_name)
+	> nmcli connection modify techarkit ipv4.addresses 192.168.128.134/24 ipv4.gateway 192.168.128.134 ipv4.dns 4.4.4.4 connection.autoconnect yes ipv4.method manual		(add profile)
+	
+	> cat /etc/sysconfig/network-scripts/ifcfg-techarkit
+	
+	> nmcli connection up techarkit
+	
+	> 
+	
+	
+	
+	> nmcli connection delete techarkit										(delete the connection)
+	
+	
 	
 	# ALL ABOUT ZONES:
 	------------------
