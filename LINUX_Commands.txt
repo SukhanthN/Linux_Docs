@@ -247,7 +247,7 @@ Package Management (rpm vs yum):
 	problem with rpm is, it cannot resolve dependencies automatically, so we have YUM
 	> cd /etc/yum.repos.d/
 	
-	To install epel repository:
+	To install epel repository:		(Extra Packages for Enterprise Linux)
 	---------------------------
 	> yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 	> yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
