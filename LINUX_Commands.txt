@@ -1,0 +1,3804 @@
+
+------------------------------------------------------------------------------------------------------------------------------
+# BASIC COMMANDS:
+
+	we can create 60 thousend user accounts.
+	
+	(variables declaration)	
+	
+	> echo $0				   	(find the shell)
+	> export PS1='Public-EC2$' 	(for change machine name)
+
+	> curl url					(browse the url)
+	
+	> whoami					(to check current login username)
+	> logname					(to check current login username)
+	> who						(display who are connect the server is online)
+	> w 						(display the active users list who are connect the server is online and complete details) 
+	> uptime					(display how long server upend running and how many users are connected and load average of the server)
+	> tty 						(current terminal information)
+	> last						(last login information)
+	
+	> uname						(display the current user name)
+	> uname -r 					(display current kurnal version)
+	> cat /proc/version			(same command)
+	> uname -i 					(display current archectutire of the OS)
+	> arch	 					(same command)
+	> uname -a					(display the complete details of the OS)
+	> hostnamectl				(display complete details of server)
+	> cat /etc/redhat-release	(display kurnal release)
+	> cat /etc/*-release		(Print Linux distribution name and version)
+	
+	> man commandname			(display the info about the command)
+	> man -k commandname		(
+	> info commandname			(display the info about the command)
+	> commandname --help		(display the info about the command)
+	
+	> id						(Gives information about currently workig user)
+	> id root					(To view information about root)
+	> id-u						(Tells you id)
+	> id-un  					(Tells you username)
+	> users						(Gives information about logged in users)
+	
+	> su- / sudo su				(switch to root user (ec2-user is default user))
+	
+	> which ls					(Search for a string)
+	> which useradd				(Search for a command location)
+	> sudo						(allow user to execute the command with root level permissions)
+	> sudo su					(Switch to root user)
+	> su 						(switch between users)
+	> exit						(Exit from root user to ec2-user)
+	
+	> clear						(Clears the screen)
+	> cls						(Clears the screen)
+	> ctrl+l					(Clears the screen)
+	
+	> date						(current date)
+	> date --date="-1 day"		(one day back)
+	> date --date="tomorrow"
+	> date --date="year ago"
+	> date --date="1 year ago"
+	> date --date="2 year ago"
+	
+	> time ls -la				(find the command executed time)
+	
+ 	> cal 						(for calender)
+	> cal -m 12 2022			(month and year)
+	> cal 2020					(calender for specific year)
+	> cal feb 2020				(month and year)
+	> cal 02 02 2020			(day month year)
+	> history
+	> cd 						(change diretory)
+	> pwd						(print working directory) 
+
+	> ls						(List the files/folders asending order)
+	> ls -r						(List the files/folders reverse order)
+	> ls -s						(List the files/foldersit is a size)
+	> ls -p  					(List the fileds/folders indentify with /)
+	> ls -a						(List all including hidden files)
+	> ls -l 					(List all files with details)
+	> ls -l filename			(List all details about specific file)
+	> ls -la					(long list all files)
+	> ls -lt					(long list recent modified files assendling order)
+	> ls -ltr					(long list recent modified files reverse order)
+
+	> ls -ltrh					(long list recent modified files reverse order human readable)
+	> ls j*						(listing file starts with the java)
+	> ls *.cfg					(listing files withextension with .cfg)
+	> ls *.py					(listing files withextension with .py)
+	> ls ???					(listing three charter files)
+	> ls ??e					(listing three chaacter file last word should be 'e')
+	> ls -l backup.tar*			(
+	
+	> stat filename				(get the complete information about file)	verify the security measures. whoever modifyed access levels.
+	
+		Identifying Linux File Types
+			- 	> regular file
+			d	> directory
+			c 	> chaacter device file
+			b	> block device file
+			I	> symbolic link
+			s 	> local socket file
+			P 	> named pipe
+			
+	> ls -l > filename			(saves the output with file)	(over write)
+	> ls -l 1> filename 		(saves the output with file)	by defult there is 1	(over write)
+	> ls -j 2> filename			(saves the output with file unsucessful data) 	
+	> ls -l a aa >>	filename	(saves the output with file)							(up end write)
+	> ls -l a aa 1>> filename	(saves the output with file sucess data only)
+	> ls -l a aa 2>> filename 	(saves the output with file sucess data shows unsucessful data)
+	> ls -l a aa &>> filename 	(saves the output with file sucess data unsucessful data)	ambus.
+	
+	> rm filename				(remove a empty file)
+	> rm -i filename			(romove file interactive method)
+	> rm -f filename			(romove file forcefully)
+	> rm -i j*					(remove file name starts with j)
+	> rm -ri ???				(remove three chaacter files)
+	
+	> rmdir						(remove only empty directory)
+	> rm -r 					(remove directory with files)
+	> rm -ri					(remove directory with files interactivelly)
+	> rm -rf					(Delete a directory that contains files with forcefully)
+	> rm -rf *					(remove all files in current directory)
+
+	> touch filename			(Create blank/empty files)
+	> touch filename			(for change the file time stamp)
+	
+	> echo 	(Print any text that follows the command)
+	> echo "<h1> sukhanth </h1>" > index.html
+	> echo "<h2> sukhanth </h2>" >> index.html
+	> echo "<h2> sukhanth </h2>" >> /var/www/html/index.html
+	
+	> mkdir 					(create a directory)
+	> mkdir name1 name2	name3	(create multiple directories)
+	> mkdir name {1..3}			(create multiple directories)
+	> mkdir -p /h1/h2/h3/h4		(one on one directory)
+	
+	> cat filename				(display the data in file)		
+	> cat > filename 			(create a file with some data) (ctrl+d for come out)
+	> cat >> fielname 			(add more data)
+	> cat -n filename			(display the data in file with numbers)
+	
+	> join file1 file2				(check the both file and if first word is matched)
+	> join file1 file2 > filename	(it adds the both file information)
+	
+	> cp									(copy and paste)	(cp filename destination name/)
+	> cp -i filename source					(copy file interactive method)
+	> cp -f filename source					(copy file foucefully)
+	> cp -p filename source					(copy file with same file properties with same time)
+	> cp -ri directoryname directoryname 	(copy directory to directory)	
+	> cp -rf *.cfg destination				(copy all .cfg file to destination)
+	> cp -ri ??? destination				(copy all three chaacter files to destination)
+
+	> mv source and destination				(cut and paste)
+	> mv oldfilename newfilename			(to rename a file we use "mv" command)
+
+	> last									(list the process)
+	
+	> tree
+	> tree / -L 1							(higher archve)
+	> tree -L 1								(same command)
+	> tree -R								(same command)
+	> pstree								(ec2 command)
+	> tree directoryname
+	> ls -R directoryname
+	
+	> sort file_name						(get the information alphabetical)
+	> sort -u file_name 					(sort the duplicate entries)
+	> nl filename							(add numbers to file info lines)
+	> fmt filename							(split latge file into multiple files)
+	
+	> wget url								(download zip file)
+	
+	> find / -name *httpd*					(find the files)
+	> find . -name "*.txt"					(find the files)	(.) : For current directory name.
+	> find / -name "*.txt"					(find the files)	(/) : For root.
+	
+	> whereis	file/directory name			(search the file/directory)
+	
+--------------------------------------------------------------------------------------------------------------------------------------------
+#BASIC NETWORK COMMANDS: 		NETWORKING ON LINUX:
+
+	> hostname								(it gives a system name (computer name)
+	> hostnamectl							(show complete details of server)
+	> env 									( display the all enviromental variables)
+	> hostnamectl set-hostname sukhanth		(for change the host name)
+	> hostnamectl  sukhanth					(same command)
+	> vim etc/sysconfig/network				(change host name for amazon linux)	
+	> cat /etc/hostname						(display hostname list location)
+	> vim /etc/hostname						(add hostname)
+	server.example.com
+	> :wq
+	
+	> ping google.com						(call brower)
+	> ping google.com -c4 					(pocket internet gopher)
+	> dig domainname						(domain infomation gopher)
+	> dig -x domainname						(to check DNS entrys)
+	> dig ns sukhanth.ml					(shows the name server records)
+	> mtr domainname 						(connectivity between local device and website)
+	> ss									(shows the port status)
+	> ss -lt								(shows services running on TCP ports)
+	
+	
+	> ip addr 								(display IP info)
+	> ifconfig								(display IP info)
+	> curl ifconfig.me						(display public IP)
+	> ip address show						(display IP info)
+	> ip a s								(display IP info)
+	> cd /etc/sysconfig/network-scripts/	(ip infomation stored location)
+	> cat /etc/sysconfig/network-scripts/ifcfg-etho
+	
+	> netstat								(display all the active connections)
+	
+	> netstat -a 							(To show both listening and non-listening sockets.)
+	> netstat -at 							(To list all tcp ports)
+	> netstat -au							(To list all udp ports)
+	> netstat -l							(To list only the listening ports)
+	> netstat -lt							(To list only the listening tcp ports)
+	> netstat -lu							(o list only the listening udp ports)
+	
+	NIC Card Information:
+	Regular Systems : enp0s3: UP (en: Ethernet, p0 : Port 0, s3: slot 3)
+	AWS: etho
+
+	> cd /etc/sysconfig/network-scripts/**  	: Network config filespath	(network file stored place)
+	
+	> curl http://169.254.169.254/latest/meta-data/
+	> curl http://169.254.169.254/latest/meta-data/local-ipv4 > /home/ec2-user/privateip.txt
+	> curl http://169.254.169.254/latest/meta-data/public-keys/0/openssh-key	(public key location)
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+# LINUX PACKAGE MANAGEMENT:
+---------------------------
+Package Management (rpm vs yum):
+	A package format is a type of archive containing computer programs and
+	additional metadata needed by package managers.
+	In simple, software installations, manages and uninstallation will be taken care
+	by Linux Package Manager.
+	
+	rpm is the Package manager for RedHat systems
+	Rpm: RedHat Package Manager.
+	Yum: Yellowdog Updater Modified.
+	
+	> search google > rpm for httpd	> copy the link
+	> wget packagename						(download package)
+	> rpm -ivh package name					(for install software)
+	problem with rpm is, it cannot resolve dependencies automatically, so we have YUM
+	> cd /etc/yum.repos.d/
+	
+	To install epel repository:
+	---------------------------
+	> yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+	> yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+	> yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+	> yum-config-manager -enable epel
+	> yum repolist
+	
+	Enable EPEL repo for RHEL 8:
+	---------------------------
+	> yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+	
+	> yum history
+	> yum history ID
+	> yum history undo ID
+	> Yum history rollback ID
+	> yum history info ID
+	> /var/log/yum.log
+	-------------------------------------------
+	Apache web application configuration:
+	SSl/TLS Certificate genetation using ACM
+	configuring http to https domain redirection
+	-------------------------------------------
+	
+	Install Apache Amazon Linux2:
+	-----------------------------
+	> yum install httpd					(install package)
+	> service httpd start				(start the service)
+	> systemctl start httpd.service		(start the service)
+	> chkconfig httpd on				(service will enable after server restart)
+	> serivce httpd status				(get the infi of the service)
+	> systemctl status httpd			(get the infi of the service)
+	
+	> cd /var/www/html					(index file path httpd)
+	> cd /var/log/httpd					(access log's path httpd)
+	> cd /usr/share/httpd/				(default page path)
+	> cat /etc/hosts					(manage hosts)
+	
+	> apachectl graceful				(every new thing will update)
+	> service httpd restart				(restart the service)		
+	
+	> apachectl configtest				(find the syntax error or ok)
+	
+	
+	HTTP TO HTTPS REDIRECTION FOR APACHE:
+	-------------------------------------
+	Open Apache configuration file : > cd /etc/httpd/conf/httpd.conf
+	Add a rewrite rule to the VirtualHost section as below
+
+	<VirtualHost *:80>
+	RewriteEngine On
+	RewriteCond %{HTTP:X-Forwarded-Proto} =http
+	RewriteRule .* https://%{HTTP:Host}%{REQUEST_URI} [L,R=permanent]
+	</VirtualHost>
+
+	Save file and restart the service
+
+	> apachectl graceful					(every new thing will update)
+	> service httpd restart					(restart the service)		
+	
+	> apachectl configtest					(find the syntax error or ok)
+	
+	--------------------------------------------------------------------------------------------------------------------
+	
+	INSTALL NGINX AMAZON LINUX2:
+	----------------------------
+	> yum install nginx					(install package)
+	> service nginx start				(start the service)
+	> systemctl start nginx.service		(start the service)
+	> chkconfig nginx on				(service will enable after server restart)
+	> serivce nginx status				(get the infi of the service) 
+	
+	> cd /var/www/html					(index file path nginx)
+	> cd /var/log/nginx					(access log's path nginx)
+	> cd /usr/share/nginx/html			(default page)
+	
+
+	HTTP TO HTTPS REDIRECTION FOR NGINX:
+	------------------------------------
+	Open nginx configuration file :  /etc/nginx/nginx.conf
+	Add a below entry
+
+	server {
+		listen 80;
+		server_name _;
+		if ($http_x_forwarded_proto = 'http'){
+		return 301 https://$host$request_uri;
+		}
+	}
+
+	Save file and restart the service
+	
+	> service nginx restart
+	
+	--------------------------------------------------------------------------------------------------------------------
+	
+	INSTALL APACHE UBUNTU:
+	----------------------
+	> apt install apache2
+	> sudo ufw allow 'Apache Full'
+	> apt-get purge apache2 apache2-utils apache2-bin apache2.2-common 	(remove web application)
+
+	
+	INSTALL APACHE CENT OS:
+	-----------------------
+	> yum install httpd
+	> systemctl start httpd
+	> systemctl enable httpd
+	> systemctl status httpd
+	> systemctl status firewalld
+	> systemctl stop firewalld
+	
+	> apache2 -v 						(shows the current version of the application)
+
+	--------------------------
+
+	rpm : Redhat package manager
+	yum : Yellowdog Update manager
+	
+	> firewall-cmd --permanent --add-port=80/tcp
+	> firewall-cmd --permanent --add-port=443/tcp
+	> firewall-cmd --reload
+
+	> yum install packagename			(install package)
+	> yum remove packagename			(uninstall package)
+	> yum info packagename				(package name)
+	> apt install packagename			(Ubuntu)
+	> apt-get install packagename		(Ubuntu)
+	
+	> service httpd start				(start the service)
+	> systemctl start httpd				(start the service)
+	
+	> chkconfig httpd on				(service will enable after server shoutdown / restart)
+	> systemctl enable httpd			(service will enable after server shoutdown / restart)
+	
+	> serivce httpd status				(get the info of the service)
+	> systemctl status httpd			(get the info of the service)
+	
+	> rpm -q httpd						(find the package installed or not)
+	> rpmquery puppet					(same command)
+	> rpm -e httpd						(uninstall package)
+
+	> httpd	-v							(version of the package)
+	> rpmquery httpd					(version of the package)
+	> httpd -valid						(version of the package)
+	
+	------------------
+
+	> yum install tree -y        
+	> yum install stress -y				(To create stress on ec2 machine)
+	> sudo amazon-linux-extras install epel -y
+	> sudo yum install stress -y
+	> stress --cpu 8 --io 4 --vm 2 --vm-bytes 128M --timeout 10s
+	> sudo top 	
+	> yum install htop -y 				(cpu utilization)
+	> yum install tmax					(terminal multiplex)
+	
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+#CRONTAB AND DATETIMECTL MANAGEMENT:
+------------------------------------
+	timedatectl command
+	corntab command
+	
+	> timedatectl 								(large info about time and date)
+	> timedatectl list-timezones				(list the all time zones)
+	  /asia 									(for filter)
+	> timedatectl set-timezone Asia/kolkata		(set to time zone) perfom this operation as a sudo user.
+	> date										(shows the date and time)
+	> cat etc/localtime							(
+	> timedatectl set-ntp off					(while coming to default time)
+	> timedatectl set-time 09:00:00				(set the time)
+	> timedatectl set-time "yy-mm-dd hh:mm:ss"	(set the date and time)
+
+# CRONTAB:
+----------
+	Crontab is basically a task sheduler for specific time for run a program, or send a E-mail, or Display a msg.
+
+	> cd /etc/crontab						(crontab location)
+	> crontab -l							(list crontab users)
+	> crontab -e							(crontab for root user)
+	
+	For RHEL:
+	> systemctl start crond.service			(for start the crontab service)
+	> chkconfig crond on					(same command)
+	> systemctl status crond				(find status of the crontab)
+	
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+# FILE COMPRESSION & ARCHIVING:
+-------------------------------
+It is useful to store a group of files in one file for easy backup, for transfer to another directory, or for
+transfer to another computer.
+It is also useful to compress large files; compressed files take up less disk space and download faster via the
+Internet.
+It is important to understand the distination between an archive file and a compressed file.
+
+# COMPRESSED FILES:
+It is a collection of files and directories that are stored in one file and stored in a way
+that uses less disk space.
+
+# ARCHIVING:
+------------
+It is a collection of files and directories stored in one file. The achive files in not compressed.
+it uses less disk space.
+
+# NOTE: 
+-------
+An archive file is not compressed file can be an archive.
+
+# COMPRESSING FILES:
+--------------------
+Red Hat Linux provides the bzip2, gzip, and zip tools for compression from a shell prompt.
+
+The bzip2 and gzip compression tools are recommended because it provides the most compresion and is
+found on most UNIX-like operating systems.
+
+To transfer files between Linux and other operating system such as MS Windows, use zip because it is
+more compatible with the compression utilities available for Windows.
+
+Compression Tool		File Extension			Decompression Tool
+
+bzip2					.bz2					bunzip2
+gzip					.gz						gunzip
+zip						.zip					unzip
+
+	> bzip java				
+	> bunzip java.z2	
+	
+	> gzip java				(zip the file)
+	> gunzip java.gz		(unzip the file)
+	
+	> zip java.zip java		
+	> unzip jaa.zip
+	
+	> zip -9 -r test1.zip /home/sukhanth/open/		(zip the entire directory)
+	
+	> zip -d test.zip file_name.txt					(delete one file from zip)
+	
+	> zip -fr test.zip *							(update the files into zip)
+	
+# ARCHIVING FILES:
+------------------
+TAR: (TAPE ARCHIVE)
+A tar file is collection of sevral files/or directories in one fiel. this is a good way to create
+backups and archives.		(taking the backups in real enviroment using tar command.)
+
+SYNTAX: $tar [option] [archive-file] [file or directory to be archived]
+
+	OPTIONS:
+		-c 	> Create a new archve
+		-v  > Verbose information
+		-f 	> creates archive filename
+		-t  > show tar file content
+		
+		-r  > append files to the end of an archive
+		-z  > compress the file with gzip
+		-j  > compress the tar file with bzip2
+		-x  > extract files from an archive
+
+	--wildcards: specifypatterns in Unix tar command.
+	
+	> tar -cvf mybackup.tar myfile aws java templates		(tar is used to combine multiple file to single file)
+	> tar -czvf mybackup.tar.gz myfile aws java templates	(combine multiple file to single file with compression)
+	> tar -cjvf mybackup.tar.bz2 myfile aws java templates	(combine multiple file to single file with compression)
+	> tar -tvf mybackup.tar									(shows the content in the file)
+	> tar -rvf mybackup.tar accessfile 						(add new source to exsting tar file)
+	> tar -ucf mybackup.tar *.txt							(update the files)
+	
+	> tar -xvf maybackup.tar 								(extract the file)
+	> tar -xvf maybackup.tar -C devops 						(extract the file to directory)
+	
+	> tar -xzvf mybackup.tar.gz								(extract)
+	
+	
+----------------------------------------------------------------------------------------------------------------------------------------
+# TEXT EDITORS:
+	> Linux comes with several applications tha can be used to worite and edit program code.
+	> You constantly need to edit config files, write scripts or make changes to system files....all of which 
+	required you to use a text editor.
+	> The most popular text editor are:
+		> vi/vi editor 
+		> emacs 
+		> gedit
+		> kate/kwrite
+		> nano
+		> lime text
+		> pico editor
+
+# VI / VIM EDITOR:
+	
+	> VI/VIM is a powerful shell prompt text editor. This means that like less, opening an instance ofvi does
+	not open a GUI window.
+	> It is one of the most popular and widely used text editors anmong system Administrators and programmers.
+	> It enables syntax highlighting when writing code or editing configuration files.
+	> It has three modes:
+		> Commands mode
+		> Insert mode
+		> Colon or execution mode
+	SYNTAX: $vim [arguments] mode
+	
+# VIM Editor: 
+	
+	INSERT MODE OPTIONS:
+	--------------------
+	> i 				(To begin insert mode at the current cursor position.
+	> I 				(To insert at the begining of the current line.
+	> a	 				(To append to the next words letter.
+	> A  				(To append at the next words of the line.
+	> o	 				(To insert a new line below the cursor position.
+	> O  				(To insert a new line above the cursor position.
+	
+	COMMANDS FOR COMMAND MODE:
+	--------------------------
+	> $ 				(move cursor to end of current line)
+	> ^ 				(move cursor to beginig of current line)
+	> x(nx)				(delete a currant character (delete n characters)
+	> dw(ndw)			(delete a current word (delete n words begining with character)
+	> dd(ndd) 	 		(delete an entire current line (delete n lines)
+	> db				(delete work backword)
+	> d$				(delete to end of line)
+	
+	> u 				(undo whatever you did)
+	
+	> r 				(replace single chaacter under cursor)
+	> R					(replace charters, starting with current cursor position, until esc hit)
+	> yy(nyy)			(copy/yank the current line (yank n lines)
+	> p/P				(paste below / above cursor line)
+	
+	> gg(ngg)			(go to the first line in a file (line n in a file)
+	> G(nG)				(go to last line in a file (line n in a file)
+	
+	> /<string>			(to search forword for occurrence of string in a file)
+	> ?<string>			(to search backword for occurrence of string in a file)
+	> n/N				(find next / previous occurrence of search word)
+	
+	> l 				(move the curser right)
+	> k 				(up line)
+	> j					(down line)
+	> esc			 	(ReadOnly Mode)
+	
+	SAVING & READING FILES:
+	-----------------------
+	> q 				(quit without save)
+	> qa				(quit without save)
+	> w 				(save the changes)
+	> wq				(save and quit)
+	> wq!				(save and quit with forcefully)
+	> se nu				(setting line numbers)
+	> se nonu			(remove line numbers)
+	> n 				(jumps to nth line)
+	> $d 				(delete nth line)
+	
+	# FIND & REPLACE:
+	---------------
+	> :%s/orange/mango/		(replace string "orange" for the first instance on a line)
+	> :%s/orange/mango/g	(replace string "orange" for each instance of a line)
+	> :%s/orange/mango/gi	(replace string "orange" with case sensitive)
+	> :%s/orange/mango/gic	(replace string "orange" with confirmation)
+	
+	> vim filename					(Open this file in VIM editor)
+	> vim -R filename				(open the file read only mode)
+	> vim + filename				(cursor diretlly opens with the last line)
+	> vim +6 filename				(cursor directlly opens at 6th line)
+	> vimdiff filename filename		(edit two files at a time)
+	
+	> sudo apt install vim -y		(install vim editor)
+	----------------------
+	# NANO EDITOR:
+	--------------
+	> nano filename 	(Open this file in nano editor)
+	> ctrl+o			(for worite out and save)
+	> ctrl+x			(for comeout/exit)
+	
+	> ctrl+we			(for search)
+	> ctrl+a 			(jumps to beginar of the line)
+	> ctrl+e			(jumps to end of the line)
+	> alt+\				(move page to page)
+	
+	> /etc/nanorc 		(nano configuration file location)  
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+	# FILTER COMMANDS:
+	------------------
+	> wc filename 			(shows the lines words and number of charters in the file)
+	> wc -l filename 		(show only number lines in the file)
+	> wc -w filename 		(show only number words in the file)
+	> wc -c filename		(show only number charter in the file)
+	> date | wc -l			(
+	> cal | wc -l
+	
+	> head filename			(will show first ten lines)
+	> tail filename			(will show first ten lines)
+	> head -5 filename		(will show first five lines)
+	> hail -5 filename		(will show last five lines)
+	> head -5 filename | tail-l
+	
+	> more filename			(display the content from beginig to end)
+		> space bar for next page.
+		> enter key for watch the content line by line.
+		> q is the option for quit the file.
+		
+	> less filename			(it supports both forword and backword direction)
+		> f for forword direction.
+		> b for backword direction.
+		> enter is line by line.
+		> q for quit.
+		
+	> date; pwd; longname		(every command execute in individually)
+	> date && pwd && longname	(every command execute in dependently)
+	
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+# MANAIPULATEING TEXT WITH SED & GREP:
+--------------------------------------
+> SED (STREAM EDITOR) and GREP (GLOBAL REGULAR EXPRESsION PRINT) are powerful
+ways to save time and make your work faster.
+> When we deal with log files, text files, or a piece of code, we need to understand that all of these consist of
+characters.
+> When the length of the file is large, it becomes a necessity to filter out certain patterns in order to make
+your debugging easier.
+
+# SED (STREAM EDITOR):
+----------------------
+> SED is mainly used for text substitution, find & replace but it can also pertorm other text manipulations
+like insertion, deletion, search etc.
+> It also supports the use ot regular expressions, which makes SED an even more powertul test manipulation
+tool.
+> SED perform complex pattern matching.
+
+	SYNTAX: $sed Options... [SCRIPT] [INPUTFILE...]
+	
+	> sed 's/ansible/linux/' filename			(replace the word in the fiel)	this wont update the file just display the content
+	> sed 's/ansible/linux/g' filename			(replace the word in the file globally change the word)
+	> sed 's/ansible/linux/ig' filename			(replace the every word in the file ignore case sensitive)
+	
+	> sed 's/#/ /' filename							(remove the #)
+	> sed 's/ansible/linux/' filename >> filename	(save the outup with new file)   
+	 
+	> sed -i 's/ansible/linux/' filename		(replace the word in the fiel in interactive method)	
+	> sed -i 's/ansible/linux/ig' filename		(replace the word in the fiel)
+	
+	> sed -n '1p' filename						(display the content 1 line)
+	> sed -n '1,5p' filename					(display the content 5 to 10 lines)
+	> sed -n '5,10p' filename					(display the content 5 to 10 lines)
+
+# GREP (GLOBAL REGULAR EXPRESSION PRINT):
+-----------------------------------------
+Grep is uscd to print lines matching a regular expression.
+Use grep to search for lines of text that match one or many regular expressions, and outputs only the
+matching lines.
+It is one of the most uscful command on Linux and Unix-like systems, which is a powerful file pattern
+searcher.
+
+	SYNTAX: $grep [options] pattern [files]
+
+	> grep root filename						(print only root pattern line in the file)
+	> grep -n root filename						(print only root pattern line in the file add numbers)
+	> grep -i root filename						(print only root pattern line in the file ignore case sensitive)
+	> grep root filename filename1				(print only root pattern line in multiple files)
+	> grep "root roung" filename filename1		(print only root pattern line in multiple files)
+	> grep root *								(search root word in current location in all file)
+	> grep -l root *							(listing only file names)
+	> grep -rl root *							(search including directorys)
+	
+	> grep -V 									(find current version of grep)
+	
+	> grep <string> filename
+	
+	# PIPING (|) 	IN UNIX / LINUX:
+	--------------------------------
+	> Using a pipe, we can control that behaviour. A pipe is the (|) symbol.
+	> t is used to connect the standard output of one command to the standard input of another command.
+	> Simple command, and this command's output may act as input to the next command and so on.
+	  another command, and this command's output may act as input to the next command and so on.
+	  
+	> In piping every command input is next command input.
+		
+		SYNTAX: $command_1 | command_2 | command_3 | .... | command_N
+	
+	> cat java | wc -l
+	> cat java | head | wc -l
+	
+---------------------------------------------------------------------------------------------------------------------------------------------
+# FILE PERMISSIONS:
+-------------------
+	> permission is an important components of LINUX that provides a secuer method for storing files.
+	> Linux is a multiple-user operating system, so it has security to prevent people from accessing each other's 
+	confidential files.
+	> Each file and directory have there user-based permissions.
+	
+		OWNER PERMISSIONS : It determine what actions the owner of the file can perfom on the file.
+		GROUP PERMISSIONS : It determine what actions a user, who is a member of the group that a
+							file belongs to, can perfom on the file.
+		OTHER PERMISSIONS : it indicates what actions all users can perform on the file.
+	
+	# FILE ACCESS MODES:
+	--------------------
+		READ 	: grants the capability to read, i.e, view the contents of the files.
+		WRITE 	: grants the capability to modify or remove the content of the file.
+		EXECUTE	: user with executr permission can a file as a program.
+		
+			ACTIONS:
+				+ : adds the permission.
+				- : remove the permission.
+				= : makes it the only permission.
+	
+	# UMASK:
+	--------
+	> UMASK in linux is know as User Mask or it is also called User File creation MASK.
+	> It is a command that determines the setting of a mask that control which file permissions are set for 
+	files and directions when they arecreated.
+	> These pre-defined permissions aer assigned as per the value of default umask.
+		> The default umask valueis 022 (root) and 002 (normal userz0
+		> UMASK value for directory: Min 000 and Max 777
+		> UMASK value for file: Min 000 and Max 666		(666-022=644)
+		
+	> umask 			(display umask value) 
+	
+	# COMMAND UTILITIES:
+	--------------------
+	> chmod 						(to change the file or directory permissions)
+	> chgrp 						(to change group name of the file)
+	> chown 						(to change the ownership of a file)
+	
+	# PERMISSIONS MANAGEMENT ON FILES AND DIRECTORIES:
+	--------------------------------------------------
+	Numerical notation:
+
+	> chmod 700 filename			(to modify permissions of a file)
+	> chmod -R 700 directoryname	(give permissions to entire directory including files)
+	> chomd reference java raju  	(call the reference permissions)
+
+		read 		> r	> 4
+		write 		> w	> 2
+		execute 	> x	> 1
+			
+		chmod xxx 	a.txt
+		chmod 700 	a.txt
+
+		r+w+x	> 	4+2+1	 > 7
+		r+w+-	> 	4+2+0	 > 6
+		r+-+x	> 	4+2+1	 > 5
+		r+-+-	> 	4+2+1	 > 4
+		-+w+x	> 	0+2+1	 > 3
+		-+w+-	> 	0+2+0	 > 2
+		-+-+x	> 	4+2+1	 > 1
+		-+-+-	> 	4+2+1	 > 0
+
+	Alphabetical notation:
+	
+		owner  		> u
+		group 		> g
+		others	 	> o
+
+		+ 	(+ symbol is use for give the prmission)
+		- 	(- symbol is use for remove the permission)
+			
+	> chmod o+r f3 				(file/directory name)
+	> chmod o-r f3 				(file/directory name)
+	> chmod u-x,g+x,o+r f3 		(file/directory name) 
+	> chmod u-rwx,g+rx,o+wr f3 	(file/directory name)
+	
+	> chmod u=rwx,g=r,o=rw		
+	
+	> chgrp 													(to change group name of the file) 		By default every file belongs to same group name.
+	> chgrp groupname filename									(to change the groupname of the file)
+
+	> chown 													(to change the ownership of a file)
+	> chown ownername filename or directoryname					(for change the ownership  for the file/directory)
+	> chown ownername:groupname filename or directoryname		(for change the ownership and group at a time)
+	> chown -R	ownername:groupname filename or directoryname	(for change the ownership and group entire directory and all files)
+	
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+# PROCESSES MANAGEMENT IN LINUX:
+-------------------------------
+	> A process is program under execution (or) Any running, or a command given to Linux system is called as a process.
+	> The operating system tracks process through a process ID (PID). Each process in the system has a unique PID.
+	> The priority index of a process is called NICE in Linux. Its default value is 0 and it can vary between 20 to -19.
+	> The lower the Nicencess index the higher would be priority given to that task.
+	> A process can be run in two ways:
+			> Foreground Processes
+			> Background Processes
+			
+	# PROCESS TYPES:
+	----------------
+		we have a two type of process. 1 foreground process and background process.
+		# FOREGROUND PROCESS:
+		---------------------
+		> Every process when started runs in foreground by default.
+		> A user be done only one process at a time.
+			
+			SYNTAX: $firefox		(run the process foreground)
+			
+		# BACKGROUND PROCESS:
+		---------------------
+		> A user can be done in parallel with the process running in  background since they do not have
+		to wait for the previous process to be completed.
+		> Adding "&" along with the command starts it as a background process.
+			
+		SYNTAX: $firefox &		(run the process background)
+
+
+	> jobs 						(shows the background process jobs as well as suspended process)
+	> ps 						(find the process ID'S) (proccess currentlly running on the terminal)	
+	
+	> ps -ef | grep -i httpd	(find only httpd process job)	(if lost off jobs is running use this command)
+	> pidof sshd				(same command)
+	> pgrep sshd				(same command)
+	
+	> ps -l 					(find the full discription of the jos)
+	> ps a 						(display all process current terminal)
+	> ps ax						(display all process on all users)		> ps aux 	(same info in a clenar manaer)
+	> ps faux 					(shows process tree also)
+	
+	> ping						(send ICMP REQUEST to network hosts)
+	> tree						
+	> tree / -L 1
+	> tree directoryname
+	> pstree					(amazon linux)
+
+	> pstree -p | less	(get the info with process ID)
+	> process state		R: Running
+						S: Sleeping (interrutible)
+						D: sleepin
+						T: Suspended
+						Z: Zombie (deformation)
+						
+	> uptime		(gives system uptime information howmuch time running)
+	> free			(shows free memory)
+	> free -m 		(find the swap memory)
+	
+	
+	# PROCESS KILL:
+	---------------
+	> The kill command accepts process ID (PID) as an in a parameter.
+	> This is applicable only for the process own by the command executor.
+		
+		SYNTAX: $kill -l
+					  -3	(sigquit)
+					  -9	(sigkill)
+					  -15	(sigterm)
+	
+	> kill	PID						(kill the process)				
+	> kill -9 process PID			(kill the process)
+				
+	> top 		(show process, contineously running list/moitor system realtime(press z gives colour) (it refrest every 3 sec's)
+	
+	#NICE:
+	------
+	(nice is used to invoke a utility or shell script with a particular CPU priority) lowest value is high priority.
+	
+	> nice 							(by default nice value is "0")	
+	> nice -2 crond 				(for change nice value priority)
+	> renice 5 PID					(for re arage the priority)
+	> ps -U root					(find the process managed by root)
+	> ps -G root 					(process managed by group root)
+
+	
+	# STATE OF A PROCESS:
+	---------------------
+		RUNNING 	: The process os either running or it is ready to run.
+		WAITING 	: The process is waiting for an event or for a resource.
+		STOPPING	: The process has been stopped, usually by receiving a signal.
+		ZOMBIE		: The process is dead but have not been removed from the process table.
+		ORPHANED	: 
+	
+	# DAEMONS: daemons is nothing but background service name.
+	
+	> These are special types of background process that start at system start-up and keep running 
+	forever as a service; they don't die.
+	> They are started as system tasks, spontancously. However, they can be controlled by a user via the
+	init / systemd process.
+	
+	# INIT / SYSTEMD PROCESS:
+	
+	> Init is the first program in the linux that is executed when the Linux boots up.
+	> It is a mother of all process on the system.
+	> It is started by the kernal itself, so in principle it does not have a parent process.
+	> The init process always has process ID of 1.
+			
+			$pidof systemmd
+			
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+# MANAGING USERS & GROUPS:
+--------------------------
+	> The control of users and groups is a core element of RHEL system administration.
+	> Each user and group have unique numerical identification numer called a userid (UID) and a groupid
+	(GID), respectively.
+	> RHEL reserves user and group ID's below 1000 for system users and groups.
+	> Red Hat support three different types of users.
+	
+	In Linux by default we have 3 types of Users:
+	---------------------------------------------
+	> Super or root user	: User is most powerful user. He is the administrator user.
+	> System User			: Users created by the software or applications.
+	> Normal User			: Normal users are the created by root user.
+	
+	# TYPES OF USERS:
+	-----------------
+	# SUPRT USER:
+	-------------
+	> The root user account is the quivaent of the administrator or Enterprise admin account in the windows world. 
+		Login prompt is "#".
+	> It is the most poerfull account on the system and has access to everything.
+	
+	# NORMAL USERS:
+	--------------
+	> Normal users are created by the root user, like Raju, Sara, max ....etc.
+	> Normal users accounts have no write have no write access to anything on the system except their home directory.
+		Login prompt is "$"
+
+	# SYSTEM USERS:
+	---------------
+	> A system account is like a normal user account. The main difference is that system users normally don't have a home directory and can't login the way normal users do.
+	> Many system users are created or asssociated with applications or service to help run them more securely.
+	> It is security reason system users are automatically created.
+	
+	> system user are created by some specific service.
+	
+	root id 		: 0
+	normaluser id	: 1000 - 60000
+	systemuser id 	: 1 - 999
+	
+	# WHAT THINGS ARE CREATED BY DEFAULT:
+	> A home directory is created (homeusername)
+	> A mail box created (/var/spool/username)
+	> Login shell is created (bin/bash)
+	> Unique UID $ GID values are given to a user
+	
+	# FILES CONTOLLING USER ACCOUNTS: 
+	---------------------------------
+	/etc/passwd file:
+	> This file is world-readable and cotains a list of users, each on a separate line. On each line is a 
+	colon delimited list containing the following information:
+			root:0:0:root:/root:/bin/bash		
+	
+	> cat /etc/passwd | grep -i raju
+			
+	/etc/shadow file:
+	> this file must be world -readable, there is a risk involved in storing everyone's password in /etc/passwd.
+	True, the passwords are encrypted.
+			raju:$1$.QKDPc5E$SWlkjRWexrXYgc98F:12825:0:90:5:30:13096:		
+	
+	> cat /etc/shadow | grep -i raju		(ch eck password add to user or not)
+	> cat /etc/passwd | grep -i username	(to verify usr is created ot not)
+	
+	> useradd username								(create a new user)
+	> useradd -u 2000 -g test1 -G devteam,test -c "admin user RHCSA" -s /bin/bash -d /opt/rhcsa -e 2018-08-25		(create a user with custom options with description)
+	
+	> useradd -g groupname -G groupname	username	(add user with custom options -g primary group and -G secondary group)
+	
+	> useradd -u 1005 -c "Linux Admin" -d /opt/username -s /bin/sh username		(create a user with custom options with description)
+
+	> userdel username 						(to delete an user)
+	> userdel -rf username					(to delete an user along with user files) 
+
+	> id username							(same command)
+	> echo $0  								(to check the current login user shell)
+	> cat /etc/shells 						(check avaliable shells)
+	> whoami 								(to check the current login user name)
+	> useradd -D username 					(to check default option of the user)
+	
+	> usermod -aG GN UN 					(add user to group upend the group)
+	> usermod -G GN UN 						(same command)
+	> usermod -g GN UN 						(chnage primary group not upend)
+	
+	> usermod username						(modify/change user account)
+	> usermod -u 1003 username				(modify/change user ID)
+	> usermod -c "dba Admin" username		(specify the description)
+	
+	> usermod -s /bin/bash username			(modify/change user login shell)
+	> usermod -s /sbin/nologin/	UN			(remove shell for user)
+	> cat /etc/shells 						(check avaliable shells)
+	
+	> usermod -d /home/username				(modify/change user location)
+	
+	> usermod -L username					(to lock the user)
+	> usermod -U username					(to un-lock the user)
+	> usermod -f username					(inactive the user)
+	> usermod -e 2018-08-22 username		(add expire date to user)
+	
+	> usermod -l new_username old_usernme			(modify/change user name)
+	> usermod -d /home/new_username new_username 	(modify/change user home location)
+	> usermod -m /home/sai sai 						(move home path for user)	-m means move home path.
+	
+	> usermod -o 1001 -u 1001 username				(add user with specified userID and groupID for multiple users)
+
+
+
+	> passwd username						(modify/change password for user)
+	> cat /etc/shadow | grep -i username	(to check password add or not status field of the passwd)
+	> passwd -S username					(same command)
+	> passwd -d username					(delete password of user)
+	> passwd -l username					(lock the user passwd)
+	> passwd -u username					(unlock the user passwd)
+	
+	> passwd -n 10 username					(the user can't change its own password untill 10 days)
+	> passwd -e 2018-08-22 username			(one time password short expire password)
+ 	
+	> echo "12345" | passwd --stdin username(set password to user)
+	> passwd -x 90 username					(after 90 days the passwd required to be changed)
+	
+	> chage username						(change user password expiry information)
+	> chage -l username						(display details of user)
+	> chage -m 45 -M 60 -W 10 -E 2021-12-31 username 	(passwd options passwd change minmum & maximum date, warning, expire date)
+	
+
+	# MANAGING GROUPS:
+	------------------
+	> Groups are logical experssion of organization, tying users together for a common purpose. Users
+	within a group can read, write, or execute files owned by that group.
+	> Ther are two types of groups.
+		
+		Primary Groups:
+		---------------
+		It is group in which a user initially belongs in this group the user can access the resource with default permission.
+		
+		Secondry Droup:
+		---------------
+		Apart from primary, if a user has an account in the other group then it is called secondary group to the user.
+		
+	# USER PRIVATE GROUP (UPG):
+	---------------------------
+	> In Red Hat Linux uses user private group (UPG) scheme. Acording to UPG scheme, you create any user
+	account, the user consists the primary group with same name and same ID.
+	> for example, if a user is created with the name Raju, then a primary group of that user will be Raju only.
+	
+	# FILES CONTROLLING GROUPS:
+	--------------------------
+		> /etc/group files:
+			This file is world-readable and contains a list of groups, each on a separate line.
+					family:x:502:raju,ramu,jai
+		
+		 > /etc/gshadow file:
+			this file is readable only by the root user and contains an encrypted password for each group, 
+			as well as group membership and administrator information.
+					family:!!:raju,ramu,jai
+	
+	> groupadd									(create a new group)
+	> cat /etc/group | grep -i groupname		(status of the group)
+	> groupadd -g 1008 groupname 				(create a new group with custom ID value)
+	
+	> groupmod -g 1111 groupname				(modify/change group ID)
+	> groupmod -n new_group_name old_group_name	(modify/change group name)
+	
+	> groupmod -ptest GN						(protect the group)
+	> groupmod -A UN GN							(add administrator for the group)	
+	
+	> gpasswd groupname    						(add the password to group)
+	> cat /etc/gshadow groupname				(status of the group password)
+	
+	> gpasswd -a username groupname				(add user to group)
+	> gpasswd -M UN1, UN2, UN3 groupname		(add multiple users at a time)
+	> cat /etc/gshadow | grep -i groupname		(status of the group)
+	> gpasswd -d username groupname				(remove user from group)
+	
+	> groupdel groupname 						(delete the group)	(don't delete the group when the user are exists)
+	
+	> id username								(display user and group ID's)
+	> id -Gn username							(group info of the user)
+	
+	
+	# USER ACCOUNT INITILIZATION:
+	-----------------------------
+	> When a user is created, everything from the /etc/skel directory is copied to the user's newly created
+	home directory (usually /home/username)
+	> You can modify these "skeleton" files or can add your own custom files.
+	> The customizable files broken down into two different sections.
+	
+		USER SPECIFIC FILES:
+		--------------------
+		> .bashrc				(defines functions and aliases)
+		> .bash_profile			(sets enviroment variables)
+		> .bash _logout			(any commands that should be executed before users log out)
+		
+		> vim .bashrc alias c='clear'					(we can create alias commands under this .bashrc)
+		> vim .bash_profile 	echo "Welcome...."		(we can create welcome notes)
+		> vim .bash_logout		echo "Bye....."			(we can create logout notes)
+		
+		> /etc/skel/ 							(common file location)
+		add file ower here when we create a new user this file commonlly available.
+		
+		GLOBAL USER CONFIGURATION:
+		--------------------------
+		> /etc/bashrc			(defines functions and aliases)
+		> /etc/profile:			(sets enviroment variables)
+		> /etc/profile.d:		(it contains scripts tha are called by the /etc/profile file)
+		
+		MAIN CONFIGURATION FILE:
+		------------------------
+		> vim /etc/login.defs						(controls specific related to system wider user login & permissions.)
+		> vim /etc/login.defs						(login definations)
+		> vim /etc/login.defs						(user pre-defined settings) (how to change user pre-defined settings)
+		
+		> cat /etc/default/useradd					(default information)
+
+-------------------------------------------------------------------------------------------------------------------------------------------     	
+# GROUP COLLABORATION:		(special permissions)
+----------------------
+	> Group Collaborations is an essential part of any system administrator who deals with users.
+	knowing file and directory permissins will allow you to let users work together.
+	
+	Setuid, Setgid and Stickybit:
+	-----------------------------
+	> Setuid is a Linux file permission setting that allows a user to
+	execute that file or program with the permission of the owner of
+	that file. This is primarily used to elevate the privileges of the
+	Current user.
+	Example: /etc/passwd
+	
+	> Setgid is also similar like setuid. A process, when executed,
+	will run as the group that owns the file.
+	Example: ls -l /usr/bin/crontab
+	
+	> Stickybit: When stickybit is set on a directory, the files in that
+	directory can only be deleted by the owner.
+	Example: /tmp/
+	
+	# Here, we look at three key features:
+	--------------------------------------	
+			suid (set user id):
+			-------------------
+			> setuid
+			> Used to allow multi user access.
+			> Flag id value is : 4
+			> symbolic value : S
+			
+			sgid (set group id):
+			--------------------
+			> setgid
+			> Used to allow multi group access.
+			> Flag id value is: 2
+			> symbolic value : S
+			
+			sticky bit:
+			-----------
+			> stickybit
+			> Used to prevent accidental delete by users and groups.
+			> flag id value is: 1
+			> stickybit : T
+			
+	> which useradd							(Search for a string)
+	> chmod u+s /usr/sbin/useradd (filepath)(add command with normal user set multi user assess)
+	> chmod 4755 /usr/sbin/useradd			(same command add)
+	> chmod u-s /usr/sbin/useradd			(remove command with normal user)
+	> chmod 0755 /usr/sbin/useradd			(same command remove)
+	> ls -l /usr/sbin/useradd (filepath)	(status of the useradd command)
+	
+	> chgrp groupname /usr/sbin/useradd		(change the group of command)
+	> chmod g+s /usr/sbin/useradd			(add command with normal user set multi user assess group level user add command executed by dev-team people)
+	> chomd 2755 /usr/sbin/useradd 			(same command add)	
+	> chmod 0755 /usr/sbin/useradd			(same command remove)
+	
+	> chomd +t /cloud-data					(enable sticky bit for the folder it is prevents accendentlly deletes users and groups)
+	> chomd -t /cloud-data					(disable sticky bit)
+	> chomd 1777 /cloud-data				(same command add)
+	> chomd 0777 /cloud-data				(same command remove)
+	
+	# CONFIGURING SUDO ACCESS:    VCS#4311
+	--------------------------
+	> The sudo command offers a mechanism for providing trusted users with administrative access to a
+	system without sharing the passwd of the root user.
+	> This mechanism precedes an administrative command with sudo they are prompted to enter their own 
+	password. Once authenticated, and assuming the command is permitted, the administrative command
+	is executed as if run by the root user.
+	> Run the visudo to edit the etc/sudoers file.
+	
+	> visudo								(Allow members and group sudo to execute any command)
+	> vim visudo
+	root			ALL=(ALL)		ALL
+	username		ALL=(ALL)		ALL 	(add user as sudoer)
+	%groupname		ALL=(ALL) 		All		(add group as sudoer)
+	
+	username		ALL=(ALL)		NOPASSWD:ALL 	(add user as sudoer with on password)
+	%groupname		ALL=(ALL) 		NOAPSSWD:All	(add group as sudoer with on password)
+	
+## Allow Users to run any Commands
+root ALL=(ALL) ALL
+aravi ALL =NOPASSWD: ALL
+
+# Group Names
+%engineers ALL =NOPASSWD:	CUSTOM
+%admins1 ALL =NOPASSWD: ADMINISTRATORS
+
+---------------------------------------------------------------------------------------------------------------------
+	
+# MANAGINING USERS AND GROUPS :						avinash
+-------------------------------
+	> /etc/passwd 				(This file contains users information)
+	> /etc/shadow				(This file contains password information)
+	> /etc/group 				(contains group info location) (switch to root user to manage all other users)
+	
+	> getent passwd username	(entry in passwd file)
+	> getent shadow username	(entry in shadow file)
+	> getent group username		(entry in group file)
+	> getent gshadow username	(entry in gshadow file)
+	
+	> usermod 					(to edit user)
+	> usermod -aG GN username	(add user to wheel group)
+	> usermod-a-G/-aG GN UN		(To change users group)
+	> wheel group				(A group where it can control access on su or sudo)
+	> id username				(to verify the groups)
+	> usermod -L username		(to lock the user)
+	> usermod -U username		(to un-lock the user)
+
+	GROUPS:
+	-------
+	Every group will have unique GID
+	Used to manage shared access to files / directories
+	Users can be member of multiple group also
+	
+	> Group Database files:
+	/etc/group 						(contains group info)
+	Note: switch to root user to manage all other users....
+	
+	> chown 						(to change the ownership)
+	> chgrp 						(to change the group)
+	
+	> groups username				(tells you specified user nember of you belongs to)
+	> groupadd groupname			(to create group)
+	
+	> chown :GN filename			(for change the file group)
+	
+	Shadow file explanation:
+	------------------------
+	> change username						(change password expire date)				(imp)
+	> change -l username					(password info for perticular user)
+	
+	> usermod -s /sbin/nologin username		(to remove from shell)
+	> usermod -s /sbin/bash UN 				(to add to shell)
+	
+	> cat /etc/sudoers						(visudo file location)
+	--------------------
+	> useradd 	(name)
+	> adduser	(ubuntu)
+	> visudo	(#Allow members and group sudo to execute any command)
+	> teja ALL=(ALL:ALL) NOPASSWD:ALL		(exit)
+	> sai ALL 
+	
+	> visudo								(press i to search wheel group and remove = and space and save) 
+
+	> 
+	
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+# USER MANAGEMENT ADVANCE SSH AUTHENCATION:
+-------------------------------------------
+
+	How to setup password for ec2-user
+	How to login as newly created user
+	
+	> 	 		(search for PasswordAuthentication enter yes)	(enable password to ec2-user)
+	after that restart the sshd
+	> service sshd restart
+	> systemctl restart sshd
+	--------------------------
+	> vim /etc/ssh/sshd_config		(enable ssh login for users) 
+	
+	AllowUsers sukhanth root		(allow users)
+	AllowGroups administrators		(allow groups)	
+	
+	> :wq	
+	> systemctl restart sshd
+	
+	> vim /etc/issue.net
+	Welcome to $HOSTNAME $USER 
+	> :wq
+	
+	# KEY BASED AUTHENCATION:
+	-------------------------
+	> ssh-keygen -t rsa							(generate the key)
+	> cd /root/.ssh
+	> ssh-copy-id username@192.168.10.100
+	
+------------------------------------------------------------------------------------------------------------------------------------------
+
+COPY FILES BETWEEN SERVERS:
+---------------------------
+	Windows to Linux:
+	-----------------
+	> Mobaxterm or winscp.
+	
+	Linux to Linux:
+	---------------
+	SCP (secure copy) is a command-line utility that allows you to securely copy files and directories between two systems.
+	
+	scp source_file_name username@destination_host:destination_folder
+	
+	Example: 
+	> scp filel saikoti@10.1.0.100:/home/saikoti/						(copy file server 1 to server 2) pushing.
+	> scp saikoti@10.1.0.100:/home/saikoti/file1 /home/ubuntu/			(copy file from remote system to local system) pulling.
+	
+	> scp -r kaka saikoti@10.1.0.100:/home/saikoti/						(copy directory server 1 to server 2) pushing.
+	
+	> scp -C linux.tar.xz saikoti@10.1.0.100:/home/saikoti/				(copy compressed file)
+	
+	> scp -l 500 liux.tar.xz saikoti@10.1.0.100:/home/saikoti/			(copy fiels limit to 500 kbps)
+	
+	> scp -rv test.zip sukhanth@52.254.11:/home/mayur					(copy file one server to another in linux)
+	> scp -i /home/kumar/test.pem sukhanth@52.254.11:/home/sukhanth		(copy pem file)
+------------------------------------------------------------------------------------------------------------------------------------------
+
+# PACKAGE MANAGEMENT:
+---------------------
+	> A package manage or package management system is a collection of software tools for installing,
+	upgrading, configuring, and removing computer programs.
+	> A package is a file containing the file, such as executable fiels, libraries, and documentation.
+	> Each distination of linux has its own management system. For Red Hat, there are two package
+	management system.
+		> RPM: Red Hat Package Manager
+		> YUM: Yellow Dog Update Modifier. 	yum resolves dipendiences.
+
+	# Installing /removing /upgrading package:
+		
+		syntax: #rpm [options] <pkg-name>
+			Options:
+			> -i 		(install a package)
+			> -v 		(verbose output)
+			> -h 		(shows hash programs)
+			> -U		(upgrades a given package)
+			> -e		(erase a package)
+			> --force	(install package with forefully)
+			> --nodeps	(no dependencies)
+			
+	> mount /dev/sr0 /mnt					(mount image file to VM)
+	
+	> ls | wc -l /mnt/AppStream/Packages	(to check the available packages)
+	
+	> rpm ivh package name					(install package)
+	> rpm ivh package name --force			(re-install the software)
+	> rpm -Uvh package name					(upgrade package)
+	> rpm -evh package name	firstfield only	(un-install/remove the package)
+	> rpm -evh firefox --nodeps				(don't remove any dependencies) un install without dependencies.
+	
+	# query option (with -q):
+		syntax: #rpm [option] <pkg name>
+		options:
+		> -a 	: queries all packages
+		> -c 	: list all config files
+		> -d 	: list documentation files
+		> -f    : queries the rpm database for which package owns
+		> -i 	: information about the package
+		> -l	: list of extracted files in the package
+		> -p 	: queries the uninstalled package
+		> -s 	: status of the package
+
+	> rpm -qa					(listout all installed softwares in the machine)
+	> rpm -q packagename		(status of the package)s
+	> rpm -q | wc -l 			(count)
+	> rpm -qa | grep -i firefox	(find status of the firefox installed or not)
+	> rpmquery puppet			(status of the puppot installed or not) if the result is empty software is not installed.
+	> rpm -qi package name		(complete info about package)
+	
+	> rpm -Va 					(verifying missing files on entire machine)
+	> rpm -Va package name		(verifying missing files under the package)
+	
+	> wget url					(download software)
+	
+	
+# PACKAGE MANAGEMENT YUM:
+-------------------------
+	enable repo on un registred VM
+	
+	> cd /etc/yum.repos.d		(for create yum repo switch to directory)
+	> rm -rf *					(remove all files under yum repo.d)
+	
+	> vim local.repo
+[BaseOS]
+name="my BaseOS Repository"
+baseurl=file:///mnt/BaseOS
+enabled=1
+gpgcheck=0
+
+[AppStream]
+name="MY AppStream Repository"
+baseurl=file:///mnt/AppStream
+enabled=1
+gpgcheck=0
+	> :wq
+	
+	> rpm --import RPM-GPG-KEY-redhat-release			(rum this command for aviod unregistrated msg)
+	
+	> cd /mnt/AppStream/Packages
+	
+	# INSTALLING / REMOVING / UPGRADING PACKAGES:
+	---------------------------------------------	
+		SYNTAX: # yum [options] <pkg-name>
+		OPTIONS:
+			list			clean
+			repolist		search
+			info			repoinfo
+			history			provides
+			update 			check-update
+			install 		localinstall
+			update			remove
+			
+			grouplist		groupinstall
+			groupupdate		groupremove
+	
+	> yum clean all 				(clean cache)
+	> yum repolist					(find repo list)
+	> yum list						(what are the package avaliable under the repo)
+	> yum list installed 			(listout only installed packages only)
+	> yum install packagename		(install package)
+	> yum remove packagename		(un install package)
+	> yum search package			(find the package availablety)
+	
+	> yum provides ifconfig			(find coreutills for not available commands)
+	> yum install net-tools			(install not available commands)
+	
+	> yum update -y 				(update new things in entire machine)
+	> yum update httpd -y			(update only specific package)
+	> yum check-update -y			(listout the available updates)
+	
+	> yum grouplist 					(listout available groups)
+	> yum groupinstall "group package"	(install group package)
+	> yum groupremove "group package" 	(un install group package name)
+	
+	
+# THE LINUX KERNAL:
+-------------------
+	> A kernal is a core part of a Linux operating system, which manages the system resources, and provides 
+	interface between hardware and software applications.
+	> The Red Hat kernal is custom-built and based on the upsteam Linux kernal, with focus on stability and 
+	compatibility with the latest technologies and hardware.
+	
+	> uname -r 											(find the kernal version)
+	> uname -a 											(kernal full information)
+	> cat /etc/redhat-release							(display kurnal release)
+	> rpm -q kernal (or) > rpm -qa | grep -I kernal 	(listout installed packages)
+	
+	
+	
+	# KERNAL MODULES:
+	-----------------
+	> A device drives which adds support for new hardware.
+	> Support for a file system such as GF2 or NFS.
+	> To manage linux kernal modules, make sure to install kmod and module-init-tool package.
+	> modules are important it improves hardware capabilites.
+
+	> lsmod 							(listout available modules)
+	> modprobe xfs  					(to load the modules)
+	> lsmod | grep -i xfs				(checkout xfs module is available or not)
+	> modprobe -r xfs					(un load mode)
+	
+	# UPDATING KERNAL:
+	------------------
+	NOTE 1:
+	When upgrading from Red Hat Enterprise Linux 7 to Red Hat Enterprise Linux 8, Red Hat strongly
+	recommends that you reinstall whole OS.
+	
+	NOTE 2:
+	> When updating a kernal with the command, never use the -U to update.
+	> The reason behing this that the update option erases the prior kernal when updating, whereas the -i option
+	installs the newer alongside the old kernal.
+	> If something doesn't work or goes wrong, you have an old kernal to revert to.
+
+	NOTE: this red hat 8.3
+
+	> yum install httpd -y
+	> cd /var/www/html
+	> mkdir rhrl_8.iso
+	> cp -rvf /mnt/* rhel_8.iso
+	> systemctl start httpd
+	> systemctl enable httpd
+	> systemctl status httpd
+	
+	> cd /etc/yum.repo.d
+	> vim local.repo
+	
+[BaseOS]
+name="MY BaseOS Repository"
+baseurl=http:///192.168.10.254/rhel_8.iso/BaseOS
+enabled=1
+gpgcheck=0
+
+
+[AppStream]
+name="MY AppStream Repository"
+baseurl=http:///192.168.10.254/rhel_8.iso/AppStream
+enabled=1
+gpgcheck=0
+
+	> yum clean all
+	> yum install vsftpd -y
+	
+	NOTE: this 8.2 machine call the 8.3 address here.
+	
+	> cd /etc/yum.repos.d/
+	> vim local.repo
+
+[BaseOS]
+name="MY BaseOS Repository"
+baseurl=http:///192.168.10.254/rhel_8.iso/BaseOS
+enabled=1
+gpgcheck=0
+
+
+[AppStream]
+name="MY AppStream Repository"
+baseurl=http:///192.168.10.254/rhel_8.iso/AppStream
+enabled=1
+gpgcheck=0
+
+	> yum update -y		(will update the base OS)
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+# SCHEDULING JOBS (or) AUTOMATING SYSTEM TASKS:
+-----------------------------------------------
+	> Tasks, also known as jobs, can be configured to run automatically within a specified period, on a specific date.
+	> Red Hat Linux comes with the three auomated task utilities:
+		> at
+		> batch
+		> cron and anacron
+	# at jobs:
+	----------
+	> To schedule a one-time task, also called a job, to run once at a specific time, use the at utility.
+	syntax: > at [option]
+			> at -l 	(lists all jobs in the queue)
+			> at -d 	(removes job from the queue)
+			> at -f		(reads input from the file)
+			> at -m 	(sends mail to the user when the job is complete)
+
+			
+			> at 15:00 (enter)	> /opt/scripts.sh
+			> at august 28 2022 (enter) > date >>/home/date.txt
+			> at now + 5 days (enter) > cp -i /root/java /opt
+			> at now + 5 minutes (enter) > uptime  >>/home/uptime.txt
+	
+	# batch jobs:
+	-------------
+	> To schedule a one-time task, also called a job, to run when the system load average drops below the 
+	specified value (0.8), use the batch utility.
+	> This can be useful for performing resource-demanding tasks or for preventing tasks or for preventing the system from being 
+	idle.
+		syntax: > batch
+				> batch (enter)	cp -i /root/java /opt
+	NOTE: Batch does not accept any parameters.
+	
+	# cron and anacron:
+	-------------------
+	> cron jobs can run as every minute. if the system is not running on at the time whem a job is scheduled, the
+	job is not executed.
+	> On the other hand, Anacron remembers the scheduled jobs if the system is not running at the time when the 
+	job is scheduled. The job is then executed as soon as the system is up.
+	> anacron remembers the scheduled tasks.
+	
+		crontabs format:
+				> minutes 		- from 0 to 59
+				> hours   		- from 0 to 23
+				> day 			- from 1 to 31
+				> month 		- from 1 to 12
+				> day to week	- from 0 ti 7, where 0 or 7 represnts sunday
+				
+				> username		- specific the user under which the jobs aer run
+				> command		- the command to be executed
+				
+	crontab syntax:
+	> crontab -e				(edit the user crontab)
+	> crontab -l				(lists the user crontab)
+	> crontab -r				(deletes the user crontab)
+	> crontab -i				(prompts before deleteing the users crontab)
+	> #*						(for stop the cron job)
+	> cat /etc/crontab			(crontab location)
+	
+	> crontab -e -u username	(edit the specific user crontab)
+	> crontab -l -u username	(lists the specific user crontab)
+	> crontab [-u user] [options]
+	
+	> systemctl start crond.service			(for start the crontab service)
+	> chkconfig crond on					(same command)
+	> systemctl status crond				(find status of the crontab)
+	
+	NOTE:
+	-----
+	To Disable Email Notification:
+	* * * * * > /dev/null2>&1
+	Output Location:
+	> cat /var/spool/mail/username
+	
+	
+	# CONTROLLING ACCESS TO CRON:
+	-----------------------------
+	To restrict the access to cron, you can use files:
+	
+	/etc/cron.allow		 
+	/etc/cron.deny
+	
+	> The /etc/cron.allow files:
+		> If it exists, only these users are allowed (cron.deny is ignored).
+		> If it doesn't exit, all users except cron.deny are permitted.
+	
+	> The /etc/cron.deny file:
+		> If it is exists and empty, all users are allowed (red Hat Default)
+	
+	> For Both Files:
+		> if neither file exists, root only.
+		
+	NOTE:
+	You can control the access also through pluggable Authentication Module (PAM).
+	The setting are stored in the /etc/security/access.conf
+		
+		: ALL EXCEPT root:cron
+		
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+# DISKS & PARTITIONS (LOCAL STORAGE):
+-------------------------------------
+
+	> Partitioning means to divide a single hard drive into many logical drives.
+	> In each system the physical disk drives are divided up logically into partitions that allows to store data on them.
+	> There is also special type of partitions such as RAID and LVM.
+	> RAID for increased performance, redundancy, or both.
+	> LVM like RAID, is an easiest management of partitions and growing them for increased storage capacity simple.
+	
+	> partitioning is nothing but creating logical regions of the hard disk/storage.
+	> store different types of data.
+	
+	> by default we create maximum 4 primary partitions. But if we want more partitions, we can create a three primary partition one extended partition. In that extended partition we can create a N number of logical partitions.
+	> If we are using virtual device the maximum partition we do is "fifty". we if utilizing a physical device may hard drive we can create N number of logical volumes.
+	
+	thress types of partitions:
+	---------------------------
+		1. standard partition.
+		2. RAID partition.
+		3. LVM partition.
+		
+	# disk partition criteria:
+	--------------------------
+	> Every disk can have only 3 primary partitions. which usually holds the OS information.
+	> Extended partition is a special type of primary partition which can be subdivided into multiple logical
+	partitions.
+	> Finally, logical partitions are under extended partitions.
+	
+		MBR		: Master Boot Record
+		P		: Primary Partitions
+		L 		: Logical Partition
+		Free	: Free Space
+		
+	# Steps for creating partition:
+	-------------------------------
+	1. Attach new disk to the server.
+	2. Scan for new hardware changes or reboot.
+	3. fdisk /dev/newdiskname.
+	4. n, Part type, specify size and save & exit.
+	5. udevadm settle.
+	6. Make file system.
+	7. Mount and add fstab entry for permanent mount. when ever we reboot fstab entry will remount the partition.
+	
+	 # Steps  to Delete partition:
+	 -----------------------------
+	 1. Run final archive backup.
+	 2. Bring doen applications hosted on partition.
+	 3. Un-mount mount point.
+	 4. Delete partition using fdick/gdisk utilities.
+	 5. Destroy the HDD. 
+		
+	# disk identifications:
+	-----------------------
+		> SCSI or SATA		: /dev/sda
+		> IDE				: /dev/hda
+		> VIRTUAL			: /dev/vda
+		> CLOUD 			: /dev/xvda
+		> NVME				: /dev/nvme0n1
+		
+		NOTE:
+			The first two letter represnts the disk is SCSI (sd) or IDE (hd) disk. The third letter 
+		represnts position of the hard disk. If there is number after third letter, it is the number of the 
+		partition.
+	
+	step1 : create a new partions
+	step2 : making file system (formating)	(ext2/ext3/ext4, xfs)
+	step3 : mountig file system
+	
+	> udevadm trigger			(update the attached hard disks)
+	
+	> ls /sys/class/scsi_host/ | while read host ; do echo "- - -" > /sys/class/scsi_host/$host/scan ; done 	(update the attached hard disks)
+	
+	Add a partition:
+	----------------
+	> fdisk -l 					(find the disk formats)
+	> fdisk /dev/xvda			(for create new volume)
+	  n							(add new partition)
+	  +2G						(add 2gb space)
+	  wq						(save and quit)
+	  q							(quit without saving) 
+	> partprobe /dev/nvme0n1	(must run this command after creatig partition or delete a partition. it update to kurnal)
+	
+	> mkfs.ext4 /dev/sda3		(format file system)
+	
+	> mkdir Suhkanth						(create directory)
+	> mount /dev/volumename	mountpoint		(mound volume)
+	> mount -a								(mound every thing)
+	
+	delete a partition:
+	-------------------
+	> umount /sukhanth			(unmount)
+	> fdisk /dev/xvda 			(to delete a partition)
+	  d							(delete a partition)
+	  2							(select partition number)
+	  wq						(save and quit)
+	> partprobe /dev/nvme0n1	(must run this command after creatig partition or delete a partition. it update to kurnal)
+	> mount -a					(run this command)
+	> udevadm trigger			(update the attached hard disks)
+	
+	# managing files system:
+	------------------------
+	> File system is a method of storing data in an organization fashion on the disk.
+	> Every partition on the disk except MBR and extended partition should be assigned with some file
+	system in order to make them store the data.
+	> File system is applied on the partition by formating it with a partition it with a particular type of a partition.
+	> File system is applied on the partition it with a particular type of a partition.
+	
+	# Local file system:
+	--------------------
+	> Local file system  are file system run on a single, local server and are directly attached to storage.
+	
+	xfs file system:
+	----------------
+	> xfs is a highly scalable, high -performance, robust, and mature 64-bit journaling file system that supports 
+	very large files and systems on a single host. It is the default file system in RHEL8.
+	
+	ext4 file system:
+	-----------------
+	> The ext4 file system is the fourth genetation of the ext file ext file system family. It was the default FS in RHEL6.
+	> The ext4 driver can read and write to ext2 and ext3 file systems, but the ext4 file system format is not
+	compatible with ext2 and ext3 drivers.
+	
+	Journaling:
+	-----------
+	XFS and EXT4 FS are offers a journaling option, which has two main advantages.It can help 
+	speed up recovery if there is a disk failure because journaling file system keep a "journal" of the file system's 
+	metadata. It can check drivers fasters during the system boot process.
+	
+	NOTE:
+	The journaling feature isn't available on older file system such as ext2.
+	
+	
+	Tools for different file systems:
+	---------------------------------
+	TASK 								ext3/4						XFS
+	
+	create a file system				mkfs.ext4 or mkfs.ext3 		mkfs.xfs
+	file system check					e2fsck						xfs_repair
+	Resizing a file system				resize2fs					xfs_growfs
+	save an image of a file system		e2image						xfs_metadump and xfs_mdrestore
+	label or tune a file system			tune2fs						xfs_admin
+	backup a file system				dump and restore 			xfsdump and zfsrestore
+	
+	> mkfs.ext					(find the available file systems)
+	
+	Mounting file systems:
+	----------------------
+	> After formating a partition, we can't add the data into the partition. In order to add the data in the 
+	partition it is required to be mounted.
+	> Mounting is a procedure where we attach a directory to the file system.
+	> There are only two commands for mountig and unmounting a file system.
+		> mount 		(mounts a file system)
+		> unmount 		(unmount a file system)
+		
+	Set up Lable name:
+	------------------
+	> xfs_admin -l /dev/partion_name			(shows label name)
+	unmount the device before allowing the label.
+	> xfs_admin -L "label name"					(add label name)
+	> mound -a 									(run this command)
+	> mound -l | grep -i label_name				(get info specific partion only)
+	> blkid	/dev/partion_name					(shows block ID values)
+	
+	
+	
+STORAGE MANAGEMENT ON LINUX: avinash
+----------------------------
+	In Linux, All torage devices appears in /dev
+	
+	/dev/sda/ and sda1		(sda-->xvda)
+							(s-SCSI/SATA Disk)
+							 Disk A
+							 Partition 1
+
+	/dev/xvda  : Entire disk 	
+	/dev/xvdal : SCSI/SATA Disk A Partition 1
+	
+	EBS: Elastic Block Storage
+		 Storage option for ec2 instances
+		 Make sure instance and volume are in same  AZ
+
+	> lsblk					( list all block devices in the liux machine) (to find how many drives we have)
+	> lsblk -fs				(stracture)
+	> fsck -N /dev/sda1		(find file system type)
+	> mount | grep "^/dev"	(find file system type)
+
+	> df -Th | aws '{print $1,$2,$NF}' | grep "^/dev"
+	> fdisk		
+	> fdisk -l				(find the 
+	> mount
+	> umount
+	> umount -d
+	> df					(check avaliable disks and mount points)
+	> df -h -x tmpfs		(list specific file type system)
+	> df -h					(display disk free size of operating system)
+	> df -Th				(info about volumes and mount points with file system type)
+	
+	> du -h 				(displays disk usage of each file)
+	> du -h filename		(displays disk usage of each file)
+	> du -Th				(displays disk usage of each file)
+	> du -sh filename/dir	(display the file/dir size)
+	
+	> file -s /dev/volumename		(if you see only "data" that means there is no file system avaliable with in this newelly associated volume you need to setup file system for this block device)	(information aout the file system type)
+	> mkfs -t xfs /dev/volumename 	(creating a file system)
+	
+	Run xfsprogs package if any error comes "mkfs.xfs" not found perform this > yum install xfsprogs
+	
+	"mkfs.xfs is not available" your getting such kind of isue you need to exegute  ( > yum install xfsprogs)
+
+	> mkdir Suhkanth						(create directory)
+	> mount /dev/volumename	mountpoint		(mound volume)
+	> mount -a								(mound every thing)
+	
+	Add an entry in fstab for permanent mount:
+	------------------------------------------
+	> cp /etc/fstab/ /etc/fstab.bkp		(create backup for safe side)
+	> cat /etc/mtab						(copy this information)
+	> vim /etc/fstab					(gives us information about what need to write in fstab)
+	partition
+	label
+	blkid
+	> mount -a							(update file system table no errors its updated sucessfully)
+	> systemctl daemon-reload			(same command)
+	remove entry in fstab before unmount.
+	> umount
+	> umount -d /dev/mountpoint			(umount volume)
+	> umount -f /dev/mountpoint			(umount volume)
+	
+	> lsof /mountpoint					(find the who are using mountpoint)
+	> fuser -uav /dev/mountpoint		(same command)
+	> mound -a 							(run this command after unmount)
+	
+	Extending the File System:
+	--------------------------
+	
+	> fiel -s  /dev/xvd* 				(to get the file system info)
+	> growpart /dev/xvda 1				( 1 is volume ID)
+	> xfs_growfs -d /	(enter)			(resize the volume)
+	> xfs_growfs /dev/volume name		(resize the volume)
+	> cat /dev/							(attachment details)
+	
+	> cat /etc/fstab					(to get the volume ID file system details)
+	
+	if you don't find xfs_growfs as a valid command, Install "xfsprogs" 
+
+	
+	Shared Storage for EC2 with EFS:
+	--------------------------------
+	supports the network file system version 4 (NFSv4.1) protocal
+	no pre-provisioning required
+	can scale up to the petabytes
+	EFS can support thousends of concurrent connections
+	need to manage permissions at file level/directory level
+	
+	EFS lab:
+	--------
+	> sudo mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport fs-0105c444db24d1ebb.efs.us-east-1.amazonaws.com:/ directory name/
+
+	> umount 		(mount point)
+	
+	
+--------------------------------------------------------------------------------------------------------------------------------------------
+# REDUNDANT ARRAY OF INDEPENDENT DISKS (RAID):
+----------------------------------------------
+	> User can use RAID to store data across multiple drives. It also helps to avoid data loss if a drive has failed.
+	> The basic idea behind RAID is to combine multiple devices, such as HDD, SSD or NVMe, into an array to 
+	accomplish performance or redundancy goals.
+	> Primary reasons to deploy RAID include:
+		> Enhances speed
+		> Increases storage capacity using a single disk
+		> Minimize data loss from disk failure
+		> RAID layout and level online conversion
+	
+	# RAID TYPES:
+	firmware raid:
+	> Firmware RAID, also known as ATARAID, is a type of software RAID where the RAID sets can be
+	configured using a firmware-based menu.
+	> The firmware used by this type of RAID also hooks into the BIOS, allowing you to boot from its RAID
+	sets. The Intel Matrix RAID is a good example.
+	
+	hardware raid:
+	> The hardware-based array manages the RAID subssystem independently from the host.
+	> It may present multiple devices per RAID array to the host.
+	> Hardware RAID devices may be internal to the system.
+	
+	software raid:
+	> Software RAID implements the various RAID levels in the kernal block device code. It offers the cheapest
+	possible solutions, as expensive disk controller cards or hot-swap chassis are not required.
+	> Software RAID also works with any block storage which are supported by the Linux kernel, such as SATA,
+	SCSI, and NVMs.
+	
+	raid levels:
+	> raid 0 		(striping)
+	> raid 1		(mirroring)
+	> raid 4 		(parity)
+	> raid 5 		(single disk distributed parity)
+	> raid 6		(double disk distributed parity)
+	> raid 10		(combine of mirror ad stripe (nested RAID)
+	
+	> yum install mdadm	-y			(install daid package meta disk admin to manage raid levels)
+	
+	if we want to manage RAID devices four hard dick are required. if we want implements RAID 5 defiently minmum three 
+	hard disk are required. 
+	
+	> fdisk /dev/partion_name		(create partition)
+	t								(change the ID value)
+	select the partition number
+	fd								
+	w								(for save changes)
+	 
+	> mdadm -C /dev/metadisk_name_any -n3 /dev/partion_name{8,9,10}	-l5		(-n3 means number of devices (to create a RAID devices)
+	
+	RAID means it combine multiple devices into single drive.
+	
+	> mdadm -D /dev/metadisk_name_any	 (find the details RAID device)
+	
+	> mkfs.xfs /dev/metadisk_name_any	 (formating file system)
+	> mkdir /cloud-data
+	> mount /dev/cloud-data
+	add entry in fstab
+	> mount -a
+	
+	> mdadm -f /dev/metadisk_name /dev/partion_name		(create failure on RAID don't run this command in organization)
+	
+	In case any RAID device failure first we have to remove the device.
+	
+	> mdadm -r /dev/metadisk_name /dev/partion_name		(remove the device from RAID) 
+	> mdadm -a /dev/partion_name /dev/partion_name		(add new disk) (re build the RAID)
+	
+	> mdadm -S /dev/metadisk_name								(stop the device) (for stop the device first we have to unmount the device)
+	> mdadm -A /dev/metadisk_name /dev/partion_name{8,9,11}		(start the device)
+	
+	> cat /proc/devices											 		(to check the number of devices)
+	> cat /proc/mdstak			(meta-data statictics) 
+	
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+# LOGICAL VOLUME MANAGER (LVM):
+-------------------------------
+	> In standard partitions we connot resize the file system. Also, we have some partition limit in RHEL.
+	> LVM is a from of advanced partion managment.
+	> We can merge many hard drives and make it as single hard drive.
+	> LVM is a method of allocating hard drive space into logical volumes that can be easily resized of partitionswith LVM, 
+	the hard drive or set of hard drives are allocated to one more physical volumes.
+
+	# Advantages:
+	-------------
+		> Flexible capacity.
+		> Resizable storage pools.
+		> Online data relocation.
+		> Convenient device naming.
+		> Disk striping.
+		> Mirroring volumes.
+		> Volumes Snapshots.
+	
+	# LVM ARCHITECTURE:
+	-------------------
+	Logical Volume
+		 ↑
+	 volume group
+		 ↑
+	Physical volume
+	
+	# LVM COMPONENTS:
+	-----------------
+	Physical Volume:
+	----------------
+	> The underlying physical storage uni t of an logical volume is a block device such as a partition or whole disk.
+	> To use the device for an LVM logical volume, the device must be as a physical volume (PV).
+	
+	Volume Groups:
+	--------------
+	> Physical volume are combined into volume groups (VGs). This creates a pool of disk space.
+	> The VG disk space divided into units of a fixed-size called extents. An extent is the smallest unit of space that can be 
+	allocated to logical volumes.
+	> every volume group divided into samall sizes units, one uint size is 4mb. total cells.
+	one unit is called one extended. by default one extended size is equal to 4MB.
+	
+	Logical Volumes:
+	----------------
+	> In LVM, a volume group is divided up into logical volumes.
+	> A logical volume is allocated into logical extents. An extent is the smallest unit of space that can be 
+	allocated to logical volumes.
+	
+	Logical Volumes:
+	----------------
+	> In LVM, a volume group is divided up into logical volumes.
+	> A logical volume is allocated into logical extents of the same sizes as the physical extents.
+	> The logical partitions which can resize, format, mount etc.
+	
+	
+	# LVM configuration files:
+	--------------------------
+	> /etc/lvm/lvm.conf						(configuration file)
+	> /etc/lvm/lvm_hosttag.conf				(for each host tag, an extra configuration file.
+	> /etc/lvm/cache/.cache					(device name filter cache file (configurable)
+	> /etc/lvm/backup/						(automatic volume group metadata backups (configurable)
+	> /etc/lvm/archive/						(automatic volume group metadata archives)
+	
+	# Lab:
+	------
+	> yum install lvm2 -y					(install LVM package)
+	> fdisk /dev/nvm0n1						(create partion) 4 partions
+	n
+	+2G
+	
+	n
+	+2G
+	
+	n
+	+2G
+	
+	n
+	+2G
+	
+	t
+	13
+	8e
+	
+	t
+	14
+	8e
+	
+	t
+	15
+	8e
+	
+	wq											(for save the partions)
+	> partprobe /dev/nvm0n1						(update to kernal)
+	
+	> pvcreate /dev/nvm0n1{12,13,14,15}			(create physical volumes number of partions)
+	> pvcreate /dev/sda							(same command)
+	
+	> pvscan									(scan the all volumes)
+	> pvs										(find the details)
+	> pvdisplay									(to check complete details of physical volumes)
+	
+	> vgcreate india /dev/sdbp{12,13,14}		(create volume ground)
+	
+	> vgcreate VGO /dev/sda /dev/sdb			(same command)
+	
+	will display sucessfully created msg.
+	> vgcreate -s 8 india /dev/sdbp{12,13,14}	(change the unit size to 8MB)
+	
+	> vgs										(display volume details)
+	> vgdisplay									(display complete volume details)
+	
+	> lvcreate -L+3G -n /dev/india/ap			(create a logical volume from the group)
+	> lvcreate -n lv0 -L 4G VG0					(same command)
+	
+	> lvdisplay									(display complete volume details)
+	> vgs										(same command)
+	> lvs										(same command)
+	
+	> mkfs.xfs /dev/india/ap					(format file system)
+	> mkdir /devops-data
+	> mount /dev/india/ap						(mount file system)
+	> vim /etc/fstab							(add entry)
+	/dev/india/ap	/devops-data	xfs		defaults	0 0
+	> :wq
+	> mount -a
+	
+	# EXTEND LVM PARTION:
+	---------------------
+	How to extend our file system without intrupting any application.
+	
+	> lvs
+	
+	> lvextend -L +1G /dev/VG0/lv0				(extend the volume ext4 file system)
+	> lvdisplay /dev/VG0/lv0					(display specific lvm partition details)					
+	> resize2fs /dev/VG0/lv0					(update the volume ext4 file system)
+	
+	> lvextend -L +1G /dev/VG0/lv1				(extend the volume xfx file system)
+	> xfs_growfs /dev/VG0/lv1					(update the volume xfs file system)
+	
+	> df -h /xfxpart/							(list out the xfs file system)
+
+	# REDUCE LVM:
+	-------------
+	1. Shutdown all applications/databases which are hosted in lvm.
+	2. Completed backup.
+	3. unmount lvm file system.
+	4. Hashout entry in /etc/fstab.
+	5. Ext2/ext3/ext4
+	6. Check for any errors
+	
+	No XFS reduce.
+	
+	> vim /etc/fstab
+	#out the partition
+	> :wq
+	
+	> umount /etx4part
+	> mount -a 									(reconformation)
+	> e2fsck -f /dev/VG0/lv0					(check the errors)
+	
+	> resize2fs /dev/VG0/lv0 1G 				(resize)
+	> lvresize -L 1G /dev/VG0/lv0				(resize)
+	
+	> vim /etc/fstab
+	uncomment #
+	> :wq
+	> mount -a
+	> df -h
+	
+	
+	
+	
+	
+	
+	----------------------------------------------------------
+	> In the format of standard partion we can not resize the size. we can not resize the file system.
+	> The standard partion does't support resizeing file system.
+	> RAID also does't support resizeingfile system. RAID offers only redundancy. 
+	> RAID is also not offering resizeing.
+	----------------------------------------------------------
+	# extend LVM:
+	-------------
+	> lvresize -L+1G /dev/india/ap				(expand the file system size)
+	> xfs_growfs /dev/india/ap					(update the mount point)
+	
+	> lvreduce -L+1G /dev/india/ap				(reduce the file system size)
+	when we reduce the file system, before reduce first we must take a backup of device.
+	
+	> vgextend india /dev/nvme0n1p15			(expand volume group) p means partion.
+ 
+	> umount -f /devops-data					(unmount the file system)
+	delete the entry in fstab 
+	before remove physical volume we must unmount the file system.
+	
+	> vgremove -f volume_group_name				(remove volume group)
+	> pvremove -f /dev/sdbp{12,13,14,15}		(remove physical volumes)
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+# BACKUP & RESTORE:
+-------------------
+	> It always good idea to keep on backup data on our computers, this can either can be done manually or
+	configured to work automatically.
+	
+	> Types of backups are:
+		> Full Backups
+		> Incremental Backups
+		> Differential Backups
+	
+	# full backups:
+	---------------
+	> It writes all files, to the backup media.
+	> if the data being backed up never changes, every full backup being created will be the same.
+	> A full backup does not check to see if a file has changed since the last backup; it blindly writes 
+	everything to the backup media whether it has been modified or not.
+	
+	# Incremental Backups:
+	----------------------
+	> It writes files that have been created or modified since the last usually full backup.
+	> It first looks to ee whether a file's modification time is more recent than backup time.
+	> when restoring a complete file system, it is necessary to restore the last full backup and every 
+	subsequent incremental backup.
+	
+	# Differential Backups:
+	-----------------------
+	> Differential backups are similar to incremental backups in that both backups only modified files.
+	> Each differential backup contains all the files modified since the last full backup.
+	
+		syntax: dump & restore & xfsdump
+	
+	> xfsdump -l 0 -L "My cloud data backup `date`" -f /dev/st0 /mount_point		(full backup)
+	> xfsdump -l 1 -L "My cloud data backup `date`" -f /dev/st1 /mount_point		(incremental backup)
+	"0" means full backup "-L" is set label name
+	"1" means incremental backup.
+	
+	> xfsrestore -I											(display backup status)
+	
+	> xfsrestore -f /dev/st1 -S session_id /mount_point		(restore the backup incremental)
+	> xfsrestore -f /dev/st0 -S session_id /mount_point		(restore the backup full)
+	
+------------------------------------------------------------------------------------------------------------------------------------------
+
+# NFS SERVER (NETWORK FILES SYSTEM):
+------------------------------------
+	> There are many ways you can share files with on your network.
+	> NFS helps you to share file system between Linux and Unix systems (Homogeneous Enviroment).
+	> NFS allows remote hosts to mount file ystem over a network and interact with those file systems as 
+	through they are mounted locally.
+	> NFS enable you to consolidate resources onto servers on the network.
+	
+	# rpcbind:
+	> The rpcbind service maps Remote Procedure call (RPC) services to the ports on which they listen.
+	> RPC process notify rpcbind when they start, registering the ports they are listening on and the RPC
+	program numbers they expect to serve.
+	> rpcbind is no longer avaliable it is includes NFS 4.
+	
+	# SUPPORTED NFS VERSIONS:
+	-------------------------
+	> NFS version 4 (NFSv4) works through firewall and on the internet, no longer requires a rpcbind
+	service, supports Access control List (ACLs), and utilizes stateful operations.
+	> NFS version 3 (NFSv3) supports safe asynronous writes and is more robust at error handling 
+	than the previous NFSv2; it also supports 64-bit sizes and offsets, allowing clients to access
+	more than 2 GB of file data.
+	> NFS version 2 (NFSv2) is no longer supported by Red Hat. NFS 2 does't supports more than 2GB file system.
+	
+	# NFS FEATURES:
+	---------------
+	> Everyone can access same data this eliminates the need to have a redundant data on server
+	systems.
+	> Reduces storage cost.
+	> Can be acted as centralized storage solutions.
+	> Provides data consistency.
+	> Reduces the system administrator overhead.  
+	
+	# MAIN CONFIGURATION FILES (PREREQUISITES):
+	-------------------------------------------
+	> Package 						(nfs-utils, rpc-bind)
+	> /etc/exports					(List of resources that will be exported to clients)
+	> /etc/sysconfig/nfs			(to control which ports the required RPC services run on)
+	> /etc/nfs.conf					(main configuration file)
+	> /var/log/messages				(log file. check if NFS fail to start)
+	> services						(nfs-server, rpcbind)
+	
+	> Additinal files:
+	> /var/lib/nfs/etab				(a list of currently exported resources)
+	> /var/lib/nfs/rmtab			(a list of remotely mounted resources)
+	
+	> ports:
+	> NFS - 2049
+	> PORTMAP/RPCBIND - 111
+	
+	# MOUNT OPTIONS:
+	> ro								(allow clients read only access to the share)
+	> rw								(allow clients write access to the share)
+	> sync 								(allow changes to the according file system are immediately flushed to disk)
+	> async								(performs all writes when server is busy)
+	> root_squash						(prevent root users connected remotely from having root an access. Effectively squashing remote root privileges)
+	> no_root_squash 					(disable root squashing)
+	> all_squash						(to squash every remote user (including root)
+	
+	# THE EXPORTFS UTILITY:
+	> exportfs
+		-r		(This option effectively refreshes the export list with any changes made to /etc/exports)
+		-a 		(exportfs exports all file systems specified in /etc/exports)
+		-u		(unexports all shared directories)
+		-v 		(verbose operations, where the file systems being exported or unexported are display in geater details)
+	
+	# LAB:
+	------------
+	> yum install nfs-utils -y 			(install nfs package)
+	> mkdir /company-data
+	> cd /company-data
+	> touch aws devops azure
+	> vim /etc/exports					(List of resources that will be exported to clients)
+	/company-data		192.168.10.0/24(ro, sync)
+	> :wq
+	
+	> systemctl start rpcbind
+	> systemctl start nfs-server
+	
+	> systemctl enable rpcbind
+	> systemctl enable nfs-server
+	> systemctl status nfs-server
+	
+	> showmount -e 0					(check exported resources)
+	
+	> showmount -e 192.168.10.100		(check NFS shared resources)
+	ip address is server address
+	
+	# mount nfs shared resources:
+	-----------------------------
+	first we need to create directory
+	> mkdir /sai
+	> mount 192.168.10.100:/company-data /sai		(mount nfs server)
+	> cd /sai
+	> ls
+	add entry in fstab
+	> vim /etc/fstab
+	/192.168.10.100:/company-data 	/sai	nfs 	defaults 	0 0
+	> :wq
+	> mount -a
+	
+	> vim /etc/exports						(List of resources that will be exported to clients)
+	/company-data		192.168.10.0/24(ro, sync)
+	/home				192.168.10.030(rw, sync,no_root_squash)
+	> :wq
+	
+	don't run the command again after adding resources inted of systemctl restart nfs-server run "exports -arfv" command
+	> exports -arfv						(update the system without affecting any running resources)
+	> showmount -e 192.168.10.100		(check NFS shared resources)
+	
+	> cat /var/lib/nfs/etab				(verify exported files)
+	
+	
+	# TROUBLE SHOOTING NFS AND RPCBIND:
+	-----------------------------------
+	
+	> mountstats						(shows information about mounted NFS shares)
+	> nfsstat 							(shows statistics of exported resources)
+	> nfsiostat							(shows statistics of NFS mounted shares)
+	
+	# CONFIGURING THE NFS SERVER TO RUN BEHIND A FIREWALL:
+	------------------------------------------------------
+	To allow clients to access NFS shares behind a firewall, set which ports the RPC services run on in the
+	[mountd] section of the /etc/nfs.conf file:
+	[mountd]
+		port=port-number
+	
+	> vim /etc/nfs.conf	(change settings)
+	[mountd]
+	port=2020			(remove # before port add port number 0 to any other number)
+	[nfsd]
+	vers2=n				(disable nfs version 2 remove the #)
+	vers3=n				(disable nfs version 3 remove the #)
+	vers4=y				(enable nfs version 4 remove the #)
+	> :wq
+	
+	> systemctl restart nfs-serve
+	
+	> firewall-cmd --permanent --add-service mountd
+	> firewall-cmd --permanent --add-service rpc-bind
+	> firewall-cmd --permanent --add-service nfs-server
+	
+	> firewall-cmd --permanent --add-port=<mountd-port>/tcp
+	> firewall-cmd --permanent --add-port=<mountd-port>/udp
+	
+	> firewall-cmd--reload
+	
+	> systemctl status firewalld
+	
+	
+--------------------------------------------------------------------------------------------------------------------------------------------
+	
+# SWAP SPACE:
+-------------
+	> swap space improve the system performance.
+	> In Linux, a swap space is used as a "scratch space" for the system.
+	> Swap space in Linux is used when the amount of physical memory (RAM) is full.
+	> Swap space is located on hard drives, which have a slower access time than physical memory.
+	> Swap space can be a dedicated:
+			> swap partition (recommended)
+			> swap file
+	
+	# Recommended system swap space:
+	--------------------------------
+	Amount of RAM in the		Recommended swap space			Recommended swap space if allowing
+	ststem														for hibernation
+	
+	< 2 GB 						2 times the amount of RAM		3 times the amount of RAM
+	> 2 GB-8GB 					Equal to amount of RAM			2 times the amount of RAM
+	> 8 GB-64GB					At least 4 GB					1.5 times the amount of RAM
+	> 64 GB						At least 4 GB					Hibernation not recommended
+	
+	
+	step1: create a partion with 2GB
+	step2: format a partion	(swap)
+	step3: mount a file system
+	step4: persistence (/etc/fstab)
+	
+	
+	> fdisk /dev/device_name		(create a partion)
+	n
+	blank enter    
+	blank enter
+	+2GB
+	t 								(change the ID value)
+	82								(add ID value for swap)
+	> :wq							(save changes)
+	
+	> partprobe /dev/device_name	(for update to kernal)
+	
+	> mkswap -f /dev/partion_name	(formating file ststem swap)
+	> vim /etc/fstab
+	UUID=value		none	swap 	defaults 	0 0 
+	> :wq
+	
+	> blkid /dev/sdc1				(list out awsp partitions)
+	
+	> mount -a						(run the command update all)
+	
+	> free -m 						(check the swap space ram memory)
+	(m means mega bite, g means giga bite)
+	
+	# add swap existing swap space:
+	-------------------------------
+	first we need to tunoff all swaps and turn on for add swap.
+	> swapoff -a					(turn off all swaps)
+	> swapon -a						(turn on all swaps)
+	
+	> swapon -s						(check the available swaps)
+	
+	> swapoff /dev/partion_name		(for turn off swap)
+	> swapoff /dev/partion_name{3,7}(for turn off multiple swaps)
+	> swapon /dev/partion_name		(for turn on swap)
+	
+	more than 4GB swap space no use.
+	don't create swap space more than 4GB. system consider only upto 4GB.
+	the simple defination of swap space is it improves system performance.
+	
+	# how to create swap file (like a virtual memory):
+	--------------------------------------------------
+	
+	step1: create a swap file 1GB
+	step2: format a partion	(swap)
+	step3: mount a file system
+	step4: persistence (/etc/fstab)
+	
+	> dd if=/dev/zero of=/dev/opt/swap-file bs=1024 count=1000000		(create swap file)
+	> ls -lh	 						(find the swap file)
+	
+	> mkswap -f /of_file_location		(formating file ststem swap)
+	chnage the permissions of swap file
+	> chmod 600 /of_file_location		(change permissions)
+	
+	> vim /etc/fstab
+	of_file_location	none	swap	defaults 	 0 0
+	save and quit
+	> mount -a							(no errors means sucess)
+	
+	> swapon -s /of_file_location			(turn on swap file)
+	
+	if it is not update turn off all swaps and on.
+	> swapoff -a
+	> swapon -a
+	
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+# ACL:
+------
+	what is ISO file:
+	-----------------
+		An ISO image or .iso (international organization for standardization) file is an archive file that contains a disk image called ISO 9660 file system format.
+		Every ISO file have.
+		ISO extension has deined format name taken from the 9660 file system and specially used specially used with CD/DVD Rom's.
+		In simple words an iso file is a disk image.
+		by default iso image non readable format.
+	
+	how to read iso image:
+	----------------------
+	we mush mount iso image.
+	> mkdir rhel_release
+	> mount -t iso9660 -o loop iso image file name /mount point		(mount iso image)
+	
+	add entry in fstab for permanent fix.
+	> vim /etc/fstab
+	/image_file_full_path	/mount_point	iso9660		defaults	0 0 
+	
+	> mount -a
+	
+# ACCESS CONTROL LIST'S (ACL'S):
+--------------------------------
+	> Files and directories have permissin sets for the owner of the file, the group associated with the file, and
+	all other users for the system. However, these permissin sets have limitations.
+	> different permissins can be configured for different users and groups.
+	
+	> Access control list is used to provide more flexible/granular
+	permissions to files & directories.
+	
+	SCENARIO:
+	---------
+	Provide read and write permissions to /testing/techarkit file and to aravi user.
+	
+	> You should not add aravi to any group.
+	> Revoke others permissions to particular file.
+	> aravi user should able to read and write /testing/techarkit.
+	
+		There are two types of ACLs:
+		----------------------------
+			> access acls			(ACL for specific file or directory)
+			> default acls			(A default, ACL for directory. These are an optional.
+			
+	TOOLS:
+	------
+	> setfacl				(sets ACLs for files and directories.
+	> getfacl				(to verifying ACLs information)
+			
+	SYSNTAX: #setfacl -m <rules> <files>
+	
+	By default every system has acl's.
+	Advance file permissins acls.
+			
+	> yum install acl -y								(install acl package)
+	
+	> setfacl -m u:raju:x /directory_name				(set the acl for raju user for execute only cloud-data folder)
+	> setfacl -m :u:raju:- /directory_name				(remove user name)
+	> setfacl -m u:rajux,u:sai:rwx /directory_name		(set the acl for multiple users)
+	> setfacl -x u:raju: /directory_name				(remove all permissins for raju user)
+	> setfacl -x u:raju:,u:sai: /directory_name			(remove all permissins for multiple user)
+	
+	> setfacl -m g:sales:x /directory_name				(set the acl for sales group for execute only cloud-data folder)
+	> setfacl -m g:sales:x,g:dev:rwx /directory_name	(set the acl for multiple ugroups)
+	> setfacl -x g:sales: /directory_name				(remove all permissins for sales group)
+	> setfacl -x g:sales:,g:dev: /directory_name		(remove all permissins for multiple groups)
+	
+	> getfacl file1 | setfacl --set-file=- file2		(copying the ACL of one file to another)
+	> getfacl --access dir | setfacl -d -M dir			(copying the access ACL into the Default ACL)
+	
+	> getfacl directory_name							(to verifying ACLs information)
+	
+	> setfacl -b fie2 									(remove all ACL entries)
+	
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+# DOMAIN NAME SYSTEM (DNS):
+---------------------------
+	> DNS is a distributed database system that is used ti associate host names with their respective IP address.
+	> DNS Server also known as Name server.
+	> It is usually implemented using one or more centralized servers that are authoritative for certain domains.
+	> For users, this has the advantage that they can refer to machines on the network by names that are usually
+	casier to remember than the numerical network address.
+	
+	# DNS tree structure:
+	---------------------
+	> Domain names are orginized into a tree structure.
+	> The DNS structure is consisted of the Root zon contains the global list top-level domains like .com, .org, .edu...etc.
+	> Under the top-level domains there are sub-domains like mail.google.com, mail.yahoo.com.
+	
+	# DNS resource records:
+	-----------------------
+	> A (IPV4 address)					(mapping the name to an IPV4 address)
+	> AAAA (IPV6 address)				(mapping the name to an IPV6 address)
+	> CNAME (canonical name)			(it is na alias name)
+	> MX (mail exchange)				(responsible for E-mail services)
+	> NS (name server)					(nodes that hold information about a given name)
+	> PTR (pointer)						(reverse DNS records (opposite of A record does)
+	> SOA (start of authority)			(manages of DNS. overall information about domain)
+	
+	# Main configuration files (prerequisites):
+	
+	if we want to install configure DNS server the main configuration file are listed below.
+	
+	> packages							(bind, bind-utils)
+	> /etc/named.conf					(main configuration file)
+	> /etc/named.rfc1912.zones			(zones configuration file)
+	> /etc/resolv.conf					(DNS address file)
+	> /var/named 						(zone file location)
+	> DNS-53							(port number)
+	> named 							(serivce/Daemon)
+	
+	> yum install bind-utils -y			(install DNS package)
+	> yum install bind -y
+	
+	we must install both bind and bind-utils.
+	
+	> vim /etc/named.conf				
+	------------------------------------------------------
+	options {
+        listen-on port 53 { 127.0.0.1;172.31.35.61; };
+        listen-on-v6 port 53 { ::1; };
+        directory       "/var/named";
+        dump-file       "/var/named/data/cache_dump.db";
+        statistics-file "/var/named/data/named_stats.txt";
+        memstatistics-file "/var/named/data/named_mem_stats.txt";
+        secroots-file   "/var/named/data/named.secroots";
+        recursing-file  "/var/named/data/named.recursing";
+        allow-query     { localhost;any; };
+		
+	save and quit.
+		
+		allow-query     { localhost;172.31.35.0/24; 172.31.30.0/24 };
+	------------------------------------------------------
+	> vim /etc/named.rfc1912.zones				(zone file location)
+	
+	this file maintance record information. the forword lookup zone and reverse lookup zone information.
+	the forword lookup zone maintance maping address of "names to IP address".
+	the reverse lookup zone maintance maping address of "IP address to names".
+
+------------------------------------------------------
+	First five lines related to forword lookup zone.
+	Second five lines related to reverse lookup zone.
+	second first file IP reverse order.
+
+zone "example.com" IN {
+        type master;
+        file "example.for";
+        allow-update { none; };
+};
+
+
+zone "128.168.192.in-addr.arpa" IN {
+        type master;
+        file "example.rev";
+        allow-update { none; };
+};
+
+named.localhost		(example.for)
+named.loopbck		(example.rev)
+
+------------------------------------------------------
+
+	> cd /var/named/
+	> ls -l
+	> cp named.localhost example.for
+	> cp named.loopback example.rev
+	> chgrp named example*				(change the group for example files)
+	> vim example.for
+	
+------------------------------------------------------
+
+$TTL 1D
+@       IN SOA  server.example.com. root.example.com. (
+                                        0       ; serial
+                                        1D      ; refresh
+                                        1H      ; retry
+                                        1W      ; expire
+                                        3H )    ; minimum
+
+@		IN		NS		server.example.com.
+@		IN 		A		172.31.35.61
+server	IN 		A 		172.31.35.61
+client	IN 		A 		172.31.37.189
+host	IN 		A 		172.31.10.10
+www		IN		CNAME	server
+
+------------------------------------------------------
+
+> vi example.rev
+
+$TTL 1D
+@       IN SOA  server.example.com root.example.com. (
+                                        0       ; serial
+                                        1D      ; refresh
+                                        1H      ; retry
+                                        1W      ; expire
+                                        3H )    ; minimum
+										
+@		IN		NS		server.example.com.
+@		IN 		PTR		example.com.
+server	IN 		A 		172.31.35.61
+61		IN 		PTR		server
+186		IN 		PTR 	client
+37		IN		PTR		host
+
+------------------------------------------------------
+
+	> named-checkconf /etc/named.conf						(test the zone files correct or not) it verify syntax errors.
+	> named-checkconf /etc/named.rfc1912.zones				(if command runs with out roors) it is sucessful.
+	
+	> named-checkzone example.com /var/named/example.for	(if the value is zero everything is perfectlly configured)
+	> named-checkzone example.com /var/named/example.rev	(if the value is zero everything is perfectlly configured)
+	
+	> vim /etc/resolv.conf
+	
+	search example.com
+	nameserver 172.31.35.61
+	
+	> systemctl start named
+	> systemctl enable named.service
+	> systemctl status named
+
+
+	# DNS UTILITIES & TROUBLE SHOOTING:
+	-----------------------------------
+	DIG: To perform DNS lookups and debug a nameserver configuring.
+	
+	> dig server.example.com			(A simple name server lookup)
+	> dig -x 192.168.10.254				(lookup a hostname)
+	
+	NSLOOKUP:
+	Utility to lookup a hostname from an IP-Address.
+	
+	> nslookup server.example.com
+	> nslookp 192.168.10.254
+	
+	> hostnamectl
+	
+	PING:
+	Internet control message protocal (ICMP) protocal for network or hostname from an IP address.
+	
+	> ping 192.168.10.254
+	> ping server.example.com
+	
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+# FILE TRANSFER PROTOCOL (FTP):
+-------------------------------
+	> FTP is one of the oldest and most commonly used protocal found on the Internet today.
+	> Its purpose is to reliably transfer files between computer hosts on a network.
+	> It allows users to access files on remote systems using a standard set of simple commands.
+
+	VSFTPD:
+
+	> The very Scure FTP Daemon (vsftpd) is designed from the ground up to be fast, stable, and, most importantly, secure.
+	> Vsftpd is the only stand-alone FTP server distributed with Red HAt Enterprice Linux, due to its ability to 
+	handle large numbers of connections efficiently and securely.
+
+	# main configuration files (prerequisites):
+
+	> packages						(vsftpd, ftp, lftp)
+	> /etc/vsftpd/vsftpd.conf		(main configuration file)
+	> /etc/vsftpd/ftpusers			(a list of users not allowed to log into vstfpd)
+	> /etc/vsftpd/user_list			(file can be configured to either deny or allow access to users)
+	> /var/ftp						(the directory containing files served by vsftpd.
+	> /etc/pam.d/vsftpd				(pluggable authencation modules (PAM) configuration file)
+	> vsftpd 						(service and daemon)
+	> /var/log/xferlog				(service and daemon)
+	
+	ports:
+	
+	> 20 							(FTP Data (for transferring FTP data)
+	> 21 							(FTP Control (for starting FTP connection)
+	
+	> yum install vsftpd -y 
+	
+	> cd /var/ftp
+	create some files here.
+	
+	> vim etc/vsftpd/vsftpd.conf				(main file for vsftpd)
+	
+	annonymous_enable=YES
+	xferlog_file=/var/log/xferlog				(remote # before xferlog)
+	anon_upload_enable=YES						(remote # before anon for enable upload freature for all and anonymous users)
+	ftp_banner=welcome to blash FTP service.	(remote # before ftpd)
+
+
+	> systemctl restart vsftpd
+	> systemctl status vsftpd
+
+	> yum install ftp lftp -y
+
+	> ftp 192.168.10.100			(connect to ftp server)
+	anonymous
+	password:none
+
+	# FTP COMMANDS:
+
+	> pwd 							(display server-side diretory)
+	> !pwd 							(display client-side directory)
+	> cd 							(change the workig directory)
+	> get							(retrieve	the file)
+	> mget 							(retrieve multiple files)
+	> put 							(store a local file to remote machine)
+	> mput							(send multiple files to the server)
+	> bye							(to quit ftp prompt)   
+ 
+	> vim /etc/vsftpd/user_list		(listout the vsftpd	users)
+	add user name for restrict for no login for vsftpd.
+	
+--------------------------------------------------------------------------------------------------------------------------------------------
+# LINUX NETWORKING:
+-------------------
+	> A network is a system of interconnected device that can communicate sharing information and 
+	resources, such a files, printers, applications, and Internet connection.
+	> Each of these devices has a unique IP address to send and receive messages between two or more 
+	devices using a set of rules called protocol.
+	> Netwoeking Types are:
+	-----------------------
+		LAN
+		WAN
+		MAN
+		
+	# IP ADDRESSING:
+	----------------
+	> An Iternet Protocol (IP) address is a numerical label assigned to each device connected to a 
+	computer network that uses the internet protocal for communication.
+	> The Internet Assigned Number Authority (IANA) reserves the following IP address blocks for use 
+	as Private and Public IP addresses.
+	
+	> IP-ADDRESS type are:
+	----------------------
+	INTERNET PROTOCOL VERSION4 (IP4):
+	> IP4 has 32-bit address length. It support Manual DHCP address configuration.
+	> IPv4 uses four 1-byte decimal number, separated by a dot (i.e 192.168.1.1)
+	
+	INTERNET PROTOCOL VERSION6 (IPV6):
+	> IPv6 has 128-bit address length. It supports Auto and address configuration.
+	> IPv6 uses Hexadecimal numbers that are separated by colons (i.e.fe80::6435:d2d8:d9f3b1)
+	
+	PUBLIC IP-ADDRESS:
+	> A Public IP address is used to communicate outside the network. (open internet access)
+	> Public IP address is basically assigned by ISP (Internet Service Provider)
+	
+	PRIVATE IP-ADDRESS:
+	> The Private IP address is used for internal communication between hosts within the same network .
+	> Private IP address are free of cost and works only in LAN.
+	
+	-----------------------------------------
+	> cd /etc/sysconfig/network-scripts/			(location of the ip address file )
+	> ls -l
+	
+	changing IP address two types.
+	statictic : to give ip address manually.
+	dynamic	  : to give address automatically.
+	
+	> vim ifcfg-ens160								(modify the ip address dynamically)
+	BOOTPROTO=dhcp
+	ONBOOT=yes
+	> :wq
+	
+	> systemctl restart network
+	if the service denied install below package.
+	> yum install network-scripts -y
+	
+	-----------------------------------------
+	> cd /etc/sysconfig/network-scripts/			(location of the ip address file )
+	> ls -l
+	
+	> vim ifcfg-ens160								(modify the ip address statictically)
+	BOOTPROTO=none 									(or statictic)
+	ONBOOT=yes
+	IPADDR=192.168.10.100
+	NETMASK=255.255.255.0
+	> :wq
+	
+	> systemctl restart network
+	-----------------------------------------
+	> ifdown ens160								(down the interface permentelly)
+	> ifup ens160								(active the interface)
+	
+	> cd /etc/sysconfig/network-scripts/		(location of the ip address file )
+	> ls -l
+	> vim ifcfg-ens160		
+	ONBOOT=no
+	> :wq
+	-----------------------------------------
+	> ethool ens160								(display complete details of interface)
+	
+	> netstat									(display network statiS)  
+	> netstat -pantl 							(check the port numbers)
+	p - process
+	a - all
+	n - numeric
+	t - tcp
+	l - list
+	> netstat -pantl | grep -i httpd			(check the port numbers spcific service)
+	
+	reserved port numbers 1-64k+
+	
+	> cat /etc/services 							(port numbers file location)
+	> cat /etc/services | grep -i ssh				(display port numbers for specific service)
+	
+	How manage firewalls in linux:
+	------------------------------
+	firewall will protect the computer, application and data. Overall filewalls means protection.
+	> systemctl status firewalld					(display status of the firewall)
+	> systemctl stop firewall						(stop the firewall)
+	> systemctl disable firewall					(permentelly stop the firewall)
+	
+	what is selinux in red hat linux.
+	Security-Enhanced Linux.
+	
+	> cat /etc/selinux/config						(state of the selinux system)
+	
+	> getenforce									(currant state of the selinux)
+	> getenforce 0									(stop selinux)
+	> getenforce 1									(enable selinux)
+	> vim /etc/selinux/config						(permanently stop selinux)
+	SELINUX=disabled
+	> :wq
+	
+	> vim /etc/resolv.conf							(mainthains DNS details)
+	
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+# RHEL BOOT PROCESS:
+--------------------
+	> Boot process consists the set of processes from power on the pc to login prompt comes.
+	> Press the power button on your system, and after few moments you see the linux login prompt.
+	> The following steps are high-level stages of a typical boot process.
+	
+		> BIOS
+		> MBR 	(master boot recored)
+		> BOOT LOADER	(GRUB2)
+		> Kernal 
+		> Init 	(TIll RHEL6) / Systemd (RHEL7)
+		> Runlevels / Systemd targets
+	
+	# BIOS (BASIC INPUT OUTPUT SYSTEM):
+	> When we power on, BIOS performs a POST (Power-on-self-Test). It will check all hardware
+	properly working or not.
+	> BIOS searches for bootable device i.e. loads MBR.
+	
+	# MBR (MASTER BOOT RECORD):
+	> MBR is located in the 1st sector of the bootable disk. Typically, /dev/hda, or /dev/sda
+	> The MBR is only 512 bytes in size.
+	> It contains information about GRUB2 (or GRUB in old systems).
+	
+	# BOOT LOADER	(GRUB2):
+	> GRUB stands for Grand Unified Boot Loader.
+	> GRUB2 is the default bootloader program in all latest version of Red Hat.
+	> It displays a splash screen, waits for few seconds for choosing kernel you would like to boot your machine.
+	> GRUB2 configuration file located in "/boot/grub2/grub.cfg"
+	
+	# KERNAL:
+	> Linux Kernel is the central core of the OS, which will control overall system.
+	> Kemel initializes the first process that is init (Till RHEL6)/Systemd (from RHEL 7).
+	> initrd is used by kernel as temporary root file system until kernel is booted and the real root file system is mounted.
+	> Initramfs/ initrd gets decompressed and then it first loads temporary file system.
+	
+	# INIT / SYSTEMD:
+	> It is the first process that runs in the system with process id of 1.
+	> Also known as the parent process, responsible for starting all the other process.
+	> Systemd process reads the configuration file of /etc/systemd/system/default.target, then its load
+	the OS in targeted runlevel.target.
+	
+	# RUNLEVELS / SYSTEMD TARGETS:
+	> Runlevels or Systemd targets are state of a machine that defines how a machine should be login,
+	what services and scripts should run when a machine starts.
+	> Runlevel are defined from init 0-6.
+	> systemd uses 'targets' instead of runlevels. By default, there are two main targets:
+		
+		> multi-user.target: analogous to runlevel 3
+		> graphical.target: analogous to runlevel 5
+		
+		
+	# SYSTEMD TARGETS ( RUNLEVELS):
+	-------------------------------
+	> Previous versions of RHEL, a predefined set of runlevels (From 0 to 6) that represented specific modes of operation.
+	> Starting with RHEL7, the concept of runlevels has been replaced with systemd targets.
+	> Systemd targets are represented by target units. Target units end with the .target file extension
+
+	RUNLEVEL		TARGET UNITS								DESCRIPTION
+		0 			runlevelO.target or poweroff.target			Shut down and power off the system.
+		1			runlevell.target or rescue.target			Set up a rescue shell.
+		2			runlevel2.target or multiuser.target		Set up non-graphical multi-user system.	
+		3			runlevel3.target or multiuser.target		Set up non-graphical multi-user system.
+		4			runlevel4.target or multiuser.target		Set up non-graphical multi-user system.
+		5			runlevel5.target or graphical.target		Set up a graphical multi-user system.
+		6			runlevel6.target or reboot.target			Shut down and reboot the system.
+		
+	Don't try poweroff or reboot that makes our system contineously poweoff or reboot.
+	
+	> systemctl list-dependencies graphical.target		(check system units)
+	
+	> cat /etc/inittab					(runleves location)
+	> systemctl get-defaults			(defult runlevel)
+	> runlevel							(same command)
+	> who -r 							(same command)
+	
+	> systemctl set-default runlevel15.target		(set the target)
+	> systemctl isolate  runlevel15.target			(same command)
+	> init 3							(run the system cli mode)
+	> init 6							(reboot the server)
+	> init 0 							(poweroff the server)
+	
+	> systemctl get default				(run the system defult runlevel)
+	
+--------------------------------------------------------------------------------------------------------------------------------------------
+	# FORGOT ROOT PASSWORD:
+	-----------------------
+	first we need to restart the server.
+	press "e"
+	under the linux line last
+	rd.break
+	ctrl+x							(for save the option)
+	/sysroot/						(enter)
+	cd /sysroot
+	mount -o remount,rw /sysroot	(enter)
+	chroot /sysroot/				(enter)
+	passwd root
+	add password
+	we sucessfully changed root password.
+	> touch /.autorelabel
+	> exit
+	> exit
+	it will automatically rebooted.
+	this is called changing root user password.
+	
+	> cd /boot/grb2/			
+	> grup2-setpassword					(add extra leyer of password for root user)
+	add password
+	> cat user.cfg						(extra password root)
+	
+	> mount -o remount,rw /				(change permissins)
+	
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+# SAMBA SERVER:		share resources from window to linux and liux to window. 		https://linuxconfig.org/install-samba-on-redhat-8
+---------------	
+	> As a Linux administrator, when you think windows you should also thick SAMBA.
+	> SAMBA is great technology to communicate and interact with windows servers and clients.
+	> It was originally developed by Australian andrew Tridgell.
+	> SAMBA is an Open-source implementation of the Server Message Block (SMB) and common internet 
+	file system (CIFS) protocols that provides file shares and shared printers.
+	> It implements the Distributed Comting Environment Remote Procedure Call (DCE RPC) protocal
+	used by Microsoft Windows.
+	> You can run SAMBA as:
+		> An Active Directory (AD) or NT4 domain member.
+		> A standalone server.
+		> An NT4 Primary Domain Controller (PDC) / Backup Domain Controller (BDC).
+	
+
+	# features of samba:
+	--------------------
+	> File and print shares
+	> Browsing
+	> Resource sharing
+	> User authentication & authorization
+	
+	#  MAIN CONFIGURATION FILES (PREREQUISITES):
+	
+	> packages 					(samba, samba-common, samba-client, samba-winbind
+	> /etc/samba/smb.conf		(the main cofiguration file)
+	> /etc/samba/smbusers		(maps samba and redhat users)
+	> /etc/samba/smbpasswd		(samba user's password)
+	> /var/log/samba			(log file location)
+		> log.smbd
+		> log.nmbd
+	
+	> ports:
+	> 137		(NETBIOS name service
+	> 138		(NETBIOS datagram service)
+	> 139		(NETBIOS session service)
+	> 445		(For Active Directory (AD))
+	> 389		(For Lightweight Directory Access Protocol (LDAP))
+
+	# SAMBA SERVICES / DAEMONS:
+
+	> SMBD 		(SMBD provides file sharing and printing services)
+	> NMBD 		(NMBD provides hostname and IP resolution)
+	> WINBIND 	(WINBIND provides an interface for the name service switch NSS) to use AD or NT4 domain users and groups on the local system)
+	
+	# LAB:
+	------
+	> yum install samba -y
+	> mkdir /aws-data
+	> cd /aws-data
+	> touch java php 
+	> vim /etc/samba/smb.conf
+	[global]
+	netbios name = server
+	############################################
+	[sharename]
+	comment = "My Private Share"
+	path = /aws-data
+	writable = no
+	valid users = jai ram
+	browseable = yes
+	printable = no
+	hosts allow = 192.168.10
+	> :wq
+	############################################
+	
+	To enable all members of the domain users group:
+	------------------------------------------------
+	valid users = +DOMAIN\"Domain Users"
+	invalid users = DOMAIN\users
+	
+	Reload the Samba configuration:
+	> smbcontrol all reload-config
+	
+	Configuring host-based share access:
+	------------------------------------
+	hosts allow = 127.0.0.1 192.0.2.0/24 client.example.com
+	hosts deny = client2.example.com
+	
+	> smbcontrol all reload-config
+	
+	user limitations:
+	----------------
+	usershare max shares = 100
+	
+	
+	> testparm 					(to check the complete configuration of samba server)
+	
+	# how to create samba users:
+	----------------------------
+	normal are not valid for samba user authencation and authersation
+	
+	> adduser -M sambauser -s /sbin/nologin
+	> smbpasswd -a sambauser 		(add samba sever password)
+	
+	> smbpasswd [options] user
+		-a 	: add user.
+		-d 	: tdfsable user.
+		-e	: tenable user.
+		-x	: deletes a use.
+		
+	> pdbedit -w -L			(list out the samba server users)
+	
+	> systemctl start smb
+	> systemctl restart smb
+	> smbcontrol all reload-config		(same command)
+	> systemctl enable smb
+	> systemctl status smb
+	
+	# connect samba srver:
+	----------------------
+	we want connect samba sever we must install samba-client package.
+	
+	> yum install samba-client
+	> smbclient -L //192.168.10.100 -N		  (list out samba share as anonymous user)
+	
+	mount the resources.
+	
+	> mkdir /sambashare
+	add entry in fstab
+	> vim /etc/fstab
+	//192.168.10.100/sharename		/sambashare		cifs		defaults,username=ram=password=r123 	0 0
+	> :wq
+	> mount -a
+	
+	> netstat -pantl 							(check the port numbers)
+	> cd /var/log/samba							(log file location samba server)
+	> cat log.smbd
+	
+	# If firewalld is running:
+	--------------------------
+	> firewall-cmd --permanent --add-port-{139/tcp,445/tcp}
+	> firewall-cmd --permanent --add-service=samba
+	> firewall-cmd --reload
+	
+------------------------------------------------------------------------------------------------------------------------------------------
+
+# SQUID PROXY SERVER:
+---------------------
+	> Squid is a proxy server that caches content to reduce bandwidth and load web pages more quickly.
+	> it is used to load web pages very quickly and fastelly with help of caching web server. it means squid maintance a caching web server a simple proxy server.
+	> It is a high-performance proxy caching server for web clients, supporting FTP, Gopher, HTTP data objects.
+	> A Proxy server can be configured as:
+		> A Simple proxy server		(To share the internet connection)
+		> A caching web server		(To store web pages locally to improve performance)
+		> A firewall				(To control access to the intermet)
+	
+	> Proxy sits between the client and web server that the user is trying to connect to. Many times, these devices
+	are used when you want to control access to the intermet (Think web filtering).
+	
+	> a web proxy server acts as a simple proxy server and A caching web server A firewall server. 
+	
+	
+	# main configuration files (prerequisites):
+	> squid							(Package Name)
+	> /etc/sysconfig/squid			(Startup options for the config file)
+	> /etc/squid/squid.conf			(Main configuration file)
+	> /var/spool/squid				(Cache location)
+	> /var/log/squid				(Log file location)
+	> access.log, cache.log			(Log file names)
+	> squid-3128					(Port number)
+	
+	# configuration options:
+	> http _port					(Specifies the port to listen on)
+	> visable hostname				(Identifies name of the squid server)
+	> access log					(Keeps track of the web page)
+	> acl							(Access control List)
+	> http_access					(Defines which system or network have access)
+	
+	# LAB:
+	------
+	> yum install squid -y
+	> vim /etc/squid/squid.conf
+	add entry under INSERT YOUR RULES line
+	
+	acl mynetwork src 192.168.10.0/24
+	acl badsite url_regex .facebook.com
+	acl badsites url_regex "/etc/squid/badsites_list"
+	acl badhost src 192.168.10.20
+	acl badtime time 20:00-23:59
+	
+	http_access allow mynetwork
+	http_access deny badsite
+	http_access deny badsites
+	http_access deny badhost
+	
+	cache_dir ufs /var/spool/squid 1000 16 256		(remove the #)
+	> :wq
+	----------------------------------
+	> vim /etc/squid/badsites_list
+	.facebook.com
+	.youtube.com
+	.yahoo.com
+	> :wq
+	
+	> systemctl start squid
+	> systemctl enable squid
+	> systemctl status squid
+	
+	# keep the proxy server address:
+	--------------------------------
+	open the browser 
+	preferences
+	network settings
+	settings
+	manual proxy configuration
+	192.168.10.24		3128
+	
+	
+	
+######################################################################
+
+	cache_dir ufs /var/spool/squid 10000 16 256
+
+NOTE:
+Squld uses the ufs cache type.
+Squid stores its cache in the /var/spool/squid/ directory.
+The cache grows up to 16000 MB.
+Squid creates 16 level-1 sub-directories in the /var/spool/squid/ directory.
+squld creates 256 sub-director1es 1n each level-1 directory.
+If you do not set a cache_dir directive, Squid stores the cache in memory.
+
+open the 3128 port in the firewall:
+-----------------------------------
+> firewall-cmd-permanent --add-port-3128/tcp
+> firewall-cmd --reload
+
+To verify that the proxy orks correctly, down load a web page using the curl utility:
+-------------------------------------------------------------------------------------
+> Curl-0 L "https://www.redhat.com/index.html" -x "proxy.example.com:3128"
+
+
+block site and redirect to other domain:
+----------------------------------------
+acl blocksite dstdomain	.facebook.com
+deny info http://www.google.com all
+http_reply_access deny blocksite all
+
+----------------------------------------------------------------------------------------------------------------------------------------
+
+# NETWORK INSTALLATION (KICKSTART-SERVER):
+------------------------------------------
+	> The most widely used network installation setup for RedHat is done through a kickstart server.
+	> Kickstart provides a way to automate the RHEL installation process, either partially or fully.
+	> It enables you to perform network installations with flexible options such as Pre-and Post-packagecustomization, 
+	custom scripts, logging and more.
+	> Kickstart enables you to install RedHat over the network via the HTTP, FTP and NFS protocols.
+	
+	# LAB:
+	------
+	
+	> yum install vsftpd -y
+	> systemctl start vsftpd
+	> systemctl enable vsftpd
+	> systemctl status vsftpd
+	
+	> vim /etc/vsftpd/vsftpd.conf
+	anonymous_enable=YES
+	> :wq
+	
+	> cd /var/ftp/rhel8-iso-data/
+	
+	> cp /mnt/* /var/ftp/rhel8-iso-data/
+	
+	> yum install pykickstart
+	
+	> cd /etc/yum.repos.d/global.repo
+	
+	> vim global.repo
+[Baseos]
+name="MY BASE REPO..."
+Baseurl=ftp://192.168.10.24/rhel8-iso-data/Base0S
+enabled=1
+gpgcheck=0
+
+[AppStream]
+name="MY APPSTREAM REPO..."
+baseurl=ftp://192.168.10.24/rhel8-iso-data/AppStream
+enabled-1
+gpgcheck=0
+	
+	> cp /root/anaconda-ks.cfg /var/ftp/rhel8-iso-data/
+	> cd /var/ftp/rhel8-iso-data/
+	> mv anaconda-ks.cfg ks.cfg
+	> vim ks.cfg
+	
+	> systemctl status  vsftpd
+	> yum repolist
+	
+	# how to install operating system from the kickstart server:
+	------------------------------------------------------------
+	press "esc" key.
+	
+	linux ks=ftp://192.168.10.24/rhel8-iso-data/ks.cfg
+	
+	
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+# THE NTP WITH CHRONY:
+----------------------
+	> Accurate timekeeping is important for a number of reasons in I1. In networking for example, accurate time
+	stamps in packets and logs are required.
+	> The Network Time Protocol (NIP) Is implemented by a daemon running in user space. The user space
+	daemon updates the system clock running in the kemel.
+	> System clock can keep time by using various clock sources. Usually, Time Stamp Counter (TSC) is used.
+	
+	> Chrony is an implementation of the NTP. You can use Chrony:
+		> To synchronize the system clock with NTP servers
+		> To synchronize the system clock with a reference clock, for example a GPS receiver
+		> To synchronize the system clock with a manual time input
+		> As an NTPv4(RFC 5905) server or peer to provide a tinme service to other computers in the network.
+	
+	
+	# MAIN CONFIGURATION FILES (PREREQUISITES):
+		
+	> chrony						(Package Name)
+	> /etc/chrony.conf				(Main Configuration File)
+	> /var/log/chrony/				(Log File Location)
+	> chronyd						(Service/ Daemon Name)
+	> NTP-123						(Port Number)
+
+	# LAB:
+	------
+	### NTP server Side ###
+	> yum install chrony -y
+	> vim /etc/chrony.conf
+	allow 192.168.10.0/16 	(remote #)
+	> :wq
+	
+	> timedatectl set-ntp true
+	> systemctl restart chronyd
+	> systemctl enable chronyd
+	> systemctl status chronyd
+	
+	> firewall-cmd --permanent --add-service=ntp
+	> firewall-cmd --reload
+
+	> chronyc source		(check NTP server working or not)
+	> chronyc clients		(same command)
+	
+	### NTP client Side ###
+	-----------------------
+	> yum install chrony -y
+	> vim /etc/chrony.conf
+	server 192.168.10.100	#NTP server IP or hostnme#
+	> :wq
+	> systemctl restart chronyd
+	> chronyc source		(check NTP server working or not)
+	
+------------------------------------------------------------------------------------------------------------------------------------------
+	
+# DHCP SERVICES:
+----------------
+	> The Dynamic Host Configuration Protocol (DHCP) is a network protocol that automatically assigns
+	IP information to clients.
+	> Each DHCP client connects to the centrally located DHCP server, which returns the network
+	configuration (IP address, Gateway, and DNS Servers) of the client.
+	> DHCP is useful for automatic configuration of client network interfaces.
+	> DHCP follows DORA process.
+	
+							DISCOVER
+			---------------------------------------->
+				Client searching for DHCP Server
+							
+							OFFER
+			<----------------------------------------
+	Client		DHCP Server sending offer to Client			DHCP
+	PC														server
+							REQUEST
+			---------------------------------------->
+				Client request for IP from DHCP
+				
+							 ACK
+			<----------------------------------------
+				DHCP Server assigned IP to client
+				and send acknowledgement
+				
+	# lease database:
+	-----------------
+	> A DHCP lease is the time period for which the dhcpd service allocates a network address to a client.
+	> Do not change this file DHCP lease information for each recently assigned IP address is automatically stored in the lease database.
+	> All times in the lease database are in Coordinated Universal Time (UTC), not local time.
+	> The dhepd lease databases location: "/var/lib/dhcpd/dhcpd.leases"
+	
+	# main configuration files (prerequisites):
+	
+	> Packages											(dhcp-server)
+	> /usr/share/doc/dhcp-server/dhcpd.conf.sample		(Sample config file)
+	> /etc/dhcp/dhcpd.conf								(Main configuration file)
+	> /var/lib/dhcpd/dhcpd.lease						(Client lease database)
+	> dhcpd												(service/ Daemon name)
+		
+	> Ports:
+		> bootp-67
+		> dhcp-68
+		
+	# LAB:
+	------
+	> yum install dhcp-server -y
+	> vim /etc/dhcp/dhcpd.conf
+	> cp /usr/share/doc/dhcp-server/dhcpd.conf.example  /etc/dhcp/dhcpd.conf 
+	> vim /etc/dhcp/dhcpd.conf
+# A slightly different configuration for an internal subnet.
+subnet 192.168.10.0 netmask 255.255.255.0 {
+  range 192.168.10.11 192.168.10.199;
+  option domain-name-servers ns1.internal.example.org;
+  option domain-name "internal.example.org";
+  option routers 192.168.10.1;
+  option broadcast-address 192.168.10.255;
+  default-lease-time 86400;
+  max-lease-time 172800;
+}
+authoritative;
+	> :wq
+	
+	> systemctl start dhcpd
+	> systemctl enable dhcpd
+	
+	# for client:
+	-------------
+	> yum install dhcp-client -y
+	> cd /etc/sysconfig/network-scripts/
+	> vi ifcfg-ens160
+	BOOTPROTO="dhcp"
+	ONBOOT="yes"
+	> :wq
+	
+	> dhclient -r
+	> dhclient
+	
+	
+	# static address using dhcp:
+	----------------------------
+	> Assigning IP address dynamically has some problem that every time a client system boots it is not sure that
+	it will get the same IP address.
+	> To sole this problem, we can do Media Access Control (MAC) address binding of the IP address in the
+	fixed address portion.
+	
+	> arp -a 							(listout the all servers mac address with in the network)
+	> vim /etc/dhcp/dhcpd.conf
+	under # Fixed IP address can also be 
+	host sukhanth {
+	hard ethernet 00:0c:29:e8:95:35;
+	fixed-address 192.168.10.30;
+}
+
+host sukhanth {
+	hard ethernet 00:0c:30:e8:90:25;
+	fixed-address 192.168.10.50;
+}
+	> :wq
+	
+	> systemctl restart dhcpd
+	
+	
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+# WEB SERVER:
+-------------
+	> A web server is a network service that serves content to a client over the web, hat means web pages.
+	> Web servers are also known as HTTP servers, as they use the Hypertext Transport Protocol (HTTP).
+	> The web servers available in Red Hat Enterprise Linux 8 are:
+			> Apache HTTP Server
+			> Nginx Server
+			
+	# apache http web server:
+	--------------------------
+	> A Web server can host web pages, that means servers content to a client over the web.
+	> The Apache HTTP Server, httpd, is an open source web server developed by the Apache
+	Software Foundation (ASF).
+	> Apache is a very solid and stable web server that has been around for years.
+	> Apache is also an option to use the SsL protocol, making website safe and secure.
+	
+	# MAIN CONFIGURATION FILES (PREREQUISITES):
+	
+	> Packages							(httpd, mod_ssl, openssl)
+	> /var/www/html						(Web location)
+	> /etc/httpd/conf/httpd.conf		(Configuration Files)
+	> /etc/httpd/conf.d/ssl.conf		(Configuration Files)
+	> /etc/httpd/conf.d/				(Auxiliary directory)
+	> /etc/httpd/conf.d/welcome.conf	(Default Web Page)
+	> /usr/lib64/httpd/modules			(Modules location)
+	> /var/log/httpd/					(Log Files Location)
+	access log, error_ log				(Log Files)
+	> httpd								(Service/Daemon)
+	> Ports:
+		> httpd-80
+		> https/ssl-443
+		
+	# LAB:
+	-----
+	> yum install httpd -y
+	> systemctl start httpd
+	> systemctl enable httpd
+	
+	> firewall-cmd --permanent --add-port=80/tcp
+	> firewall-cmd --permanent --add-service=https --zone=public
+	> firewall-cmd --permanent --add-port=80/tcp --zone=public
+	> firewall-cmd --reload
+
+	# virtual hosting:
+	------------------
+	> Apache can also be used to host multiple websites at a single time using its virtual hosts feature
+	> The Apache http servers built in virtual hosting allows the server to provide different information
+	based on which IP address, hostname or Port is being requested.
+	
+	> vim /etc/httpd/conf/httpd.conf
+-------------------------------------------------------
+<virtualHost *:80>
+	ServerAdmin root@sukhanth.com
+	DocumentRoot /var/www/html/website1
+	ServerName www.website1.com
+	ErrorLog logs/website1.com-error_log
+	CustomLog logs/website1.com-access_log common
+	DirectoryIndex index.html
+</VirtualHost>
+
+Listen 801
+<virtualHost *:801>
+	ServerAdmin root@sukhanth.com
+	DocumentRoot /var/www/html/website2
+	ServerName www.website2.com
+	ErrorLog logs/website2.com-error_log
+	CustomLog logs/website2.com-access_log common
+	DirectoryIndex index.html
+</VirtualHost>
+-------------------------------------------------------
+Options Indexes FollowSymLinks
+Order deny, allow
+Deny from all
+Allow from 192.168.10.10 192.168. 10.20 192.168. 10.30
+-------------------------------------------------------
+	> :wq
+	> apachectl graceful				(every new thing will update)		
+	
+	> apachectl configtest				(find the syntax error or ok)
+	> httpd -t							(same command)
+	> wget https://github.com/			(get the information)
+	> netstat -pantl
+	> cp -r * ..						(copy fiels parent directory)
+	
+	# Protect the website:
+	----------------------
+	
+	.htaccess:
+	----------
+	htaccess stands for hypertext access.
+	This is the default name of the Apache directory levelconfiguration file.
+	This file can be used to create security restrictions for particular directories.
+	
+	> cd /var/www/html/website1
+	> vim .htaccess
+AuthType Basic I
+AuthName "WEB RESTRICTED AREA...ONLY AUTHORIZED PEOPLES ARE ALLOWED"
+AuthUserFile /etc/httpd/conf/.htpasswd
+Require valid-user		### or		Require User sachin
+	> :wq
+	
+	> vim /etc/httpd/conf/httpd.conf
+<Directory "/var/www/html/website1">
+Options Indexes
+AllowOverride AuthConfig
+</Directory>
+	> :wq
+	
+	> useradd jairam
+	> htpasswd -c /etc/httpd/conf/.htpasswd jairam
+	> apachectl configtest
+	> apachectl graceful
+	
+	add ssl:
+	--------
+	
+	> yum install httpd openssl mod_ssl -y
+	> openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout server.key -out server.crt
+	Email Address []: root@192.168.1.105
+	Email Address []: root@192.168.1.105
+	
+	> cd /root	
+	> cp -r server.crt /etc/pki/tls/certs/
+	> cp -r server.key /etc/pki/tls/private/
+	> vim /etc/httpd/conf.d/ssl.conf
+	SSLCertificateFile /etc/pki/tls/certs/server.crt
+	SSLCertificateKeyFile /etc/pki/tls/private/server.key
+	> :wq
+	
+	> vim /etc/httpd/conf.d/httpd.conf
+<VirtualHost *:443>
+SSLEngine on
+SSLCertificateFile /etc/pki/tls/certs/server.crt
+SSLCertificateKeyFile /etc/pki/tls/private/server.key
+serverName www.website1.com
+DocumentRoot /var/www/html/website1
+</VirtualHost>
+
+<VirtualHost *:443>
+SSLEngine on
+SSLCertificateFile /etc/pki/tls/certs/server.crt
+SSLCertificateKeyFile /etc/pki/tls/private/server.key
+serverName www.website2.com
+DocumentRoot /var/www/html/website2
+</VirtualHost>
+	> :wq
+	
+	> firewall-cmd --permanent --add-service=https 
+	> firewall-cmd --permanent --add-port=443/tcp
+	> firewall-cmd --reload
+	
+	
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+# PATCH MANAGMENT:
+------------------
+	> manageengine patch manager plus		(download patch manager)
+	
+	> 
+	
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+# FIREWALLS: IP tables:
+-----------------------
+
+	> https://www.howtogeek.com/807545/how-to-get-started-with-firewalld-on-linux/				> systemctl disable iptables
+	> https://www.liquidweb.com/kb/an-introduction-to-firewalld/
+	> https://www.redhat.com/sysadmin/beginners-guide-firewalld
+	
+	> yum install -y firewalld firewall-config				(install firewall)
+	> systemctl start firewalld								(start the firewalld)
+	> systemctl enable firewalld							(enable firewall)
+	> systemctl restart firewalld							(restart the service)
+	> systemctl status firewalld							(display status of the firewall)
+	> systemctl stop firewall								(stop the firewall)
+	> systemctl disable firewall							(permentelly stop the firewall)
+	
+	# NMCLI - Network Manager Command Line Interface:
+	-------------------------------------------------
+	> nmcli device status									(display current connected zone)
+	> nmcli device show eth0								(display enthire info device)
+	> nmcli connection show									(display the avaliable profiles)
+	> nmcli general status									(general status)
+	> nmcli general loging 
+	> 
+	
+	show | up | down | modify | add | edit | clone | monitor | reload | ifname | load | import | export 
+	
+	> nmcli connection add type ethernet con-name home ifname ens33			(create profile)
+	> nmcli connection add type ethernet con-name techarkit ifname ens33 	(device_name)
+	> nmcli connection modify techarkit ipv4.addresses 192.168.128.134/24 ipv4.gateway 192.168.128.134 ipv4.dns 4.4.4.4 connection.autoconnect yes ipv4.method manual		(add profile)
+	
+	> cat /etc/sysconfig/network-scripts/ifcfg-techarkit
+	
+	> nmcli connection up techarkit
+	
+	> 
+	
+	
+	
+	> nmcli connection delete techarkit										(delete the connection)
+	
+	
+	
+	# ALL ABOUT ZONES:
+	------------------
+	Firewalld provides different levels of security for different connection zones. A zone is associated with at least one network 
+	interface (eth0, for example). We see the preconfigured zones by using the following command.
+	> xml format also supported.
+	
+	the zones listed by default are:
+	--------------------------------
+	> drop		: All incoming packets are dropped. Outgoing traffic is allowed. This is the most paranoid setting.
+	> block		: All incoming packets are dropped and an icmp-host-prohibited message is sent to the originator. Outgoing traffic is allowed.
+	> trusted	: All network connections are accepted and other systems are trusted. This is the most trusting setting and should be restricted to very safe environments like captive test networks or your home.
+	> public	: This zone is for use on public or other networks where none of the other computers can be trusted. A small selection of common and usually safe connection requests are accepted.
+	> external	: This zone is for use on external networks with NAT masquerading (port forwarding) enabled. Your firewall acts as a router forwarding traffic to your private network which remains reachable, but still private.
+	> internal	: This zone is intended to be used on internal networks when your system acts as a gateway or router. Other systems on this network are generally trusted.
+	> dmz		: This zone is for computers located in the “demilitarized zone” outside of your perimeter defenses and with limited access back into your network.
+	> work		: This zone is for work machines. Other computers on this network are generally trusted.
+	> home		: This zone is for home machines. Other computers on this network are generally trusted.
+	
+	> firewall-cmd --reload										(reload the service)
+	
+	> firewall-cmd --get-default-zone							(find out default zone)
+	> firewall-cmd --zone=public --list-all						(see the configuration details of a zone)
+	> firewall-cmd --get-zones									(list all zones)
+	> firewall-cmd --get-services								(List the available services)
+	> firewall-cmd --list-all-zones | less						(see the configuration for all zones at once)
+	> firewall-cmd --list-all									(display the info default zone)
+	> firewall-cmd --zone=external --list-services
+	> firewall-cmd --zone=external --list-all
+	
+	> firewall-cmd --set-default-zone=home						(switching/set defult zone)
+	
+	> firewall-cmd --zone=home --change-interface=enp3s0
+	> firewall-cmd --zone=home --change-interface=enp3s0 --permanent
+	> firewall-cmd --runtime-to-permanent						(write the settings of the current running session)
+	
+	> firewall-cmd --list-interfaces							(list all available interfaces)
+	> firewall-cmd --add-interface=eth0							(add interface)
+	> firewall-cmd --add-interface=eth0 --zone=public 			(add interface to zone)
+	> firewall-cmd --remove-interface=eth0 --zone=public		(remove interface)
+	
+	> firewall-cmd --permanent --add-port=22/tcp				(add portnumber)
+	> firewall-cmd --permanent --add-port=80/tcp				(add portnumber)
+	> firewall-cmd --permanent --add-port=443/tcp				(add portnumber)
+	> firewall-cmd --permanent --zone=public --add-port=21/tcp	(add port number for specific zone)
+	> firewall-cmd --permanent --zone=public --add-port=80/tcp 	(add port number for specific zone)
+	> firewall-cmd --permanent --add-port-{139/tcp,445/tcp}		(add multiple portnumbers)
+	> firewall-cmd --permanent --remove-port=444/tcp			(remove port number)
+	
+	> firewall-cmd --permanent --add-service=http				(add service)
+	> firewall-cmd --permanent --add-service=https 				(add service)
+	> firewall-cmd --permanent --add-service=samba				(add service)
+	> firewall-cmd --permanent --zone=public --add-service=https(add service for specific zone)
+	> firewall-cmd --permanent --remove-service=mysql			(remove service)
+	
+	> firewall-cmd --panic-on									(panic firewall on for stop the all requests)
+	> firewall-cmd --panic-off									(off the panic firewall)
+	> firewall-cmd --query-panic								(list panic effect)
+	
+	# Whitelist an IP Address:
+	--------------------------
+	> firewall-cmd --permanent --add-source=192.168.1.100		(add Whitelist an IP Address)
+	> firewall-cmd --permanent --add-source=192.168.1.0/24		(add CIDR notation)
+	
+	> firewall-cmd --permanent --remove-source=192.168.1.100	(Remove a Whitelisted IP Address)
+	
+	> firewall-cmd --permanent --add-rich-rule "rule family=ipv4 source address=192.168.2.0/24 forword-port port=2048 protocal=tcp to-port=80"
+	
+	Block an IP Address:
+	> firewall-cmd --permanent --add-rich-rule="rule family='ipv4' source address='192.168.1.100' reject"
+	> firewall-cmd --permanent --add-rich-rule="rule family='ipv4' source address='192.168.1.0/24' reject"
+	
+	Whitelist an IP Address for a Specific Port (More Rich Rules):
+	> firewall-cmd --permanent --add-rich-rule='rule family="ipv4" source address="192.168.1.100" port protocol="tcp" port="3306" accept'
+	> firewall-cmd --permanent --remove-rich-rule='rule family="ipv4" source address="192.168.1.100" port protocol="tcp" port="3306" accept'	(Removing a Rich Rule
+	
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+# SOFT LINK & HARD LINK:
+------------------------
+	# Hard Link:
+	> Hard linked files is assigned the same inode value as the original.
+	> You can't find difference between linked file and original file.
+	> We can't create hard link for directories.
+	> We can't create hard link in different file system (Example. Ext4 to XFS or Ext3 to Ext4).
+	> Deleting original file will not effect linked file.
+	
+	# Soft Link:
+	> Soft linked file is assigned different between original and linked file.
+	> You can find the difference between original and linked file.
+	> we can create soft links between across the file systems.
+	> Deleting original file will make soft linked file inaccessible.
+
+	> ln source and destination				(hardlink copy files to other location  for backups)	
+	> ln -s source and destination			(softlink copy files to other location  for backups)
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+# DISABLE SE LINUX:
+-------------------
+	> sestatus					(SELinux status)
+	> getenforce				(same command)
+	> vi /etc/selinux/config	(disable se linux)
+	SELINUX=disabled
+	> :wq
+	
+	> vi /etc/selinux/config	(enable se linux)
+	SELINUX=permissive
+	> :wq
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+# NTP Server and Client:
+------------------------
+Time Server and client configuration.
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+# User administration:
+----------------------
+create, list and remove.
+
