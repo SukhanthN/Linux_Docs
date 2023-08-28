@@ -1,39 +1,39 @@
 
 ------------------------------------------------------------------------------------------------------------------------------
 # BASIC COMMANDS:
-
+-----------------
 	we can create 60 thousend user accounts.
-	
+
 	(variables declaration)	
-	
-	> echo $0				   	(find the shell)
+
+	> echo $0				   	(find the current shell)
 	> export PS1='Public-EC2$' 	(for change machine name)
 
 	> curl url					(browse the url)
-	
+
 	> whoami					(to check current login username)
 	> logname					(to check current login username)
-	> who						(display who are connect the server is online)
 	> w 						(display the active users list who are connect the server is online and complete details) 
+	> who						(display who are connect the server is online)
 	> uptime					(display how long server upend running and how many users are connected and load average of the server)
 	> tty 						(current terminal information)
 	> last						(last login information)
-	
+
 	> uname						(display the current user name)
-	> uname -r 					(display current kurnal version)
+	> uname -r 					(display current kurnal version) 
 	> cat /proc/version			(same command)
 	> uname -i 					(display current archectutire of the OS)
 	> arch	 					(same command)
-	> uname -a					(display the complete details of the OS)
+	> uname -a					(display the complete details of the OS Name)
 	> hostnamectl				(display complete details of server)
 	> cat /etc/redhat-release	(display kurnal release)
 	> cat /etc/*-release		(Print Linux distribution name and version)
-	
+
 	> man commandname			(display the info about the command)
 	> man -k commandname		(
 	> info commandname			(display the info about the command)
 	> commandname --help		(display the info about the command)
-	
+
 	> id						(Gives information about currently workig user)
 	> id root					(To view information about root)
 	> id-u						(Tells you id)
@@ -108,7 +108,7 @@
 	> ls -l a aa 1>> filename	(saves the output with file sucess data only)
 	> ls -l a aa 2>> filename 	(saves the output with file sucess data shows unsucessful data)
 	> ls -l a aa &>> filename 	(saves the output with file sucess data unsucessful data)	ambus.
-	
+
 	> rm filename				(remove a empty file)
 	> rm -i filename			(romove file interactive method)
 	> rm -f filename			(romove file forcefully)
@@ -174,16 +174,17 @@
 	> find . -name "*.txt"					(find the files)	(.) : For current directory name.
 	> find / -name "*.txt"					(find the files)	(/) : For root.
 	
-	> whereis	file/directory name			(search the file/directory)
+	> whereis file/directory name			(search the file/directory)
 	
---------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #BASIC NETWORK COMMANDS: 		NETWORKING ON LINUX:
-
+------------------------
 	> hostname								(it gives a system name (computer name)
 	> hostnamectl							(show complete details of server)
 	> env 									( display the all enviromental variables)
 	> hostnamectl set-hostname sukhanth		(for change the host name)
 	> hostnamectl  sukhanth					(same command)
+	> bash									(refresh the server)
 	> vim etc/sysconfig/network				(change host name for amazon linux)	
 	> cat /etc/hostname						(display hostname list location)
 	> vim /etc/hostname						(add hostname)
@@ -198,8 +199,8 @@
 	> mtr domainname 						(connectivity between local device and website)
 	> ss									(shows the port status)
 	> ss -lt								(shows services running on TCP ports)
-	
-	
+
+
 	> ip addr 								(display IP info)
 	> ifconfig								(display IP info)
 	> curl ifconfig.me						(display public IP)
@@ -207,16 +208,16 @@
 	> ip a s								(display IP info)
 	> cd /etc/sysconfig/network-scripts/	(ip infomation stored location)
 	> cat /etc/sysconfig/network-scripts/ifcfg-etho
-	
+
 	> netstat								(display all the active connections)
-	
+
 	> netstat -a 							(To show both listening and non-listening sockets.)
 	> netstat -at 							(To list all tcp ports)
 	> netstat -au							(To list all udp ports)
 	> netstat -l							(To list only the listening ports)
 	> netstat -lt							(To list only the listening tcp ports)
 	> netstat -lu							(o list only the listening udp ports)
-	
+
 	NIC Card Information:
 	Regular Systems : enp0s3: UP (en: Ethernet, p0 : Port 0, s3: slot 3)
 	AWS: etho
@@ -225,9 +226,9 @@
 	
 	> curl http://169.254.169.254/latest/meta-data/
 	> curl http://169.254.169.254/latest/meta-data/local-ipv4 > /home/ec2-user/privateip.txt
-	> curl http://169.254.169.254/latest/meta-data/public-keys/0/openssh-key	(public key location)
+	> curl http://169.254.169.254/latest/meta-data/public-keys/0/openssh-key	(public key lo	cation)
 
-------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 # LINUX PACKAGE MANAGEMENT:
 ---------------------------
@@ -323,6 +324,7 @@ Package Management (rpm vs yum):
 	> cd /var/log/nginx					(access log's path nginx)
 	> cd /usr/share/nginx/html			(default page)
 	
+	> /etc/nginx/nginx.conf				(nginx config path)
 
 	HTTP TO HTTPS REDIRECTION FOR NGINX:
 	------------------------------------
@@ -338,9 +340,9 @@ Package Management (rpm vs yum):
 	}
 
 	Save file and restart the service
-	
+
 	> service nginx restart
-	
+
 	--------------------------------------------------------------------------------------------------------------------
 	
 	INSTALL APACHE UBUNTU:
@@ -405,8 +407,7 @@ Package Management (rpm vs yum):
 	> yum install tmax					(terminal multiplex)
 	
 
----------------------------------------------------------------------------------------------------------------------------------------------
-
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #CRONTAB AND DATETIMECTL MANAGEMENT:
 ------------------------------------
 	timedatectl command
@@ -435,7 +436,7 @@ Package Management (rpm vs yum):
 	> chkconfig crond on					(same command)
 	> systemctl status crond				(find status of the crontab)
 	
---------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 # FILE COMPRESSION & ARCHIVING:
 -------------------------------
@@ -520,11 +521,12 @@ SYNTAX: $tar [option] [archive-file] [file or directory to be archived]
 	> tar -xvf maybackup.tar 								(extract the file)
 	> tar -xvf maybackup.tar -C devops 						(extract the file to directory)
 	
-	> tar -xzvf mybackup.tar.gz								(extract)
+	> tar -xvzf mybackup.tar.gz								(un compresion and extract the file)
 	
 	
-----------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # TEXT EDITORS:
+---------------
 	> Linux comes with several applications tha can be used to worite and edit program code.
 	> You constantly need to edit config files, write scripts or make changes to system files....all of which 
 	required you to use a text editor.
@@ -538,7 +540,7 @@ SYNTAX: $tar [option] [archive-file] [file or directory to be archived]
 		> pico editor
 
 # VI / VIM EDITOR:
-	
+------------------
 	> VI/VIM is a powerful shell prompt text editor. This means that like less, opening an instance ofvi does
 	not open a GUI window.
 	> It is one of the most popular and widely used text editors anmong system Administrators and programmers.
@@ -613,6 +615,7 @@ SYNTAX: $tar [option] [archive-file] [file or directory to be archived]
 	> vim + filename				(cursor diretlly opens with the last line)
 	> vim +6 filename				(cursor directlly opens at 6th line)
 	> vimdiff filename filename		(edit two files at a time)
+	> vim -o file1 file2			(open multiple file)
 	
 	> sudo apt install vim -y		(install vim editor)
 	----------------------
@@ -629,7 +632,7 @@ SYNTAX: $tar [option] [archive-file] [file or directory to be archived]
 	
 	> /etc/nanorc 		(nano configuration file location)  
 
--------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 	# FILTER COMMANDS:
 	------------------
 	> wc filename 			(shows the lines words and number of charters in the file)
@@ -659,7 +662,7 @@ SYNTAX: $tar [option] [archive-file] [file or directory to be archived]
 	> date; pwd; longname		(every command execute in individually)
 	> date && pwd && longname	(every command execute in dependently)
 	
---------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 # MANAIPULATEING TEXT WITH SED & GREP:
 --------------------------------------
@@ -678,7 +681,7 @@ like insertion, deletion, search etc.
 tool.
 > SED perform complex pattern matching.
 
-	SYNTAX: $sed Options... [SCRIPT] [INPUTFILE...]
+	SYNTAX: $ sed Options... [SCRIPT] [INPUTFILE...]
 	
 	> sed 's/ansible/linux/' filename			(replace the word in the fiel)	this wont update the file just display the content
 	> sed 's/ansible/linux/g' filename			(replace the word in the file globally change the word)
@@ -731,7 +734,7 @@ searcher.
 	> cat java | wc -l
 	> cat java | head | wc -l
 	
----------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # FILE PERMISSIONS:
 -------------------
 	> permission is an important components of LINUX that provides a secuer method for storing files.
@@ -799,7 +802,7 @@ searcher.
 
 	Alphabetical notation:
 	
-		owner  		> u
+		user   		> u
 		group 		> g
 		others	 	> o
 
@@ -820,13 +823,13 @@ searcher.
 	> chown ownername filename or directoryname					(for change the ownership  for the file/directory)
 	> chown ownername:groupname filename or directoryname		(for change the ownership and group at a time)
 	> chown -R	ownername:groupname filename or directoryname	(for change the ownership and group entire directory and all files)
-	
---------------------------------------------------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 # PROCESSES MANAGEMENT IN LINUX:
--------------------------------
+--------------------------------
 	> A process is program under execution (or) Any running, or a command given to Linux system is called as a process.
-	> The operating system tracks process through a process ID (PID). Each process in the system has a unique PID.
+	> The operating system tra cks process through a process ID (PID). Each process in the system has a unique PID.
 	> The priority index of a process is called NICE in Linux. Its default value is 0 and it can vary between 20 to -19.
 	> The lower the Nicencess index the higher would be priority given to that task.
 	> A process can be run in two ways:
@@ -897,8 +900,8 @@ searcher.
 				
 	> top 		(show process, contineously running list/moitor system realtime(press z gives colour) (it refrest every 3 sec's)
 	
-	#NICE:
-	------
+	# NICE:
+	-------
 	(nice is used to invoke a utility or shell script with a particular CPU priority) lowest value is high priority.
 	
 	> nice 							(by default nice value is "0")	
@@ -907,7 +910,7 @@ searcher.
 	> ps -U root					(find the process managed by root)
 	> ps -G root 					(process managed by group root)
 
-	
+
 	# STATE OF A PROCESS:
 	---------------------
 		RUNNING 	: The process os either running or it is ready to run.
@@ -924,15 +927,15 @@ searcher.
 	init / systemd process.
 	
 	# INIT / SYSTEMD PROCESS:
-	
+	-------------------------
 	> Init is the first program in the linux that is executed when the Linux boots up.
 	> It is a mother of all process on the system.
 	> It is started by the kernal itself, so in principle it does not have a parent process.
 	> The init process always has process ID of 1.
 			
 			$pidof systemmd
-			
---------------------------------------------------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 # MANAGING USERS & GROUPS:
 --------------------------
@@ -941,7 +944,7 @@ searcher.
 	(GID), respectively.
 	> RHEL reserves user and group ID's below 1000 for system users and groups.
 	> Red Hat support three different types of users.
-	
+
 	In Linux by default we have 3 types of Users:
 	---------------------------------------------
 	> Super or root user	: User is most powerful user. He is the administrator user.
@@ -952,12 +955,12 @@ searcher.
 	-----------------
 	# SUPRT USER:
 	-------------
-	> The root user account is the quivaent of the administrator or Enterprise admin account in the windows world. 
+	> The root user account is the equivalent of the administrator or Enterprise admin account in the windows world. 
 		Login prompt is "#".
-	> It is the most poerfull account on the system and has access to everything.
+	> It is the most powerfull account on the system and has access to everything.
 	
 	# NORMAL USERS:
-	--------------
+	---------------
 	> Normal users are created by the root user, like Raju, Sara, max ....etc.
 	> Normal users accounts have no write have no write access to anything on the system except their home directory.
 		Login prompt is "$"
@@ -994,8 +997,8 @@ searcher.
 	True, the passwords are encrypted.
 			raju:$1$.QKDPc5E$SWlkjRWexrXYgc98F:12825:0:90:5:30:13096:		
 	
-	> cat /etc/shadow | grep -i raju		(ch eck password add to user or not)
-	> cat /etc/passwd | grep -i username	(to verify usr is created ot not)
+	> cat /etc/shadow | grep -i raju				(ch eck password add to user or not)
+	> cat /etc/passwd | grep -i username			(to verify usr is created ot not)
 	
 	> useradd username								(create a new user)
 	> useradd -u 2000 -g test1 -G devteam,test -c "admin user RHCSA" -s /bin/bash -d /opt/rhcsa -e 2018-08-25		(create a user with custom options with description)
@@ -1013,7 +1016,7 @@ searcher.
 	> whoami 								(to check the current login user name)
 	> useradd -D username 					(to check default option of the user)
 	
-	> usermod -aG GN UN 					(add user to group upend the group)
+	> usermod -aG GN UN						(add user to group upend the group)
 	> usermod -G GN UN 						(same command)
 	> usermod -g GN UN 						(chnage primary group not upend)
 	
@@ -1022,23 +1025,21 @@ searcher.
 	> usermod -c "dba Admin" username		(specify the description)
 	
 	> usermod -s /bin/bash username			(modify/change user login shell)
-	> usermod -s /sbin/nologin/	UN			(remove shell for user)
+	> usermod -s /sbin/nologin/	UN			(remove shell for user block the user from remote login)
 	> cat /etc/shells 						(check avaliable shells)
-	
+
 	> usermod -d /home/username				(modify/change user location)
-	
+
 	> usermod -L username					(to lock the user)
 	> usermod -U username					(to un-lock the user)
 	> usermod -f username					(inactive the user)
 	> usermod -e 2018-08-22 username		(add expire date to user)
-	
+
 	> usermod -l new_username old_usernme			(modify/change user name)
 	> usermod -d /home/new_username new_username 	(modify/change user home location)
 	> usermod -m /home/sai sai 						(move home path for user)	-m means move home path.
-	
+
 	> usermod -o 1001 -u 1001 username				(add user with specified userID and groupID for multiple users)
-
-
 
 	> passwd username						(modify/change password for user)
 	> cat /etc/shadow | grep -i username	(to check password add or not status field of the passwd)
@@ -1046,38 +1047,38 @@ searcher.
 	> passwd -d username					(delete password of user)
 	> passwd -l username					(lock the user passwd)
 	> passwd -u username					(unlock the user passwd)
-	
+
 	> passwd -n 10 username					(the user can't change its own password untill 10 days)
 	> passwd -e 2018-08-22 username			(one time password short expire password)
- 	
+
 	> echo "12345" | passwd --stdin username(set password to user)
 	> passwd -x 90 username					(after 90 days the passwd required to be changed)
-	
+
 	> chage username						(change user password expiry information)
 	> chage -l username						(display details of user)
 	> chage -m 45 -M 60 -W 10 -E 2021-12-31 username 	(passwd options passwd change minmum & maximum date, warning, expire date)
-	
+
 
 	# MANAGING GROUPS:
 	------------------
 	> Groups are logical experssion of organization, tying users together for a common purpose. Users
 	within a group can read, write, or execute files owned by that group.
 	> Ther are two types of groups.
-		
+
 		Primary Groups:
 		---------------
 		It is group in which a user initially belongs in this group the user can access the resource with default permission.
-		
+
 		Secondry Droup:
 		---------------
 		Apart from primary, if a user has an account in the other group then it is called secondary group to the user.
-		
+
 	# USER PRIVATE GROUP (UPG):
 	---------------------------
 	> In Red Hat Linux uses user private group (UPG) scheme. Acording to UPG scheme, you create any user
 	account, the user consists the primary group with same name and same ID.
 	> for example, if a user is created with the name Raju, then a primary group of that user will be Raju only.
-	
+
 	# FILES CONTROLLING GROUPS:
 	--------------------------
 		> /etc/group files:
@@ -1088,71 +1089,71 @@ searcher.
 			this file is readable only by the root user and contains an encrypted password for each group, 
 			as well as group membership and administrator information.
 					family:!!:raju,ramu,jai
-	
+
 	> groupadd									(create a new group)
 	> cat /etc/group | grep -i groupname		(status of the group)
 	> groupadd -g 1008 groupname 				(create a new group with custom ID value)
-	
+
 	> groupmod -g 1111 groupname				(modify/change group ID)
 	> groupmod -n new_group_name old_group_name	(modify/change group name)
-	
+
 	> groupmod -ptest GN						(protect the group)
 	> groupmod -A UN GN							(add administrator for the group)	
-	
+
 	> gpasswd groupname    						(add the password to group)
 	> cat /etc/gshadow groupname				(status of the group password)
-	
+
 	> gpasswd -a username groupname				(add user to group)
 	> gpasswd -M UN1, UN2, UN3 groupname		(add multiple users at a time)
 	> cat /etc/gshadow | grep -i groupname		(status of the group)
 	> gpasswd -d username groupname				(remove user from group)
-	
+
 	> groupdel groupname 						(delete the group)	(don't delete the group when the user are exists)
-	
+
 	> id username								(display user and group ID's)
 	> id -Gn username							(group info of the user)
-	
-	
+
+
 	# USER ACCOUNT INITILIZATION:
 	-----------------------------
 	> When a user is created, everything from the /etc/skel directory is copied to the user's newly created
 	home directory (usually /home/username)
 	> You can modify these "skeleton" files or can add your own custom files.
 	> The customizable files broken down into two different sections.
-	
+
 		USER SPECIFIC FILES:
 		--------------------
-		> .bashrc				(defines functions and aliases)
-		> .bash_profile			(sets enviroment variables)
-		> .bash _logout			(any commands that should be executed before users log out)
-		
+		> .bashrc										(defines functions and aliases)
+		> .bash_profile									(sets enviroment variables)
+		> .bash_logout									(any commands that should be executed before users log out)
+
 		> vim .bashrc alias c='clear'					(we can create alias commands under this .bashrc)
 		> vim .bash_profile 	echo "Welcome...."		(we can create welcome notes)
 		> vim .bash_logout		echo "Bye....."			(we can create logout notes)
-		
-		> /etc/skel/ 							(common file location)
+
+		> /etc/skel/ 									(common file location)
 		add file ower here when we create a new user this file commonlly available.
-		
+
 		GLOBAL USER CONFIGURATION:
 		--------------------------
 		> /etc/bashrc			(defines functions and aliases)
 		> /etc/profile:			(sets enviroment variables)
 		> /etc/profile.d:		(it contains scripts tha are called by the /etc/profile file)
-		
+
 		MAIN CONFIGURATION FILE:
 		------------------------
 		> vim /etc/login.defs						(controls specific related to system wider user login & permissions.)
 		> vim /etc/login.defs						(login definations)
 		> vim /etc/login.defs						(user pre-defined settings) (how to change user pre-defined settings)
-		
+
 		> cat /etc/default/useradd					(default information)
 
--------------------------------------------------------------------------------------------------------------------------------------------     	
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------     	
 # GROUP COLLABORATION:		(special permissions)
 ----------------------
 	> Group Collaborations is an essential part of any system administrator who deals with users.
 	knowing file and directory permissins will allow you to let users work together.
-	
+
 	Setuid, Setgid and Stickybit:
 	-----------------------------
 	> Setuid is a Linux file permission setting that allows a user to
@@ -1160,15 +1161,15 @@ searcher.
 	that file. This is primarily used to elevate the privileges of the
 	Current user.
 	Example: /etc/passwd
-	
+
 	> Setgid is also similar like setuid. A process, when executed,
 	will run as the group that owns the file.
 	Example: ls -l /usr/bin/crontab
-	
+
 	> Stickybit: When stickybit is set on a directory, the files in that
 	directory can only be deleted by the owner.
 	Example: /tmp/
-	
+
 	# Here, we look at three key features:
 	--------------------------------------	
 			suid (set user id):
@@ -1177,77 +1178,51 @@ searcher.
 			> Used to allow multi user access.
 			> Flag id value is : 4
 			> symbolic value : S
-			
+
 			sgid (set group id):
 			--------------------
 			> setgid
 			> Used to allow multi group access.
 			> Flag id value is: 2
 			> symbolic value : S
-			
+
 			sticky bit:
 			-----------
 			> stickybit
 			> Used to prevent accidental delete by users and groups.
 			> flag id value is: 1
 			> stickybit : T
-			
+
 	> which useradd							(Search for a string)
 	> chmod u+s /usr/sbin/useradd (filepath)(add command with normal user set multi user assess)
 	> chmod 4755 /usr/sbin/useradd			(same command add)
 	> chmod u-s /usr/sbin/useradd			(remove command with normal user)
 	> chmod 0755 /usr/sbin/useradd			(same command remove)
 	> ls -l /usr/sbin/useradd (filepath)	(status of the useradd command)
-	
+
 	> chgrp groupname /usr/sbin/useradd		(change the group of command)
 	> chmod g+s /usr/sbin/useradd			(add command with normal user set multi user assess group level user add command executed by dev-team people)
 	> chomd 2755 /usr/sbin/useradd 			(same command add)	
 	> chmod 0755 /usr/sbin/useradd			(same command remove)
-	
+
 	> chomd +t /cloud-data					(enable sticky bit for the folder it is prevents accendentlly deletes users and groups)
 	> chomd -t /cloud-data					(disable sticky bit)
 	> chomd 1777 /cloud-data				(same command add)
 	> chomd 0777 /cloud-data				(same command remove)
-	
-	# CONFIGURING SUDO ACCESS:    VCS#4311
-	--------------------------
-	> The sudo command offers a mechanism for providing trusted users with administrative access to a
-	system without sharing the passwd of the root user.
-	> This mechanism precedes an administrative command with sudo they are prompted to enter their own 
-	password. Once authenticated, and assuming the command is permitted, the administrative command
-	is executed as if run by the root user.
-	> Run the visudo to edit the etc/sudoers file.
-	
-	> visudo								(Allow members and group sudo to execute any command)
-	> vim visudo
-	root			ALL=(ALL)		ALL
-	username		ALL=(ALL)		ALL 	(add user as sudoer)
-	%groupname		ALL=(ALL) 		All		(add group as sudoer)
-	
-	username		ALL=(ALL)		NOPASSWD:ALL 	(add user as sudoer with on password)
-	%groupname		ALL=(ALL) 		NOAPSSWD:All	(add group as sudoer with on password)
-	
-## Allow Users to run any Commands
-root ALL=(ALL) ALL
-aravi ALL =NOPASSWD: ALL
 
-# Group Names
-%engineers ALL =NOPASSWD:	CUSTOM
-%admins1 ALL =NOPASSWD: ADMINISTRATORS
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
----------------------------------------------------------------------------------------------------------------------
-	
-# MANAGINING USERS AND GROUPS :						avinash
+# MANAGINING USERS AND GROUPS :						(avinash)
 -------------------------------
 	> /etc/passwd 				(This file contains users information)
 	> /etc/shadow				(This file contains password information)
 	> /etc/group 				(contains group info location) (switch to root user to manage all other users)
-	
+
 	> getent passwd username	(entry in passwd file)
 	> getent shadow username	(entry in shadow file)
 	> getent group username		(entry in group file)
 	> getent gshadow username	(entry in gshadow file)
-	
+
 	> usermod 					(to edit user)
 	> usermod -aG GN username	(add user to wheel group)
 	> usermod-a-G/-aG GN UN		(To change users group)
@@ -1261,27 +1236,27 @@ aravi ALL =NOPASSWD: ALL
 	Every group will have unique GID
 	Used to manage shared access to files / directories
 	Users can be member of multiple group also
-	
+
 	> Group Database files:
 	/etc/group 						(contains group info)
 	Note: switch to root user to manage all other users....
-	
+
 	> chown 						(to change the ownership)
 	> chgrp 						(to change the group)
-	
-	> groups username				(tells you specified user nember of you belongs to)
+
+	> groups username				(list the number of groups belongs to user)
 	> groupadd groupname			(to create group)
-	
+
 	> chown :GN filename			(for change the file group)
-	
+
 	Shadow file explanation:
 	------------------------
 	> change username						(change password expire date)				(imp)
 	> change -l username					(password info for perticular user)
-	
+
 	> usermod -s /sbin/nologin username		(to remove from shell)
 	> usermod -s /sbin/bash UN 				(to add to shell)
-	
+
 	> cat /etc/sudoers						(visudo file location)
 	--------------------
 	> useradd 	(name)
@@ -1289,69 +1264,37 @@ aravi ALL =NOPASSWD: ALL
 	> visudo	(#Allow members and group sudo to execute any command)
 	> teja ALL=(ALL:ALL) NOPASSWD:ALL		(exit)
 	> sai ALL 
-	
-	> visudo								(press i to search wheel group and remove = and space and save) 
 
-	> 
-	
--------------------------------------------------------------------------------------------------------------------------------------------
+	> visudo								(press i to search wheel group and remove = and space and save)
 
-# USER MANAGEMENT ADVANCE SSH AUTHENCATION:
--------------------------------------------
 
-	How to setup password for ec2-user
-	How to login as newly created user
-	
-	> 	 		(search for PasswordAuthentication enter yes)	(enable password to ec2-user)
-	after that restart the sshd
-	> service sshd restart
-	> systemctl restart sshd
-	--------------------------
-	> vim /etc/ssh/sshd_config		(enable ssh login for users) 
-	
-	AllowUsers sukhanth root		(allow users)
-	AllowGroups administrators		(allow groups)	
-	
-	> :wq	
-	> systemctl restart sshd
-	
-	> vim /etc/issue.net
-	Welcome to $HOSTNAME $USER 
-	> :wq
-	
-	# KEY BASED AUTHENCATION:
-	-------------------------
-	> ssh-keygen -t rsa							(generate the key)
-	> cd /root/.ssh
-	> ssh-copy-id username@192.168.10.100
-	
-------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 COPY FILES BETWEEN SERVERS:
 ---------------------------
 	Windows to Linux:
 	-----------------
 	> Mobaxterm or winscp.
-	
+
 	Linux to Linux:
 	---------------
 	SCP (secure copy) is a command-line utility that allows you to securely copy files and directories between two systems.
-	
+
 	scp source_file_name username@destination_host:destination_folder
-	
-	Example: 
+
+	Example:
 	> scp filel saikoti@10.1.0.100:/home/saikoti/						(copy file server 1 to server 2) pushing.
 	> scp saikoti@10.1.0.100:/home/saikoti/file1 /home/ubuntu/			(copy file from remote system to local system) pulling.
-	
+
 	> scp -r kaka saikoti@10.1.0.100:/home/saikoti/						(copy directory server 1 to server 2) pushing.
-	
+
 	> scp -C linux.tar.xz saikoti@10.1.0.100:/home/saikoti/				(copy compressed file)
-	
+
 	> scp -l 500 liux.tar.xz saikoti@10.1.0.100:/home/saikoti/			(copy fiels limit to 500 kbps)
-	
+
 	> scp -rv test.zip sukhanth@52.254.11:/home/mayur					(copy file one server to another in linux)
 	> scp -i /home/kumar/test.pem sukhanth@52.254.11:/home/sukhanth		(copy pem file)
-------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 # PACKAGE MANAGEMENT:
 ---------------------
@@ -1449,7 +1392,7 @@ gpgcheck=0
 			
 			grouplist		groupinstall
 			groupupdate		groupremove
-	
+
 	> yum clean all 				(clean cache)
 	> yum repolist					(find repo list)
 	> yum list						(what are the package avaliable under the repo)
@@ -1476,14 +1419,14 @@ gpgcheck=0
 	interface between hardware and software applications.
 	> The Red Hat kernal is custom-built and based on the upsteam Linux kernal, with focus on stability and 
 	compatibility with the latest technologies and hardware.
-	
+
 	> uname -r 											(find the kernal version)
 	> uname -a 											(kernal full information)
 	> cat /etc/redhat-release							(display kurnal release)
 	> rpm -q kernal (or) > rpm -qa | grep -I kernal 	(listout installed packages)
-	
-	
-	
+
+
+
 	# KERNAL MODULES:
 	-----------------
 	> A device drives which adds support for new hardware.
@@ -1495,13 +1438,13 @@ gpgcheck=0
 	> modprobe xfs  					(to load the modules)
 	> lsmod | grep -i xfs				(checkout xfs module is available or not)
 	> modprobe -r xfs					(un load mode)
-	
+
 	# UPDATING KERNAL:
 	------------------
 	NOTE 1:
 	When upgrading from Red Hat Enterprise Linux 7 to Red Hat Enterprise Linux 8, Red Hat strongly
 	recommends that you reinstall whole OS.
-	
+
 	NOTE 2:
 	> When updating a kernal with the command, never use the -U to update.
 	> The reason behing this that the update option erases the prior kernal when updating, whereas the -i option
@@ -1517,10 +1460,10 @@ gpgcheck=0
 	> systemctl start httpd
 	> systemctl enable httpd
 	> systemctl status httpd
-	
+
 	> cd /etc/yum.repo.d
 	> vim local.repo
-	
+
 [BaseOS]
 name="MY BaseOS Repository"
 baseurl=http:///192.168.10.254/rhel_8.iso/BaseOS
@@ -1557,7 +1500,7 @@ gpgcheck=0
 
 	> yum update -y		(will update the base OS)
 
--------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 # SCHEDULING JOBS (or) AUTOMATING SYSTEM TASKS:
 -----------------------------------------------
@@ -1637,26 +1580,26 @@ gpgcheck=0
 	-----------------------------
 	To restrict the access to cron, you can use files:
 	
-	/etc/cron.allow		 
+	/etc/cron.allow
 	/etc/cron.deny
 	
 	> The /etc/cron.allow files:
 		> If it exists, only these users are allowed (cron.deny is ignored).
 		> If it doesn't exit, all users except cron.deny are permitted.
-	
+
 	> The /etc/cron.deny file:
 		> If it is exists and empty, all users are allowed (red Hat Default)
-	
+
 	> For Both Files:
 		> if neither file exists, root only.
-		
+
 	NOTE:
 	You can control the access also through pluggable Authentication Module (PAM).
 	The setting are stored in the /etc/security/access.conf
 		
 		: ALL EXCEPT root:cron
-		
--------------------------------------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 # DISKS & PARTITIONS (LOCAL STORAGE):
 -------------------------------------
@@ -1700,7 +1643,7 @@ gpgcheck=0
 	5. udevadm settle.
 	6. Make file system.
 	7. Mount and add fstab entry for permanent mount. when ever we reboot fstab entry will remount the partition.
-	
+
 	 # Steps  to Delete partition:
 	 -----------------------------
 	 1. Run final archive backup.
@@ -1735,17 +1678,18 @@ gpgcheck=0
 	> fdisk -l 					(find the disk formats)
 	> fdisk /dev/xvda			(for create new volume)
 	  n							(add new partition)
+
 	  +2G						(add 2gb space)
 	  wq						(save and quit)
 	  q							(quit without saving) 
 	> partprobe /dev/nvme0n1	(must run this command after creatig partition or delete a partition. it update to kurnal)
-	
+
 	> mkfs.ext4 /dev/sda3		(format file system)
-	
+
 	> mkdir Suhkanth						(create directory)
 	> mount /dev/volumename	mountpoint		(mound volume)
 	> mount -a								(mound every thing)
-	
+
 	delete a partition:
 	-------------------
 	> umount /sukhanth			(unmount)
@@ -1764,45 +1708,46 @@ gpgcheck=0
 	system in order to make them store the data.
 	> File system is applied on the partition by formating it with a partition it with a particular type of a partition.
 	> File system is applied on the partition it with a particular type of a partition.
-	
+
 	# Local file system:
 	--------------------
 	> Local file system  are file system run on a single, local server and are directly attached to storage.
-	
+
 	xfs file system:
 	----------------
 	> xfs is a highly scalable, high -performance, robust, and mature 64-bit journaling file system that supports 
 	very large files and systems on a single host. It is the default file system in RHEL8.
-	
+
 	ext4 file system:
 	-----------------
 	> The ext4 file system is the fourth genetation of the ext file ext file system family. It was the default FS in RHEL6.
 	> The ext4 driver can read and write to ext2 and ext3 file systems, but the ext4 file system format is not
 	compatible with ext2 and ext3 drivers.
-	
+
 	Journaling:
 	-----------
 	XFS and EXT4 FS are offers a journaling option, which has two main advantages.It can help 
 	speed up recovery if there is a disk failure because journaling file system keep a "journal" of the file system's 
 	metadata. It can check drivers fasters during the system boot process.
-	
+
 	NOTE:
 	The journaling feature isn't available on older file system such as ext2.
-	
-	
+
+
 	Tools for different file systems:
 	---------------------------------
 	TASK 								ext3/4						XFS
-	
+	----								------						---
+
 	create a file system				mkfs.ext4 or mkfs.ext3 		mkfs.xfs
 	file system check					e2fsck						xfs_repair
 	Resizing a file system				resize2fs					xfs_growfs
 	save an image of a file system		e2image						xfs_metadump and xfs_mdrestore
 	label or tune a file system			tune2fs						xfs_admin
 	backup a file system				dump and restore 			xfsdump and zfsrestore
-	
+
 	> mkfs.ext					(find the available file systems)
-	
+
 	Mounting file systems:
 	----------------------
 	> After formating a partition, we can't add the data into the partition. In order to add the data in the 
@@ -1868,13 +1813,13 @@ STORAGE MANAGEMENT ON LINUX: avinash
 	"mkfs.xfs is not available" your getting such kind of isue you need to exegute  ( > yum install xfsprogs)
 
 	> mkdir Suhkanth						(create directory)
-	> mount /dev/volumename	mountpoint		(mound volume)
-	> mount -a								(mound every thing)
-	
+	> mount /dev/volumename	mountpoint		(mount volume)
+	> mount -a								(mount every thing)
+
 	Add an entry in fstab for permanent mount:
 	------------------------------------------
 	> cp /etc/fstab/ /etc/fstab.bkp		(create backup for safe side)
-	> cat /etc/mtab						(copy this information)
+	> cat /etc/mtab							(copy this information)
 	> vim /etc/fstab					(gives us information about what need to write in fstab)
 	partition
 	label
@@ -1885,14 +1830,14 @@ STORAGE MANAGEMENT ON LINUX: avinash
 	> umount
 	> umount -d /dev/mountpoint			(umount volume)
 	> umount -f /dev/mountpoint			(umount volume)
-	
+
 	> lsof /mountpoint					(find the who are using mountpoint)
 	> fuser -uav /dev/mountpoint		(same command)
-	> mound -a 							(run this command after unmount)
-	
+	> mount -a 							(run this command after unmount)
+
 	Extending the File System:
 	--------------------------
-	
+
 	> fiel -s  /dev/xvd* 				(to get the file system info)
 	> growpart /dev/xvda 1				( 1 is volume ID)
 	> xfs_growfs -d /	(enter)			(resize the volume)
@@ -1919,7 +1864,7 @@ STORAGE MANAGEMENT ON LINUX: avinash
 	> umount 		(mount point)
 	
 	
---------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # REDUNDANT ARRAY OF INDEPENDENT DISKS (RAID):
 ----------------------------------------------
 	> User can use RAID to store data across multiple drives. It also helps to avoid data loss if a drive has failed.
@@ -1931,25 +1876,30 @@ STORAGE MANAGEMENT ON LINUX: avinash
 		> Minimize data loss from disk failure
 		> RAID layout and level online conversion
 	
-	# RAID TYPES:
+# RAID TYPES:
+-------------
 	firmware raid:
+	--------------
 	> Firmware RAID, also known as ATARAID, is a type of software RAID where the RAID sets can be
 	configured using a firmware-based menu.
 	> The firmware used by this type of RAID also hooks into the BIOS, allowing you to boot from its RAID
 	sets. The Intel Matrix RAID is a good example.
 	
 	hardware raid:
+	--------------
 	> The hardware-based array manages the RAID subssystem independently from the host.
 	> It may present multiple devices per RAID array to the host.
 	> Hardware RAID devices may be internal to the system.
 	
 	software raid:
+	--------------
 	> Software RAID implements the various RAID levels in the kernal block device code. It offers the cheapest
 	possible solutions, as expensive disk controller cards or hot-swap chassis are not required.
 	> Software RAID also works with any block storage which are supported by the Linux kernel, such as SATA,
 	SCSI, and NVMs.
 	
 	raid levels:
+	------------
 	> raid 0 		(striping)
 	> raid 1		(mirroring)
 	> raid 4 		(parity)
@@ -1993,7 +1943,7 @@ STORAGE MANAGEMENT ON LINUX: avinash
 	> cat /proc/devices											 		(to check the number of devices)
 	> cat /proc/mdstak			(meta-data statictics) 
 	
--------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 # LOGICAL VOLUME MANAGER (LVM):
 -------------------------------
@@ -2012,7 +1962,7 @@ STORAGE MANAGEMENT ON LINUX: avinash
 		> Disk striping.
 		> Mirroring volumes.
 		> Volumes Snapshots.
-	
+
 	# LVM ARCHITECTURE:
 	-------------------
 	Logical Volume
@@ -2020,14 +1970,14 @@ STORAGE MANAGEMENT ON LINUX: avinash
 	 volume group
 		 ↑
 	Physical volume
-	
+
 	# LVM COMPONENTS:
 	-----------------
 	Physical Volume:
 	----------------
 	> The underlying physical storage uni t of an logical volume is a block device such as a partition or whole disk.
 	> To use the device for an LVM logical volume, the device must be as a physical volume (PV).
-	
+
 	Volume Groups:
 	--------------
 	> Physical volume are combined into volume groups (VGs). This creates a pool of disk space.
@@ -2035,20 +1985,20 @@ STORAGE MANAGEMENT ON LINUX: avinash
 	allocated to logical volumes.
 	> every volume group divided into samall sizes units, one uint size is 4mb. total cells.
 	one unit is called one extended. by default one extended size is equal to 4MB.
-	
+
 	Logical Volumes:
 	----------------
 	> In LVM, a volume group is divided up into logical volumes.
 	> A logical volume is allocated into logical extents. An extent is the smallest unit of space that can be 
 	allocated to logical volumes.
-	
+
 	Logical Volumes:
 	----------------
 	> In LVM, a volume group is divided up into logical volumes.
 	> A logical volume is allocated into logical extents of the same sizes as the physical extents.
 	> The logical partitions which can resize, format, mount etc.
-	
-	
+
+
 	# LVM configuration files:
 	--------------------------
 	> /etc/lvm/lvm.conf						(configuration file)
@@ -2091,7 +2041,7 @@ STORAGE MANAGEMENT ON LINUX: avinash
 	> pvcreate /dev/nvm0n1{12,13,14,15}			(create physical volumes number of partions)
 	> pvcreate /dev/sda							(same command)
 	
-	> pvscan									(scan the all volumes)
+	> pvscan										(scan the all volumes)
 	> pvs										(find the details)
 	> pvdisplay									(to check complete details of physical volumes)
 	
@@ -2101,7 +2051,7 @@ STORAGE MANAGEMENT ON LINUX: avinash
 	
 	will display sucessfully created msg.
 	> vgcreate -s 8 india /dev/sdbp{12,13,14}	(change the unit size to 8MB)
-	
+
 	> vgs										(display volume details)
 	> vgdisplay									(display complete volume details)
 	
@@ -2119,7 +2069,7 @@ STORAGE MANAGEMENT ON LINUX: avinash
 	/dev/india/ap	/devops-data	xfs		defaults	0 0
 	> :wq
 	> mount -a
-	
+
 	# EXTEND LVM PARTION:
 	---------------------
 	How to extend our file system without intrupting any application.
@@ -2163,9 +2113,7 @@ STORAGE MANAGEMENT ON LINUX: avinash
 	> mount -a
 	> df -h
 	
-	
-	
-	
+
 	
 	
 	----------------------------------------------------------
@@ -2191,13 +2139,12 @@ STORAGE MANAGEMENT ON LINUX: avinash
 	> vgremove -f volume_group_name				(remove volume group)
 	> pvremove -f /dev/sdbp{12,13,14,15}		(remove physical volumes)
 
---------------------------------------------------------------------------------------------------------------------------------------------
-
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # BACKUP & RESTORE:
 -------------------
 	> It always good idea to keep on backup data on our computers, this can either can be done manually or
 	configured to work automatically.
-	
+
 	> Types of backups are:
 		> Full Backups
 		> Incremental Backups
@@ -2234,7 +2181,7 @@ STORAGE MANAGEMENT ON LINUX: avinash
 	> xfsrestore -f /dev/st1 -S session_id /mount_point		(restore the backup incremental)
 	> xfsrestore -f /dev/st0 -S session_id /mount_point		(restore the backup full)
 	
-------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 # NFS SERVER (NETWORK FILES SYSTEM):
 ------------------------------------
@@ -2385,8 +2332,7 @@ STORAGE MANAGEMENT ON LINUX: avinash
 	> systemctl status firewalld
 	
 	
---------------------------------------------------------------------------------------------------------------------------------------------
-	
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # SWAP SPACE:
 -------------
 	> swap space improve the system performance.
@@ -2480,8 +2426,7 @@ STORAGE MANAGEMENT ON LINUX: avinash
 	> swapon -a
 	
 
--------------------------------------------------------------------------------------------------------------------------------------------
-
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # ACL:
 ------
 	what is ISO file:
@@ -2548,7 +2493,7 @@ STORAGE MANAGEMENT ON LINUX: avinash
 	> setfacl -m g:sales:x,g:dev:rwx /directory_name	(set the acl for multiple ugroups)
 	> setfacl -x g:sales: /directory_name				(remove all permissins for sales group)
 	> setfacl -x g:sales:,g:dev: /directory_name		(remove all permissins for multiple groups)
-	
+
 	> getfacl file1 | setfacl --set-file=- file2		(copying the ACL of one file to another)
 	> getfacl --access dir | setfacl -d -M dir			(copying the access ACL into the Default ACL)
 	
@@ -2556,7 +2501,7 @@ STORAGE MANAGEMENT ON LINUX: avinash
 	
 	> setfacl -b fie2 									(remove all ACL entries)
 	
---------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 # DOMAIN NAME SYSTEM (DNS):
 ---------------------------
@@ -2727,7 +2672,7 @@ server	IN 		A 		172.31.35.61
 	> ping 192.168.10.254
 	> ping server.example.com
 	
--------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 # FILE TRANSFER PROTOCOL (FTP):
 -------------------------------
@@ -2751,12 +2696,12 @@ server	IN 		A 		172.31.35.61
 	> /etc/pam.d/vsftpd				(pluggable authencation modules (PAM) configuration file)
 	> vsftpd 						(service and daemon)
 	> /var/log/xferlog				(service and daemon)
-	
+
 	ports:
-	
+
 	> 20 							(FTP Data (for transferring FTP data)
 	> 21 							(FTP Control (for starting FTP connection)
-	
+
 	> yum install vsftpd -y 
 	
 	> cd /var/ftp
@@ -2793,7 +2738,7 @@ server	IN 		A 		172.31.35.61
 	> vim /etc/vsftpd/user_list		(listout the vsftpd	users)
 	add user name for restrict for no login for vsftpd.
 	
---------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # LINUX NETWORKING:
 -------------------
 	> A network is a system of interconnected device that can communicate sharing information and 
@@ -2851,7 +2796,7 @@ server	IN 		A 		172.31.35.61
 	-----------------------------------------
 	> cd /etc/sysconfig/network-scripts/			(location of the ip address file )
 	> ls -l
-	
+
 	> vim ifcfg-ens160								(modify the ip address statictically)
 	BOOTPROTO=none 									(or statictic)
 	ONBOOT=yes
@@ -3249,7 +3194,7 @@ open the 3128 port in the firewall:
 > firewall-cmd-permanent --add-port-3128/tcp
 > firewall-cmd --reload
 
-To verify that the proxy orks correctly, down load a web page using the curl utility:
+To verify that the proxy orks correctly, download a web page using the curl utility:
 -------------------------------------------------------------------------------------
 > Curl-0 L "https://www.redhat.com/index.html" -x "proxy.example.com:3128"
 
@@ -3475,8 +3420,8 @@ host sukhanth {
 	> :wq
 	
 	> systemctl restart dhcpd
-	
-	
+
+
 -----------------------------------------------------------------------------------------------------------------------------------------
 
 # WEB SERVER:
@@ -3510,7 +3455,7 @@ host sukhanth {
 	> Ports:
 		> httpd-80
 		> https/ssl-443
-		
+
 	# LAB:
 	-----
 	> yum install httpd -y
@@ -3655,34 +3600,7 @@ DocumentRoot /var/www/html/website2
 	> systemctl status firewalld							(display status of the firewall)
 	> systemctl stop firewall								(stop the firewall)
 	> systemctl disable firewall							(permentelly stop the firewall)
-	
-	# NMCLI - Network Manager Command Line Interface:
-	-------------------------------------------------
-	> nmcli device status									(display current connected zone)
-	> nmcli device show eth0								(display enthire info device)
-	> nmcli connection show									(display the avaliable profiles)
-	> nmcli general status									(general status)
-	> nmcli general loging 
-	> 
-	
-	show | up | down | modify | add | edit | clone | monitor | reload | ifname | load | import | export 
-	
-	> nmcli connection add type ethernet con-name home ifname ens33			(create profile)
-	> nmcli connection add type ethernet con-name techarkit ifname ens33 	(device_name)
-	> nmcli connection modify techarkit ipv4.addresses 192.168.128.134/24 ipv4.gateway 192.168.128.134 ipv4.dns 4.4.4.4 connection.autoconnect yes ipv4.method manual		(add profile)
-	
-	> cat /etc/sysconfig/network-scripts/ifcfg-techarkit
-	
-	> nmcli connection up techarkit
-	
-	> 
-	
-	
-	
-	> nmcli connection delete techarkit										(delete the connection)
-	
-	
-	
+		
 	# ALL ABOUT ZONES:
 	------------------
 	Firewalld provides different levels of security for different connection zones. A zone is associated with at least one network 
@@ -3702,7 +3620,7 @@ DocumentRoot /var/www/html/website2
 	> home		: This zone is for home machines. Other computers on this network are generally trusted.
 	
 	> firewall-cmd --reload										(reload the service)
-	
+
 	> firewall-cmd --get-default-zone							(find out default zone)
 	> firewall-cmd --zone=public --list-all						(see the configuration details of a zone)
 	> firewall-cmd --get-zones									(list all zones)
@@ -3711,18 +3629,18 @@ DocumentRoot /var/www/html/website2
 	> firewall-cmd --list-all									(display the info default zone)
 	> firewall-cmd --zone=external --list-services
 	> firewall-cmd --zone=external --list-all
-	
+
 	> firewall-cmd --set-default-zone=home						(switching/set defult zone)
-	
+
 	> firewall-cmd --zone=home --change-interface=enp3s0
 	> firewall-cmd --zone=home --change-interface=enp3s0 --permanent
 	> firewall-cmd --runtime-to-permanent						(write the settings of the current running session)
-	
+
 	> firewall-cmd --list-interfaces							(list all available interfaces)
 	> firewall-cmd --add-interface=eth0							(add interface)
 	> firewall-cmd --add-interface=eth0 --zone=public 			(add interface to zone)
 	> firewall-cmd --remove-interface=eth0 --zone=public		(remove interface)
-	
+
 	> firewall-cmd --permanent --add-port=22/tcp				(add portnumber)
 	> firewall-cmd --permanent --add-port=80/tcp				(add portnumber)
 	> firewall-cmd --permanent --add-port=443/tcp				(add portnumber)
@@ -3730,7 +3648,7 @@ DocumentRoot /var/www/html/website2
 	> firewall-cmd --permanent --zone=public --add-port=80/tcp 	(add port number for specific zone)
 	> firewall-cmd --permanent --add-port-{139/tcp,445/tcp}		(add multiple portnumbers)
 	> firewall-cmd --permanent --remove-port=444/tcp			(remove port number)
-	
+
 	> firewall-cmd --permanent --add-service=http				(add service)
 	> firewall-cmd --permanent --add-service=https 				(add service)
 	> firewall-cmd --permanent --add-service=samba				(add service)
@@ -3758,8 +3676,35 @@ DocumentRoot /var/www/html/website2
 	> firewall-cmd --permanent --add-rich-rule='rule family="ipv4" source address="192.168.1.100" port protocol="tcp" port="3306" accept'
 	> firewall-cmd --permanent --remove-rich-rule='rule family="ipv4" source address="192.168.1.100" port protocol="tcp" port="3306" accept'	(Removing a Rich Rule
 	
--------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+# NMCLI - Network Manager Command Line Interface:		(Network Manager | Assign Static IP)
+-------------------------------------------------
+	> nmcli device status									(display current connected zone)
+	> nmcli device show eth0								(display enthire info device)
+	> nmcli connection show									(display the avaliable profiles)
+	> nmcli general status									(general status)
+	> nmcli general loging 
+	> 
+	
+	show | up | down | modify | add | edit | clone | monitor | reload | ifname | load | import | export 
+	
+	> nmcli connection add type ethernet con-name home ifname ens33			(create profile)
+	> nmcli connection add type ethernet con-name techarkit ifname ens33 	(device_name)
+	> nmcli connection modify techarkit ipv4.addresses 192.168.128.134/24 ipv4.gateway 192.168.128.134 ipv4.dns 4.4.4.4 connection.autoconnect yes ipv4.method manual		(add profile)
+	
+	> cat /etc/sysconfig/network-scripts/ifcfg-techarkit
+	
+	> nmcli connection up techarkit
+	
+	> 
+
+
+	> nmcli connection delete techarkit										(delete the connection)
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # SOFT LINK & HARD LINK:
 ------------------------
 	# Hard Link:
@@ -3768,7 +3713,7 @@ DocumentRoot /var/www/html/website2
 	> We can't create hard link for directories.
 	> We can't create hard link in different file system (Example. Ext4 to XFS or Ext3 to Ext4).
 	> Deleting original file will not effect linked file.
-	
+
 	# Soft Link:
 	> Soft linked file is assigned different between original and linked file.
 	> You can find the difference between original and linked file.
@@ -3778,7 +3723,7 @@ DocumentRoot /var/www/html/website2
 	> ln source and destination				(hardlink copy files to other location  for backups)	
 	> ln -s source and destination			(softlink copy files to other location  for backups)
 
--------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # DISABLE SE LINUX:
 -------------------
 	> sestatus					(SELinux status)
@@ -3791,14 +3736,72 @@ DocumentRoot /var/www/html/website2
 	SELINUX=permissive
 	> :wq
 
--------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # NTP Server and Client:
 ------------------------
 Time Server and client configuration.
 
--------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 # User administration:
 ----------------------
 create, list and remove.
 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# CONFIGURING SUDO ACCESS:
+--------------------------
+	> The sudo command offers a mechanism for providing trusted users with administrative access to a
+	system without sharing the passwd of the root user.
+	> This mechanism precedes an administrative command with sudo they are prompted to enter their own 
+	password. Once authenticated, and assuming the command is permitted, the administrative command
+	is executed as if run by the root user.
+	> Run the visudo to edit the etc/sudoers file.
+	
+	> visudo								(Allow members and group sudo to execute any command)
+	> vim visudo
+	root			ALL=(ALL)		ALL
+	username		ALL=(ALL)		ALL 	(add user as sudoer)
+	%groupname		ALL=(ALL) 		All		(add group as sudoer)
+
+	username		ALL=(ALL)		NOPASSWD: ALL 	(add user as sudoer with on password)
+	%groupname		ALL=(ALL) 		NOAPSSWD: All	(add group as sudoer with on password)
+	
+## Allow Users to run any Commands
+root ALL=(ALL) ALL
+aravi ALL =NOPASSWD: ALL
+
+# Group Names
+%engineers ALL =NOPASSWD:	CUSTOM
+%admins1 ALL =NOPASSWD: ADMINISTRATORS
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# USER MANAGEMENT ADVANCE SSH AUTHENCATION:
+-------------------------------------------
+
+	How to setup password for ec2-user
+	How to login as newly created user
+	
+	> 	 		(search for PasswordAuthentication enter yes)	(add password to ec2-user)
+	after that restart the sshd
+	> service sshd restart
+	> systemctl restart sshd
+	--------------------------
+	> vim /etc/ssh/sshd_config		(enable ssh login for users) 
+	
+	AllowUsers sukhanth root		(allow users)
+	AllowGroups administrators		(allow groups)	
+	
+	> :wq	
+	> systemctl restart sshd
+	
+	> vim /etc/issue.net
+	Welcome to $HOSTNAME $USER 
+	> :wq
+	
+	# KEY BASED AUTHENCATION:
+	-------------------------
+	> ssh-keygen -t rsa							(generate the key)
+	> cd /root/.ssh
+	> ssh-copy-id username@192.168.10.100
+	
